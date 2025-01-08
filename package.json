@@ -7,9 +7,11 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "format": "prettier . --ignore-path .gitignore --write",
-    "fix-style": "npm run format & npm run lint",
+    "fix-style": "npm run format && npm run lint",
     "preview": "vite preview",
-    "prepare": "husky && husky install"
+    "prepare": "husky && husky install",
+    "start": "vite",
+    "lint": "eslint ."
   },
   "dependencies": {
     "eslint-plugin-import": "^2.31.0",
