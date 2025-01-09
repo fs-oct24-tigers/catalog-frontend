@@ -49,6 +49,21 @@ export default {
           5: 'hsl(var(--chart-5))',
         },
       },
+
+      maxWidth: {
+        xl: '1136px',
+      },
+      container: {
+        center: true, // Centers the container by default
+        padding: '2rem', // Adds default padding
+        screens: {
+          'sm': '600px',
+          'md': '700px',
+          'lg': '900px',
+          'xl': '1136px',
+          '2xl': '1400px',
+        },
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
