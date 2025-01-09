@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '@/assets/logo.png';
 import { Link } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
+import '@/css/index.css';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -24,19 +25,19 @@ const Footer: React.FC = () => {
       <div className="flex flex-col md:flex-row gap-[13px] lg:gap-[106px] mt-6 md:mt-0 sm:mt-8">
         <a
           href="#"
-          className="text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400"
+          className="footer-link"
         >
           Github
         </a>
         <a
           href="#"
-          className="text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400"
+          className="footer-link"
         >
           Contacts
         </a>
         <a
           href="#"
-          className="text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400"
+          className="footer-link"
         >
           Rights
         </a>
@@ -44,14 +45,14 @@ const Footer: React.FC = () => {
 
       <div className="flex justify-center items-center gap-4 mt-6 md:mt-0 sm:mt-8">
         <p
-          className="text-xs font-bold text-gray-500 cursor-pointer whitespace-nowrap hover:text-gray-400"
+          className="footer-text"
           onClick={scrollToTop}
         >
           Back to top
         </p>
         <button
           onClick={scrollToTop}
-          className="w-8 h-8 flex items-center justify-center bg-gray-800 text-white hover:bg-gray-700 transition-colors"
+          className="footer-button"
         >
           <ChevronUp className="w-4 h-4" />
         </button>
