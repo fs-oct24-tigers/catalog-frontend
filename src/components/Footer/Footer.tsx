@@ -10,7 +10,6 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="mt-32 border-t border-gray-700 py-8 px-4 md:flex md:justify-between md:items-center sm:px-4 md:px-8 lg:px-[32px] 2xl:px-[152px]">
-      {/* Лого */}
       <Link
         to="/"
         className="md:ml-24"
@@ -22,7 +21,6 @@ const Footer: React.FC = () => {
         />
       </Link>
 
-      {/* Посилання */}
       <div className="flex flex-col md:flex-row gap-[13.5px] lg:gap-[106.83px] mt-6 md:mt-0 sm:mt-8">
         <a
           href="#"
@@ -44,7 +42,6 @@ const Footer: React.FC = () => {
         </a>
       </div>
 
-      {/* Кнопка "Back to top" */}
       <div className="flex justify-center items-center gap-4 mt-6 md:mt-0 sm:mt-8">
         <p
           className="text-xs font-bold text-gray-500 cursor-pointer whitespace-nowrap hover:text-gray-400"
