@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
         />
       </Link>
 
-      <div className="flex flex-col md:flex-row gap-[13.5px] lg:gap-[106.83px] mt-6 md:mt-0 sm:mt-8">
+      <div className="flex flex-col md:flex-row gap-[13px] lg:gap-[106px] mt-6 md:mt-0 sm:mt-8">
         <a
           href="#"
           className="text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400"
