@@ -1,3 +1,4 @@
+import { Categories } from '@/components/product/Categories';
 import ProductCard from '@/components/product/ProductCard';
 
 const HomePage = () => {
@@ -8,6 +9,7 @@ const HomePage = () => {
       <ProductCard />
       <ProductCard />
       <ProductCard />
+      <Categories />
     </div>
   );
 };

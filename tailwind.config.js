@@ -10,7 +10,7 @@ export default {
         btnPrimary: '#905BFF',
         btnSecondary: '#323542',
         textWhite: '#F1F2F9',
-        textGray: '##75767F',
+        textGray: '#75767F',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
 
