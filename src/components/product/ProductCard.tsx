@@ -8,6 +8,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { Button } from '../ui/button';
+import { Heart } from 'lucide-react';
 
 const ProductCard: React.FC = () => {
   return (
@@ -26,6 +27,10 @@ const ProductCard: React.FC = () => {
       <CardFooter>
         <Button>Button</Button>
         <Button variant="secondary">Button</Button>
+        <Heart
+          color={'red'}
+          fill={'red'}
+        />
       </CardFooter>
     </Card>
   );
