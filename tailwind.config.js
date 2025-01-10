@@ -81,8 +81,7 @@ export default {
         xl: '1136px',
       },
       container: {
-        center: true, // Centers the container by default
-        padding: '2rem', // Adds default padding
+        center: true,
         screens: {
           'sm': '600px',
           'md': '700px',
