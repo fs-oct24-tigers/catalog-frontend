@@ -11,7 +11,7 @@ const ProductsPage: FC = () => {
 
   useEffect(() => {
     axios
-      .get('../../public/api/phones.json')
+      .get('/api/phones.json')
       .then((response) => {
         setPhones(response.data);
       })
