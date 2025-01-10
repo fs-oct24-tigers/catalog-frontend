@@ -1,13 +1,10 @@
+import ProductCard from '@/components/product/ProductCard';
+import ProductGrid from '@/components/product/ProductGrid';
+import { Phone } from '@/types';
 import axios from 'axios';
 import { FC, useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 
 const ProductsPage: FC = () => {
-  interface Phone {
-    id: number;
-    name: string;
-  }
-
   const [phones, setPhones] = useState<Phone[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -33,15 +30,11 @@ const ProductsPage: FC = () => {
       {error && <div style={{ color: 'red' }}>{error}</div>}
       {isLoading && <div>Loading...</div>}
       {!isLoading && !error && phones.length > 0 && (
-        <div>
+        <ProductGrid>
           {phones.map((phone) => (
-            <div key={phone.id}>
-              <Link to={`${phone.id}`}>
-                <h2>{phone.name}</h2>
-              </Link>
-            </div>
+            <ProductCard key={phone.id} product={phone} />
           ))}
-        </div>
+        </ProductGrid>
       )}
       {!isLoading && !error && phones.length === 0 && (
         <div>No products available</div>

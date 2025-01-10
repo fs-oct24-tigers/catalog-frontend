@@ -3,7 +3,6 @@ import phones from '../../public/api/phones.json';
 
 const ProductPage = () => {
   const { id } = useParams();
-  console.log(id);
 
   const product = phones.find((phone) => phone.id === id);
 
