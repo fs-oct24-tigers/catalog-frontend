@@ -6,13 +6,23 @@ export default {
     extend: {
       colors: {
         bodyBg: '#0F1121',
+        heartGray: '#323542',
+        heartHover: '#4A4D58',
+        heartSelected: '#EB5757',
         cardBg: '#161827',
+        lineGray: '#3B3E4A',
         btnPrimary: '#905BFF',
+        btnHover: '#A378FF',
         btnSecondary: '#323542',
         textWhite: '#F1F2F9',
         textGray: '#75767F',
+
+        btnBejge: '#FCDBC1',
+        btnGreen: '#27AE60',
+
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        
 
         popover: {
           DEFAULT: 'hsl(var(--popover))',

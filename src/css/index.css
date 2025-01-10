@@ -65,3 +65,16 @@
     @apply bg-background text-foreground;
   }
 }
+@layer components {
+  .footer-link {
+    @apply text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400;
+  }
+
+  .footer-button {
+    @apply w-8 h-8 flex items-center justify-center bg-gray-800 text-white hover:bg-gray-700 transition-colors;
+  }
+
+  .footer-text {
+    @apply text-xs font-bold text-gray-500 cursor-pointer whitespace-nowrap hover:text-gray-400;
+  }
+}
