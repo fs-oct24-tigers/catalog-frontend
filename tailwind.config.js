@@ -1,4 +1,6 @@
 /** @type {import('tailwindcss').Config} */
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
@@ -58,7 +60,19 @@ export default {
           5: 'hsl(var(--chart-5))',
         },
       },
-
+      fontFamily: {
+        mont: ['"Mont"', ...defaultTheme.fontFamily.sans],
+      },
+      fontSize: {
+        h1: ['48px', { lineHeight: '56px', letterSpacing: '-0.01em' }],
+        h2: ['32px', { lineHeight: '41px', letterSpacing: '-0.01em' }],
+        h3: ['22px', { lineHeight: '31px', letterSpacing: '0' }],
+        h4: ['20px', { lineHeight: '26px', letterSpacing: '0' }],
+        button: ['14px', { lineHeight: '21px', letterSpacing: '0' }],
+        body: ['14px', { lineHeight: '21px', letterSpacing: '0' }],
+        small: ['12px', { lineHeight: '15px', letterSpacing: '0' }],
+        uppercase: ['12px', { lineHeight: '11px', letterSpacing: '0.04em' }],
+      },
       maxWidth: {
         xl: '1136px',
       },
