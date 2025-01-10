@@ -34,20 +34,19 @@ export const Categories: React.FC = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-8 gap-x-3">
         {categories.map((category) => (
-          <div
-            key={category.id}
-            className=""
-          >
+          <div key={category.id}>
             <div className="mb-6">
-              <img
-                src={category.image}
-                alt={category.title}
-              />
+              <a href="#">
+                <img
+                  src={category.image}
+                  alt={category.title}
+                />
+              </a>
             </div>
 
             <div>
               <h3 className="mb-1 text-xl font-bold text-textWhite">
-                {category.title}
+                <a href="#">{category.title}</a>
               </h3>
               <p className="text-sm font-semibold text-textGray">
                 {category.models}
