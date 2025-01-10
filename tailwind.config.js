@@ -65,9 +65,13 @@ export default {
       },
       fontSize: {
         h1: ['48px', { lineHeight: '56px', letterSpacing: '-0.01em' }],
+        h1Mobile: ['32px', { lineHeight: '41px', letterSpacing: '-0.01em' }],
         h2: ['32px', { lineHeight: '41px', letterSpacing: '-0.01em' }],
+        h2Mobile: ['20px', { lineHeight: '26px', letterSpacing: '0' }],
         h3: ['22px', { lineHeight: '31px', letterSpacing: '0' }],
+        h3Mobile: ['20px', { lineHeight: '26px', letterSpacing: '0' }],
         h4: ['20px', { lineHeight: '26px', letterSpacing: '0' }],
+        h4Mobile: ['16px', { lineHeight: '20px', letterSpacing: '0' }],
         button: ['14px', { lineHeight: '21px', letterSpacing: '0' }],
         body: ['14px', { lineHeight: '21px', letterSpacing: '0' }],
         small: ['12px', { lineHeight: '15px', letterSpacing: '0' }],
