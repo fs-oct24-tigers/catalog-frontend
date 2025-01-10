@@ -20,6 +20,7 @@ export default {
         btnGreen: '#27AE60',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
+        
 
         popover: {
           DEFAULT: 'hsl(var(--popover))',
