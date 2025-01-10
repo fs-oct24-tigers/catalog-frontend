@@ -16,8 +16,10 @@ export default {
         btnSecondary: '#323542',
         textWhite: '#F1F2F9',
         textGray: '#75767F',
+
         btnBejge: '#FCDBC1',
         btnGreen: '#27AE60',
+
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
         
