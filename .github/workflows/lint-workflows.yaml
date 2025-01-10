@@ -1,7 +1,7 @@
 name: Lint workflows
 
 permissions:
-  contents: read # Use 'read' unless you specifically need 'write'
+  contents: read
 
 on:
   pull_request:
@@ -9,7 +9,7 @@ on:
       - main
   push:
     branches:
-      - main # Replace with the correct branch name if different
+      - main
 
 jobs:
   lint:
