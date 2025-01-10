@@ -1,8 +1,12 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 type Category = {
   id: number;
   title: string;
   models: string;
   image: string;
+  path: string;
 };
 
 const categories: Category[] = [
@@ -11,18 +15,21 @@ const categories: Category[] = [
     title: 'Mobile phones',
     models: '95 models',
     image: '/img/category-phones-new.png',
+    path: '/phones',
   },
   {
     id: 2,
     title: 'Tablets',
     models: '24 models',
     image: '/img/category-tablets-new.png',
+    path: '/tablets',
   },
   {
     id: 3,
     title: 'Accessories',
     models: '100 models',
     image: '/img/category-accessories-new.png',
+    path: '/accessories',
   },
 ];
 
@@ -36,17 +43,17 @@ export const Categories: React.FC = () => {
         {categories.map((category) => (
           <div key={category.id}>
             <div className="mb-6">
-              <a href="#">
+              <NavLink to={category.path}>
                 <img
                   src={category.image}
                   alt={category.title}
                 />
-              </a>
+              </NavLink>
             </div>
 
             <div>
               <h3 className="mb-1 text-xl font-bold text-textWhite">
-                <a href="#">{category.title}</a>
+                <NavLink to={category.path}>{category.title}</NavLink>
               </h3>
               <p className="text-sm font-semibold text-textGray">
                 {category.models}
