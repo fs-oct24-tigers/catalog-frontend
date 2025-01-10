@@ -44,10 +44,7 @@ export const Categories: React.FC = () => {
           <div key={category.id}>
             <div className="mb-6">
               <NavLink to={category.path}>
-                <img
-                  src={category.image}
-                  alt={category.title}
-                />
+                <img src={category.image} alt={category.title} />
               </NavLink>
             </div>
 

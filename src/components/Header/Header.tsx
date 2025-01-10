@@ -25,10 +25,7 @@ const Header: React.FC = () => {
         <div className="flex  items-center justify-between gap-6 ">
           <Logo />
           {navLinks.map(({ name, pathName }) => (
-            <div
-              className={cn('size-max h-16 flex items-center')}
-              key={name}
-            >
+            <div className={cn('size-max h-16 flex items-center')} key={name}>
               <NavLink
                 to={pathName}
                 className={cn('text-textGray hover:text-textWhite', {

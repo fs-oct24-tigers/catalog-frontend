@@ -60,10 +60,7 @@ const ProductCard: React.FC = () => {
       </CardContent>
 
       <CardFooter className="flex flex-1 justify-between items-center w-full p-0 m-0">
-        <Button
-          size="custom"
-          className="text-sm font-bold text-textWhite"
-        >
+        <Button size="custom" className="text-sm font-bold text-textWhite">
           Add to cart
         </Button>
         {/*<Button variant="secondary">Button</Button>*/}

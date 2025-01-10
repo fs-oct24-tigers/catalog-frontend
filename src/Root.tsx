@@ -6,6 +6,7 @@ import ProductsPage from './pages/ProductsPage';
 import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import FavoritesPage from './pages/FavoritesPage';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const Root = () => {
   return (
@@ -14,7 +15,14 @@ const Root = () => {
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
           <Route path="phones">
-            <Route index element={<ProductsPage />} />
+            <Route
+              index
+              element={
+                <ErrorBoundary>
+                  <ProductsPage />
+                </ErrorBoundary>
+              }
+            />
             <Route path=":id" element={<ProductPage />} />
           </Route>
           <Route path="cart" element={<CartPage />} />
