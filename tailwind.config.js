@@ -73,6 +73,27 @@ export default {
           '2xl': '1400px',
         },
       },
+      animation: {
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'float-slow': 'float 6s ease-in-out infinite',
+        'float-medium': 'float 4s ease-in-out infinite',
+        'float-fast': 'float 3s ease-in-out infinite',
+        'swing': 'swing 2s ease-in-out infinite',
+      },
+      keyframes: {
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-20px)' },
+        },
+        swing: {
+          '0%, 100%': { transform: 'rotate(-3deg)' },
+          '50%': { transform: 'rotate(3deg)' },
+        },
+      },
     },
   },
   plugins: [require('tailwindcss-animate')],
