@@ -11,8 +11,7 @@ export default {
         btnSecondary: '#323542',
         textWhite: '#F1F2F9',
         textGray: '#75767F',
-        background: 'hsl(var(--background))',
-        foreground: 'hsl(var(--foreground))',
+        
 
         popover: {
           DEFAULT: 'hsl(var(--popover))',
