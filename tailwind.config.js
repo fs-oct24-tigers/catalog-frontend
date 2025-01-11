@@ -18,7 +18,8 @@ export default {
         btnSecondary: '#323542',
         textWhite: '#F1F2F9',
         textGray: '#75767F',
-
+        textSecondaryGray: '#89939A',
+        textMutedGray: '#B4BDC3',
         btnBejge: '#FCDBC1',
         btnGreen: '#27AE60',
 
