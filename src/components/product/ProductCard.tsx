@@ -83,16 +83,16 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         </div>
       </CardContent>
 
-      <CardFooter className="flex flex-1 justify-between items-center w-full p-0 m-0">
-        <Button size="custom" className="text-sm font-bold text-textWhite">
+      <CardFooter className="flex flex-1 justify-between items-center w-full p-0 m-0 space-x-2">
+        <Button className="text-sm font-bold text-textWhite flex-grow">
           Add to cart
         </Button>
-        {/*<Button variant="secondary">Button</Button>*/}
+
         <div
-          className={`w-10 h-10 flex items-center justify-center hover:bg-heartHover ${
+          className={`w-10 h-10 flex items-center justify-center ${
             selected ?
               'bg-transparent border border-heartHover'
-            : 'bg-heartHover border border-transparent'
+            : 'bg-heartGray border border-transparent hover:bg-heartHover'
           }`}
           onClick={handleClick}
         >
