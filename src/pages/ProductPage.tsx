@@ -1,6 +1,7 @@
 import { useParams } from 'react-router-dom';
 import phones from '../../public/api/phones.json';
 import { ProductOptions } from '../components/ProductPage/ProductOptions';
+import { ProductAbout } from '../components/ProductPage/ProductAbout';
 import { NotFoundPage } from '@/components/NotFoundPage';
 
 const ProductPage: React.FC = () => {
@@ -17,8 +18,15 @@ const ProductPage: React.FC = () => {
   );
 
   return (
-    <div>
-      <ProductOptions product={product} products={productVariants} />
+    <div className="grid grid-cols-[560px_512px] grid-rows-2 gap-x-16 gap-y-20 mx-auto">
+      <div></div>
+      <div>
+        <ProductOptions product={product} products={productVariants} />
+      </div>
+      <div>
+        <ProductAbout />
+      </div>
+      <div></div>
     </div>
   );
 };

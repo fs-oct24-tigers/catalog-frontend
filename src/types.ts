@@ -24,3 +24,23 @@ export type Phone = {
   zoom: string;
   cell: string[];
 };
+
+export type Color =
+  | 'green'
+  | 'black'
+  | 'red'
+  | 'yellow'
+  | 'white'
+  | 'purple'
+  | 'spacegray'
+  | 'midnightgreen'
+  | 'gold'
+  | 'silver'
+  | 'rosegold'
+  | 'coral'
+  | 'midnight'
+  | 'spaceblack'
+  | 'blue'
+  | 'pink'
+  | 'graphite'
+  | 'sierrablue';
