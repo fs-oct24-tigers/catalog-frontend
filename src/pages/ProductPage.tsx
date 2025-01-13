@@ -3,6 +3,7 @@ import phones from '../../public/api/phones.json';
 import { ProductOptions } from '../components/ProductPage/ProductOptions';
 import { ProductAbout } from '../components/ProductPage/ProductAbout';
 import { NotFoundPage } from '@/components/NotFoundPage';
+import { PageGallery } from '../components/ProductPage/PageGallery';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -19,15 +20,17 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className="grid grid-cols-[560px_512px] grid-rows-2 gap-x-16 gap-y-20 mx-auto">
-      <div></div>
+      <div>
+        <PageGallery images={product.images} />
+      </div>
       <div>
         <ProductOptions product={product} products={productVariants} />
       </div>
       <div>
         <ProductAbout />
       </div>
-      <div></div>
-    </div>
+      <div>
+      </div>
   );
 };
 
