@@ -23,6 +23,7 @@ const NotFoundPage = () => {
         className={`relative ${isVisible ? 'animate-fade-in' : 'opacity-0'}`}
       >
         <div className="flex items-center justify-center gap-4 mb-8">
+          <span className="text-[200px] font-bold text-gray-800">4</span>
           <div className="relative w-64 h-64">
             <Link to="/">
               <img
@@ -32,7 +33,9 @@ const NotFoundPage = () => {
               />
             </Link>
           </div>
+          <span className="text-[200px] font-bold text-gray-800">4</span>
         </div>
+
         <div className="text-center">
           <h2 className="text-2xl font-semibold text-white mb-4">
             Oops! Page not found
