@@ -29,8 +29,8 @@ const ProductPage: React.FC = () => {
       <div>
         <ProductAbout />
       </div>
-      <div>
-      </div>
+      <div></div>
+    </div>
   );
 };
 
