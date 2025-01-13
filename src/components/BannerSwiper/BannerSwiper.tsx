@@ -88,7 +88,7 @@ const BannerSwiper: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="relative flex items-center justify-center gap-4 h-full">
             <button
-              className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-banner border-banner"
+              className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-gray-800 border-gray-800 hover:bg-gray-700 hover:border-gray-700"
               style={{ height: chevronHeight }}
               onClick={goToPrevSlide}
               aria-label="Previous slide"
@@ -111,7 +111,7 @@ const BannerSwiper: React.FC = () => {
                     <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20" />
                     <Link
                       to={image.link}
-                      className="hidden sm:block absolute bottom-12 left-20 text-white px-6 py-2 rounded-full border-solid border-banner border-2 font-semibold"
+                      className="hidden sm:block absolute bottom-12 left-20 text-white px-6 py-2 rounded-full border-solid border-gray-800 border-2 hover:bg-gray-700 hover:border-gray-700 font-semibold"
                     >
                       ORDER NOW
                     </Link>
@@ -121,7 +121,7 @@ const BannerSwiper: React.FC = () => {
             </div>
 
             <button
-              className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-banner border-banner"
+              className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-gray-800 border-gray-800 hover:bg-gray-700 hover:border-gray-700"
               style={{ height: chevronHeight }}
               onClick={goToNextSlide}
               aria-label="Next slide"
