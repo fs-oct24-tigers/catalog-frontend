@@ -19,7 +19,7 @@ const ProductPage: React.FC = () => {
     (phone) => phone.namespaceId === product.namespaceId,
   );
 
-  const properties = [
+  const specs = [
     { name: 'Screen', value: product.screen },
     { name: 'Resolution', value: product.resolution },
     { name: 'Processor', value: product.processor },
@@ -29,26 +29,36 @@ const ProductPage: React.FC = () => {
     { name: 'Cell', value: product.cell.join(', ') },
   ];
 
+  const properties = [
+    { name: 'Screen', value: product.screen },
+    { name: 'Resolution', value: product.resolution },
+    { name: 'Processor', value: product.processor },
+    { name: 'RAM', value: product.ram },
+  ];
+
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
-      <div className="flex gap-x-16">
-        <div className="w-[560px]">
+      <div className="flex flaex-col lg:flex-row lg:gap-x-16 gap-y-16">
+        <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
           <PageGallery images={product.images} />
         </div>
-        <div className="w-[512px]">
-          <ProductOptions product={product} products={productVariants} />
+        <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[512px]">
+          <ProductOptions
+            product={product}
+            products={productVariants}
+            properties={properties}
+          />
         </div>
       </div>
 
-      <div className="flex gap-x-16 mt-16">
-        <div className="w-[560px]">
+      <div className="flex flex-col lg:flex-row lg:gap-x-16 mt-16">
+        <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[560px]">
           <ProductAbout />
         </div>
-        <div className="w-[512px]">
-          <ProductTable properties={properties} />
+        <div className="w-full sm:w-[287px] md;w-[592px] lg:w-[512px]">
+          <ProductTable specs={specs} />
         </div>
       </div>
-
     </div>
   );
 };

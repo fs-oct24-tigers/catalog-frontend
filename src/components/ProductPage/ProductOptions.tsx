@@ -8,9 +8,14 @@ import { Color } from '../../types';
 type Props = {
   product: Phone;
   products: Phone[];
+  properties: { name: string; value: string }[];
 };
 
-export const ProductOptions: React.FC<Props> = ({ product, products }) => {
+export const ProductOptions: React.FC<Props> = ({
+  product,
+  products,
+  properties,
+}) => {
   const [selectedCapacity, setSelectedCapacity] = useState(product.capacity);
   const [selectedProduct, setSelectedProduct] = useState(product);
   const [selected, setSelected] = useState(false);
@@ -50,7 +55,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
   };
 
   const colorOptions: Record<Color, string> = {
-    green: '#007034',
+    green: '#056434',
     black: '#2C2C2C',
     red: '#DC143C',
     yellow: '#FFCC00',
@@ -160,41 +165,16 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray text-left">
-            Screen
-          </span>
-          <span className="text-sm font-semibold text-textWhite text-right">
-            {product.screen}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
-            Resolution
-          </span>
-          <span className="text-sm font-semibold text-textWhite">
-            {product.resolution}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
-            Processor
-          </span>
-          <span className="text-sm font-semibold text-textWhite">
-            {product.processor}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
-            RAM
-          </span>
-          <span className="text-sm fond-semibold text-textWhite">
-            {product.ram}
-          </span>
-        </div>
+        {properties.map((property, index) => (
+          <div key={index} className="flex justify-between items-center w-full">
+            <span className="text-sm font-semibold text-textSecondaryGray text-left">
+              {property.name}
+            </span>
+            <span className="text-sm font-semibold text-textWhite text-right">
+              {property.value}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );
