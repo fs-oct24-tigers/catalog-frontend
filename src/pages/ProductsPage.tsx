@@ -1,22 +1,45 @@
-import { Link } from 'react-router-dom';
-import phones from '../../public/api/phones.json';
+import ProductCard from '@/components/product/ProductCard';
+import ProductGrid from '@/components/product/ProductGrid';
+import { Phone } from '@/types';
+import axios from 'axios';
+import { FC, useEffect, useState } from 'react';
 
-const ProductsPage = () => {
+const ProductsPage: FC = () => {
+  const [phones, setPhones] = useState<Phone[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    axios
+      .get('/api/phones.json')
+      .then((response) => {
+        setPhones(response.data);
+      })
+      .catch((err) => {
+        console.error('Error fetching the data:', err);
+        setError('Failed to load data');
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }, []);
+
   return (
-    <>
-      <div>
-        <h1>Products Page</h1>
-        <div>
+    <div>
+      <h1>Products Page</h1>
+      {error && <div style={{ color: 'red' }}>{error}</div>}
+      {isLoading && <div>Loading...</div>}
+      {!isLoading && !error && phones.length > 0 && (
+        <ProductGrid>
           {phones.map((phone) => (
-            <div key={phone.id}>
-              <Link to={`${phone.id}`}>
-                <h2>{phone.name}</h2>
-              </Link>
-            </div>
+            <ProductCard key={phone.id} product={phone} />
           ))}
-        </div>
-      </div>
-    </>
+        </ProductGrid>
+      )}
+      {!isLoading && !error && phones.length === 0 && (
+        <div>No products available</div>
+      )}
+    </div>
   );
 };
 
