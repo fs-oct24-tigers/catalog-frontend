@@ -39,6 +39,7 @@ const ProductPage: React.FC = () => {
           <ProductOptions product={product} products={productVariants} />
         </div>
       </div>
+
       <div className="flex gap-x-16 mt-16">
         <div className="w-[560px]">
           <ProductAbout />
@@ -47,6 +48,7 @@ const ProductPage: React.FC = () => {
           <ProductTable properties={properties} />
         </div>
       </div>
+
     </div>
   );
 };
