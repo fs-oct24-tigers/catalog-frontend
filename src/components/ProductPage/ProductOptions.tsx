@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Phone } from '../../types';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
+import { Color } from '../../types';
 
 type Props = {
   product: Phone;
@@ -31,6 +32,27 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
     }
   };
 
+  const colorOptions: Record<Color, string> = {
+    green: '#007034',
+    black: '#2C2C2C',
+    red: '#DC143C',
+    yellow: '#FFCC00',
+    white: '#E0FFFF',
+    purple: '#7B68EE',
+    spacegray: '#3D3D3D',
+    midnightgreen: '#008000',
+    gold: '#CD853F',
+    silver: '#808080',
+    rosegold: '#DDA0DD',
+    coral: '#FFA500',
+    midnight: '#008080',
+    spaceblack: '#2F4F4F',
+    blue: '#00BFFF',
+    pink: '#FA9BCB',
+    graphite: '#5B5B5B',
+    sierrablue: '#4682B4',
+  };
+
   const hasDiscount = true;
 
   return (
@@ -50,12 +72,12 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
             <div
               key={index}
               className="flex w-9 h-9 items-center justify-center rounded-full"
-              style={{ backgroundColor: color }}
+              style={{ backgroundColor: colorOptions[color as Color] }}
             >
               <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
                 <div
                   className="rounded-full h-[27px] w-[27px]"
-                  style={{ backgroundColor: color }}
+                  style={{ backgroundColor: colorOptions[color as Color] }}
                 />
               </div>
             </div>
@@ -121,7 +143,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
           <span className="text-sm font-semibold text-textSecondaryGray">
             Screen
           </span>
-          <span className="text-sm font-semibold text-textWhite">
+          <span className="text-sm font-semibold text-textWhite text-right">
             {product.screen}
           </span>
         </div>
