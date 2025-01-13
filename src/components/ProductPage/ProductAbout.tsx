@@ -1,6 +1,6 @@
 export const ProductAbout = () => {
   return (
-    <div className="flex flex-col lg:w-[559px] m-10">
+    <div className="flex flex-col lg:w-[559px] items-start ">
       <div className="text-[22px] font-extrabold text-textWhite">About</div>
 
       <div className="h-0.5 bg-lineGray mt-4 mb-8" />
