@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { NavLink, useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import { HeaderFavoritesButton } from '../Header/HeaderFavoritesButton';
