@@ -100,3 +100,11 @@
 html {
   font-family: 'Mont', sans-serif;
 }
+
+.bg-banner {
+  background-color: rgba(59, 62, 74, 1);
+}
+
+.border-banner {
+  border-color: rgba(59, 62, 74, 1);
+}
