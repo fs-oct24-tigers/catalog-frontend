@@ -56,17 +56,18 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
   const hasDiscount = true;
 
   return (
-    <div className="flex flex-col m-10 lg:w-[512px] sm:w-[288px] md:w-[237px]">
+    <div className="flex flex-col lg:w-[512px] sm:w-[288px] md:w-[237px] text-left">
       <div className="flex justify-between items-center w-full">
-        <span className="text-xs font-bold text-textGray">
+        <span className="text-xs font-bold text-textGray text-left">
           Available colors
         </span>
-        <span className="text-xs font-bold text-textMutedGra text-right">
-          ID: {selectedProduct.id}
+
+        <span className="text-xs font-bold text-heartHover text-right">
+          ID: 802390
         </span>
       </div>
 
-      <div className="flex flex-col lg:sw-[320px] sm:w-[288px] md:w-[237px]">
+      <div className="flex flex-col lg:w-[320px] sm:w-[288px] md:w-[237px]">
         <div className="flex space-x-2 mt-2">
           {selectedProduct.colorsAvailable.map((color, index) => (
             <div
@@ -86,7 +87,9 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
 
         <div className="h-0.5 bg-lineGray my-6" />
 
-        <div className="text-xs font-bold text-textGray">Select capacity</div>
+        <div className="text-xs font-bold text-textGray text-left">
+          Select capacity
+        </div>
 
         <div className="flex space-x-2 mt-2">
           {selectedProduct.capacityAvailable.map((capacity) => (
@@ -116,7 +119,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
         </div>
 
         <div className="flex flex-1 items-center justify-between space-x-2 w-full mt-4 mb-8">
-          <Button className="text-sm font-bold text-textWhite flex-grow">
+          <Button className="text-sm font-bold text-textWhite flex-grow text-left">
             Add to cart
           </Button>
 
@@ -140,7 +143,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
         </div>
 
         <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
+          <span className="text-sm font-semibold text-textSecondaryGray text-left">
             Screen
           </span>
           <span className="text-sm font-semibold text-textWhite text-right">

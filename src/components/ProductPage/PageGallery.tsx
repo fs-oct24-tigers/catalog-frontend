@@ -44,6 +44,7 @@ const Thumbnail = ({ src, isSelected, onClick, isMobile }: ThumbnailProps) => (
       className="max-w-full max-h-full object-contain p-1 lg:p-2"
       loading="lazy"
     />
+    
   </button>
 );
 
