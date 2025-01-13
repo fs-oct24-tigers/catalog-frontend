@@ -8,6 +8,7 @@ import CartPage from './pages/CartPage';
 import FavoritesPage from './pages/FavoritesPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import { NotFoundPage } from './components/NotFoundPage';
+import TabletsPage from './pages/TabletsPage';
 
 const Root = () => {
   return (
@@ -26,6 +27,29 @@ const Root = () => {
             />
             <Route path=":id" element={<ProductPage />} />
           </Route>
+          <Route path="tablets">
+            <Route
+              index
+              element={
+                <ErrorBoundary>
+                  <TabletsPage />
+                </ErrorBoundary>
+              }
+            />
+            <Route path=":id" element={<ProductPage />} />
+          </Route>
+          <Route path="phones">
+            <Route
+              index
+              element={
+                <ErrorBoundary>
+                  <ProductsPage />
+                </ErrorBoundary>
+              }
+            />
+            <Route path=":id" element={<ProductPage />} />
+          </Route>
+
           <Route path="cart" element={<CartPage />} />
           <Route path="favourites" element={<FavoritesPage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
