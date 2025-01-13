@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone } from '../../types';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
@@ -13,6 +14,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
   const [selectedCapacity, setSelectedCapacity] = useState(product.capacity);
   const [selectedProduct, setSelectedProduct] = useState(product);
   const [selected, setSelected] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setSelected(!selected);
@@ -29,6 +31,21 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
 
     if (updatedProduct) {
       setSelectedProduct(updatedProduct);
+    }
+  };
+
+  const handleColorChange = (color: Color) => {
+    const updateProduct = products.find(
+      (phone) =>
+        phone.color === color &&
+        phone.capacity === selectedCapacity &&
+        phone.namespaceId === product.namespaceId,
+    );
+
+    if (updateProduct) {
+      navigate(
+        `/phones/${updateProduct.id}?color=${color}&capacity=${selectedCapacity}`,
+      );
     }
   };
 
@@ -74,6 +91,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
               key={index}
               className="flex w-9 h-9 items-center justify-center rounded-full"
               style={{ backgroundColor: colorOptions[color as Color] }}
+              onClick={() => handleColorChange(color as Color)}
             >
               <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
                 <div
