@@ -2,6 +2,7 @@ import { useParams } from 'react-router-dom';
 import phones from '../../public/api/phones.json';
 import { ProductOptions } from '../components/ProductPage/ProductOptions';
 import { NotFoundPage } from '@/components/NotFoundPage';
+import { PageGallery } from '../components/ProductPage/PageGallery';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -18,6 +19,7 @@ const ProductPage: React.FC = () => {
 
   return (
     <div>
+      <PageGallery images={product.images} />
       <ProductOptions product={product} products={productVariants} />
     </div>
   );
