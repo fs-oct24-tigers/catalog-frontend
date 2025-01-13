@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import cn from 'classnames';
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Logo } from '../Logo';
-import { Heart, ShoppingBag } from 'lucide-react';
+import { HeaderFavoritesButton } from './HeaderFavoritesButton';
+import { HeaderCartButton } from './HeaderCartButton';
+import { HeaderMenuButton } from './HeaderMenuButton';
+import { HeaderCloseButton } from './HeaderCloseButton';
+import { HeaderMenu } from './HeaderMenu';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -11,11 +15,20 @@ const navLinks = [
 ];
 
 const Header: React.FC = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   const location = useLocation();
-  console.log(location.pathname);
+
+  const handleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const handleCloseMenu = () => {
+    setIsMenuOpen(false);
+  };
 
   return (
-    <header className="border-b border-gray-700">
+    <header className="border-b border-gray-700 h-16 relative z-50 ">
       <nav
         data-cy="nav"
         className="is-fixed-top has-shadow flex items-center justify-between"
@@ -25,32 +38,37 @@ const Header: React.FC = () => {
         <div className="flex  items-center justify-between gap-6 ">
           <Logo />
           {navLinks.map(({ name, pathName }) => (
-            <div className={cn('size-max h-16 flex items-center')} key={name}>
-              <NavLink
+            <div
+              className={cn('size-max h-16 flex items-center hidden sm:flex')}
+              key={name}
+            >
+              <Link
                 to={pathName}
                 className={cn('text-textGray hover:text-textWhite', {
                   'text-textWhite': location.pathname === pathName,
                 })}
               >
                 {name}
-              </NavLink>
+              </Link>
             </div>
           ))}
         </div>
         <div className="flex">
-          <div className="flex size-16 items-center justify-center border-x border-gray-700">
-            <NavLink to="/favourites">
-              <Heart size={16} />
-            </NavLink>
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+            <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
+          </div>
+          <div className="h-16 flex justify-between items-center hidden sm:flex">
+            <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
 
-          <div className="flex size-16 items-center justify-center">
-            <NavLink to="/cart">
-              <ShoppingBag size={16} />
-            </NavLink>
+          <div className="flex sm:hidden" onClick={handleMenu}>
+            {!isMenuOpen ?
+              <HeaderMenuButton />
+            : <HeaderCloseButton />}
           </div>
         </div>
       </nav>
+      {isMenuOpen && <HeaderMenu handleCloseMenu={handleCloseMenu} />}
     </header>
   );
 };
