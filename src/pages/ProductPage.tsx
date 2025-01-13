@@ -18,11 +18,9 @@ const ProductPage: React.FC = () => {
   );
 
   return (
-    <div className="container px-4 py-8">
-      <div className="flex flex-col lg:flex-row gap-8 justify-center">
-        <PageGallery images={product.images} />
-        <ProductOptions product={product} products={productVariants} />
-      </div>
+    <div>
+      <PageGallery images={product.images} />
+      <ProductOptions product={product} products={productVariants} />
     </div>
   );
 };
