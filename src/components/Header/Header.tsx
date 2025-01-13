@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import cn from 'classnames';
 import { Link, useLocation } from 'react-router-dom';
 import { Logo } from '../Logo';
@@ -26,6 +26,18 @@ const Header: React.FC = () => {
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
   };
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.body.style.overflow = 'auto';
+    };
+  }, [isMenuOpen]);
 
   return (
     <header className="border-b border-gray-700 h-16 relative z-50 ">
