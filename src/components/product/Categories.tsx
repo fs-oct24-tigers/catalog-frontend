@@ -1,7 +1,6 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import { CategoryCard } from './CategoryCard';
 
-type Category = {
+export type Category = {
   id: number;
   title: string;
   models: string;
@@ -35,29 +34,18 @@ const categories: Category[] = [
 
 export const Categories: React.FC = () => {
   return (
-    <section className="xl:mb-20 sm:mb-16 mb-14">
-      <h2 className="text-[22px] sm:text-[32px] font-extrabold text-textWhite mb-6">
-        Shop by Category
-      </h2>
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-8 gap-x-3">
-        {categories.map((category) => (
-          <div key={category.id}>
-            <div className="mb-6">
-              <NavLink to={category.path}>
-                <img src={category.image} alt={category.title} />
-              </NavLink>
-            </div>
-
-            <div>
-              <h3 className="mb-1 text-xl font-bold text-textWhite">
-                <NavLink to={category.path}>{category.title}</NavLink>
-              </h3>
-              <p className="text-sm font-semibold text-textGray">
-                {category.models}
-              </p>
-            </div>
+    <section className="mb-14 sm:mb-16 xl:mb-20">
+      <div className="container mx-auto px-4 sm:px-0 flex flex-col items-center">
+        <div className="w-fit">
+          <h2 className="text-h3 sm:text-h2 font-extrabold text-textWhite mb-6">
+            Shop by Category
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-y-8 gap-x-3">
+            {categories.map((category) => (
+              <CategoryCard key={category.id} category={category} />
+            ))}
           </div>
-        ))}
+        </div>
       </div>
     </section>
   );
