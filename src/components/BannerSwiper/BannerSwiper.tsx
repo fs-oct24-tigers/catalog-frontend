@@ -85,7 +85,7 @@ const BannerSwiper: React.FC = () => {
   return (
     <div className="w-full mb-24">
       <div className="flex justify-center py-8 md:block">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-7xl mx-auto">
           <div className="relative flex items-center justify-center gap-4 h-full">
             <button
               className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-banner border-banner"
@@ -132,7 +132,7 @@ const BannerSwiper: React.FC = () => {
         </div>
       </div>
 
-      <div className="hidden sm:flex gap-3 justify-center">
+      <div className="flex gap-3 justify-center">
         {sliderImages.map((_, index) => (
           <button
             key={index}
