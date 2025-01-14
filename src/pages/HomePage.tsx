@@ -9,9 +9,17 @@ const HomePage = () => {
         Welcome to Nice <span className="block sm:inline">Gadgets store!</span>
       </h1>
       <BannerSwiper />
-      <PhonesSlider title="Brand new models" filter="new" />
+      <PhonesSlider
+        title="Brand new models"
+        apiEndpoint="/api/accessories.json"
+        filterType="newModels"
+      />
       <Categories />
-      <PhonesSlider title="Hot prices" filter="hot" />
+      <PhonesSlider
+        title="Hot prices"
+        apiEndpoint="/api/phones.json"
+        filterType="hotPrices"
+      />
     </div>
   );
 };
