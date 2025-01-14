@@ -1,7 +1,7 @@
 import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
-import { Phone } from '@/types';
+import { Product } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
 
@@ -15,7 +15,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
     isLoading,
     isError,
     error,
-  } = useQuery<Phone[]>({
+  } = useQuery<Product[]>({
     queryKey: [category],
     queryFn: () => get(`/api/${category}.json`),
   });

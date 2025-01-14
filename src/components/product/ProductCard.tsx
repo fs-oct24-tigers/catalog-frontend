@@ -10,11 +10,11 @@ import {
 } from '@/components/ui/card';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
-import { Phone } from '@/types';
+import { Product } from '@/types';
 import { Link } from 'react-router-dom';
 
 type Props = {
-  product: Phone;
+  product: Product;
 };
 
 const ProductCard: React.FC<Props> = ({ product }) => {
