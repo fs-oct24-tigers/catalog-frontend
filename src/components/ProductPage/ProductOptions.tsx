@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Phone } from '../../types';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
@@ -7,12 +8,18 @@ import { Color } from '../../types';
 type Props = {
   product: Phone;
   products: Phone[];
+  properties: { name: string; value: string }[];
 };
 
-export const ProductOptions: React.FC<Props> = ({ product, products }) => {
+export const ProductOptions: React.FC<Props> = ({
+  product,
+  products,
+  properties,
+}) => {
   const [selectedCapacity, setSelectedCapacity] = useState(product.capacity);
   const [selectedProduct, setSelectedProduct] = useState(product);
   const [selected, setSelected] = useState(false);
+  const navigate = useNavigate();
 
   const handleClick = () => {
     setSelected(!selected);
@@ -32,8 +39,23 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
     }
   };
 
+  const handleColorChange = (color: Color) => {
+    const updateProduct = products.find(
+      (phone) =>
+        phone.color === color &&
+        phone.capacity === selectedCapacity &&
+        phone.namespaceId === product.namespaceId,
+    );
+
+    if (updateProduct) {
+      navigate(
+        `/phones/${updateProduct.id}?color=${color}&capacity=${selectedCapacity}`,
+      );
+    }
+  };
+
   const colorOptions: Record<Color, string> = {
-    green: '#007034',
+    green: '#056434',
     black: '#2C2C2C',
     red: '#DC143C',
     yellow: '#FFCC00',
@@ -74,6 +96,7 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
               key={index}
               className="flex w-9 h-9 items-center justify-center rounded-full"
               style={{ backgroundColor: colorOptions[color as Color] }}
+              onClick={() => handleColorChange(color as Color)}
             >
               <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
                 <div
@@ -142,41 +165,16 @@ export const ProductOptions: React.FC<Props> = ({ product, products }) => {
           </div>
         </div>
 
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray text-left">
-            Screen
-          </span>
-          <span className="text-sm font-semibold text-textWhite text-right">
-            {product.screen}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
-            Resolution
-          </span>
-          <span className="text-sm font-semibold text-textWhite">
-            {product.resolution}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
-            Processor
-          </span>
-          <span className="text-sm font-semibold text-textWhite">
-            {product.processor}
-          </span>
-        </div>
-
-        <div className="flex justify-between items-center w-full">
-          <span className="text-sm font-semibold text-textSecondaryGray">
-            RAM
-          </span>
-          <span className="text-sm fond-semibold text-textWhite">
-            {product.ram}
-          </span>
-        </div>
+        {properties.map((property, index) => (
+          <div key={index} className="flex justify-between items-center w-full">
+            <span className="text-sm font-semibold text-textSecondaryGray text-left">
+              {property.name}
+            </span>
+            <span className="text-sm font-semibold text-textWhite text-right">
+              {property.value}
+            </span>
+          </div>
+        ))}
       </div>
     </div>
   );

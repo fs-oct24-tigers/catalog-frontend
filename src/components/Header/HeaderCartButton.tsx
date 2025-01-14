@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { ShoppingBag } from 'lucide-react';
 import { NavLink } from 'react-router-dom';
 

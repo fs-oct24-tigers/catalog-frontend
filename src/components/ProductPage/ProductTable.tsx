@@ -8,11 +8,11 @@ import {
   TableCell,
 } from '@/components/ui/table';
 
-interface ProductProperties {
-  properties: { name: string; value: string }[];
+interface ProductSpecs {
+  specs: { name: string; value: string }[];
 }
 
-export const ProductTable: React.FC<ProductProperties> = ({ properties }) => {
+export const ProductTable: React.FC<ProductSpecs> = ({ specs }) => {
   return (
     <Table>
       <TableHeader>
@@ -28,13 +28,13 @@ export const ProductTable: React.FC<ProductProperties> = ({ properties }) => {
         </tr>
       </TableHeader>
       <TableBody>
-        {properties.map((propertie, index) => (
+        {specs.map((spec, index) => (
           <TableRow key={index}>
             <TableCell className="text-textGray text-sm font-semibold pt-2">
-              {propertie.name}
+              {spec.name}
             </TableCell>
             <TableCell className="text-right text-textWhite pt-2">
-              {propertie.value}
+              {spec.value}
             </TableCell>
           </TableRow>
         ))}
