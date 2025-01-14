@@ -5,7 +5,11 @@ import { Phone } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
 
-const ProductsPage: FC = ({ category }) => {
+type Props = {
+  category: string;
+};
+
+const ProductsPage: FC<Props> = ({ category }) => {
   const {
     data: products,
     isLoading,
@@ -21,11 +25,7 @@ const ProductsPage: FC = ({ category }) => {
   }
 
   if (isError) {
-    return (
-      <div>
-        Error: {error instanceof Error ? error.message : 'An error occurred'}
-      </div>
-    );
+    return <div>Error fetching products: {error.message}</div>;
   }
 
   return (
