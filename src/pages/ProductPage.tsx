@@ -8,6 +8,7 @@ import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { useQuery } from '@tanstack/react-query';
 import { Product } from '@/types';
 import { get } from '@/api/fetchProducts';
+import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
 
 type Props = {
   category: string;
@@ -85,6 +86,12 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         <div className="w-full sm:w-[287px] md;w-[592px] lg:w-[512px]">
           <ProductTable specs={specs} />
         </div>
+      </div>
+      <div>
+        <PhonesSlider
+          title="You may also like"
+          apiEndpoint="/api/phones.json"
+        />
       </div>
     </div>
   );

@@ -5,6 +5,7 @@ import { Product } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
+import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 
 type Props = {
   category: string;
@@ -32,7 +33,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
   return (
     <div>
       <Breadcrumbs category={category} />
-      <h1>Products Page</h1>
+      <HeaderTitle category={category} />
       {products && products?.length > 0 ?
         <ProductGrid>
           {products?.map((product) => (
