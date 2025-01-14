@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -7,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import { Swiper as SwiperType } from 'swiper';
-import { Phone } from '@/types';
+import { Phone, ApiPhone } from '@/types';
 import { filterProducts } from './filterProducts';
 
 interface PhonesSliderProps {
@@ -28,13 +27,13 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
     isLoading,
     isError,
     error,
-  } = useQuery({
+  } = useQuery<ApiPhone[]>({
     queryKey: ['products', apiEndpoint],
     queryFn: () => get(apiEndpoint),
   });
 
   const products: Phone[] = filterProducts(
-    (response || []).map((item: any) => ({
+    (response || []).map((item: ApiPhone) => ({
       id: item.id || item.itemId || '',
       category: item.category,
       name: item.name,

@@ -26,6 +26,24 @@ export type Phone = {
   year: number;
 };
 
+export interface ApiPhone {
+  id?: string;
+  itemId?: string;
+  category: string;
+  name: string;
+  capacity: string;
+  priceRegular?: number;
+  fullPrice?: number;
+  priceDiscount?: number;
+  price?: number;
+  screen: string;
+  ram: string;
+  color: string;
+  year?: number;
+  images?: string[];
+  image?: string;
+}
+
 export type Color =
   | 'green'
   | 'black'
