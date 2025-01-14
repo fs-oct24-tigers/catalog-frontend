@@ -13,7 +13,7 @@ export const HeaderFavoritesButton: React.FC<Props> = ({ handleCloseMenu }) => {
       className="flex grow justify-center"
     >
       <div className="flex items-center justify-center w-16 h-16 hover:bg-lineGray grow border-r border-gray-700">
-        <Heart size={16} />
+        <Heart size={20} />
       </div>
     </NavLink>
   );

@@ -2,6 +2,11 @@ import { Product } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 export interface CartProduct extends Product {
+  id: string;
+  name: string;
+  priceRegular: number;
+  priceDiscount: number;
+  images: string[];
   quantity: number;
 }
 

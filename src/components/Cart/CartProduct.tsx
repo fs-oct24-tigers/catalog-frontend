@@ -8,6 +8,7 @@ type Props = {
 
 const CartProduct: React.FC<Props> = ({ product }) => {
   console.log(product);
+
   return (
     <div className="w-full bg-cardBg rounded-lg p-4 flex items-center">
       <button className="bg-gray-700 p-2 rounded hover:bg-gray-600 mr-4">
@@ -16,13 +17,14 @@ const CartProduct: React.FC<Props> = ({ product }) => {
 
       <div>
         <img
-          src="/public/api/img/phones/apple-iphone-7/gold/00.webp"
+          className="h-[80px] mr-[30px]"
+          src={product.images[0]}
           alt="iphone"
         />
       </div>
 
       <div className="flex-1">
-        <p className="text-lg">Apple iPhone 14 Pro 128GB Silver</p>
+        <p className="text-lg">{product.name}</p>
       </div>
 
       <div className="flex items-center">
@@ -32,7 +34,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
         >
           <Minus size={16} />
         </button>
-        <div className="mx-4"></div>
+        <div className="mx-4">1</div>
         <button
           // onClick={increment}
           className="w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded"
@@ -42,7 +44,9 @@ const CartProduct: React.FC<Props> = ({ product }) => {
       </div>
 
       {/* Ціна */}
-      <div className="ml-8 text-xl font-bold">$1100</div>
+      {product.priceDiscount ?
+        <div className="ml-8 text-xl font-bold">${product.priceDiscount}</div>
+      : <div className="ml-8 text-xl font-bold">${product.priceRegular}</div>}
     </div>
   );
 };
