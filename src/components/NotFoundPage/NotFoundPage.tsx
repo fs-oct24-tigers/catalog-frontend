@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '@/../public/img/page-not-found.png';
+import logo from '/img/page-not-found.png';
 
 const NotFoundPage = () => {
   const [isVisible, setIsVisible] = useState(false);

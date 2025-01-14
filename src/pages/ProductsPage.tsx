@@ -1,4 +1,4 @@
-import { fetchProducts } from '@/api/fetchProducts';
+import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Phone } from '@/types';
@@ -17,7 +17,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
     error,
   } = useQuery<Phone[]>({
     queryKey: [category],
-    queryFn: () => fetchProducts(`/api/${category}.json`),
+    queryFn: () => get(`/api/${category}.json`),
   });
 
   if (isLoading) {
