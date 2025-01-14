@@ -1,67 +1,67 @@
-import phones from '../../public/api/phones.json';
-import { Card, CardContent } from '@/components/ui/card';
-import { Minus, Plus, X } from 'lucide-react';
 import { useState } from 'react';
-
-const phone = phones[0];
+import { Minus, Plus, X } from 'lucide-react';
 
 const CartPage = () => {
   const [count, setCount] = useState(0);
 
   const increment = () => setCount(count + 1);
-  const decrement = () => setCount(count - 1);
+  const decrement = () => {
+    if (count > 1) setCount(count - 1);
+  };
 
   return (
-    <>
-      <div>
-        <h1>Cart</h1>
-      </div>
+    <div className="container mx-auto p-6">
+      <h1 className="text-3xl font-bold mb-6">Cart</h1>
 
-      <div className="w-[752px] h-[128px] flex">
-        <Card className="px-6">
-          <CardContent className="p-0 flex justify-between items-center">
-            <div className="bg-cardBg hover:bg-lineGray">
+      <div className="flex flex-col lg:flex-row lg:items-start lg:gap-6">
+        <div className="flex-1 flex flex-col gap-4">
+          <div className="w-full bg-cardBg rounded-lg p-4 flex items-center">
+            <button className="bg-gray-700 p-2 rounded hover:bg-gray-600 mr-4">
               <X size={16} />
-            </div>
+            </button>
+
             <div>
               <img
-                src="img/phones/apple-iphone-7/black/00.webp"
-                alt="iPhone"
-                className="h-[66px] w-[62px] m-8"
+                src="/public/api/img/phones/apple-iphone-7/gold/00.webp"
+                alt="iphone"
               />
             </div>
-            <div className="mr-6">{phone.name}</div>
-            <div className="flex">
-              <div
+
+            <div className="flex-1">
+              <p className="text-lg">Apple iPhone 14 Pro 128GB Silver</p>
+            </div>
+
+            <div className="flex items-center">
+              <button
                 onClick={decrement}
-                className="w-[32px] h-[32px] flex items-center justify-center bg-cardBg hover:bg-lineGray"
+                className="w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded"
               >
                 <Minus size={16} />
-              </div>
-              <div className="flex items-center mx-3.5">{count}</div>
-              <div
+              </button>
+              <div className="mx-4">{count}</div>
+              <button
                 onClick={increment}
-                className="w-[32px] h-[32px] flex items-center justify-center bg-cardBg hover:bg-lineGray"
+                className="w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600 rounded"
               >
-                <Plus
-                  size={16}
-                  style={{
-                    color: 'gray',
-                  }}
-                />
-              </div>
+                <Plus size={16} />
+              </button>
             </div>
-            <div className="ml-14">${phone.priceRegular}</div>
-          </CardContent>
-        </Card>
-      </div>
 
-      <div className=" flex">
-        <h3>Total Price</h3>
-        <p>Total items</p>
-        <div>Button Checkout</div>
+            {/* Ціна */}
+            <div className="ml-8 text-xl font-bold">$1100</div>
+          </div>
+        </div>
+
+        <div className="mt-6 lg:mt-0 lg:w-1/3 bg-pageBg border border-gray-700 p-6 rounded-lg">
+          <h3 className="text-2xl font-semibold mb-4">Total Price</h3>
+          <p className="text-gray-400">Total items: {count}</p>
+          <div className="mt-4 text-xl font-bold">Total: $1100</div>
+          <button className="mt-6 w-full bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg">
+            Checkout
+          </button>
+        </div>
       </div>
-    </>
+    </div>
   );
 };
 
