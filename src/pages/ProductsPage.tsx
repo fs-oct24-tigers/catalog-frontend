@@ -1,10 +1,10 @@
-import { fetchProducts } from '@/api/fetchProducts';
-import { Breadcrumbs } from '@/components/BreadCrumbs';
+import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
-import { Phone } from '@/types';
+import { Product } from '@/types';
 import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
+import { Breadcrumbs } from '@/components/BreadCrumbs';
 
 type Props = {
   category: string;
@@ -16,9 +16,9 @@ const ProductsPage: FC<Props> = ({ category }) => {
     isLoading,
     isError,
     error,
-  } = useQuery<Phone[]>({
+  } = useQuery<Product[]>({
     queryKey: [category],
-    queryFn: () => fetchProducts(`/api/${category}.json`),
+    queryFn: () => get(`/api/${category}.json`),
   });
 
   if (isLoading) {

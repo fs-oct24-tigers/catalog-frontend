@@ -1,58 +1,55 @@
-import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Phone } from '../../types';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Product } from '../../types';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
 import { Color } from '../../types';
 
 type Props = {
-  product: Phone;
-  products: Phone[];
+  category: string;
+  product: Product;
+  products: Product[];
   properties: { name: string; value: string }[];
 };
 
 export const ProductOptions: React.FC<Props> = ({
+  category,
   product,
-  products,
   properties,
 }) => {
-  const [selectedCapacity, setSelectedCapacity] = useState(product.capacity);
-  const [selectedProduct, setSelectedProduct] = useState(product);
-  const [selected, setSelected] = useState(false);
-  const navigate = useNavigate();
+  const selected = false;
+  // const navigate = useNavigate();
 
-  const handleClick = () => {
-    setSelected(!selected);
-  };
+  // const handleClick = () => {
+  //   setSelected(!selected);
+  // };
 
-  const handleCapacityChange = (capacity: string) => {
-    setSelectedCapacity(capacity);
+  // const handleCapacityChange = (capacity: string) => {
+  //   setSelectedCapacity(capacity);
 
-    const updatedProduct = products.find(
-      (phone) =>
-        phone.capacity === capacity &&
-        phone.namespaceId === product.namespaceId,
-    );
+  //   const updatedProduct = products.find(
+  //     (phone) =>
+  //       phone.capacity === capacity &&
+  //       phone.namespaceId === product.namespaceId,
+  //   );
 
-    if (updatedProduct) {
-      setSelectedProduct(updatedProduct);
-    }
-  };
+  //   if (updatedProduct) {
+  //     setSelectedProduct(updatedProduct);
+  //   }
+  // };
 
-  const handleColorChange = (color: Color) => {
-    const updateProduct = products.find(
-      (phone) =>
-        phone.color === color &&
-        phone.capacity === selectedCapacity &&
-        phone.namespaceId === product.namespaceId,
-    );
+  // const handleColorChange = (color: Color) => {
+  //   const updateProduct = products.find(
+  //     (phone) =>
+  //       phone.color === color &&
+  //       phone.capacity === selectedCapacity &&
+  //       phone.namespaceId === product.namespaceId,
+  //   );
 
-    if (updateProduct) {
-      navigate(
-        `/phones/${updateProduct.id}?color=${color}&capacity=${selectedCapacity}`,
-      );
-    }
-  };
+  //   if (updateProduct) {
+  //     navigate(`/${category}/${updateProduct.id}`);
+  //   }
+  // };
 
   const colorOptions: Record<Color, string> = {
     green: '#056434',
@@ -91,12 +88,12 @@ export const ProductOptions: React.FC<Props> = ({
 
       <div className="flex flex-col lg:w-[320px] sm:w-[288px] md:w-[237px]">
         <div className="flex space-x-2 mt-2">
-          {selectedProduct.colorsAvailable.map((color, index) => (
-            <div
-              key={index}
-              className="flex w-9 h-9 items-center justify-center rounded-full"
+          {product.colorsAvailable.map((color) => (
+            <Link
+              to={`/${category}/${product.namespaceId}-${product.capacity.toLowerCase()}-${color}`}
+              key={color}
+              className="flex w-9 h-9 items-center justify-center rounded-full cursor-pointer"
               style={{ backgroundColor: colorOptions[color as Color] }}
-              onClick={() => handleColorChange(color as Color)}
             >
               <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
                 <div
@@ -104,7 +101,7 @@ export const ProductOptions: React.FC<Props> = ({
                   style={{ backgroundColor: colorOptions[color as Color] }}
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
@@ -115,15 +112,15 @@ export const ProductOptions: React.FC<Props> = ({
         </div>
 
         <div className="flex space-x-2 mt-2">
-          {selectedProduct.capacityAvailable.map((capacity) => (
-            <button
+          {product.capacityAvailable.map((capacity) => (
+            <Link
+              to={`/${category}/${product.namespaceId}-${capacity.toLowerCase()}-${product.color}`}
               key={capacity}
-              className={`w-[63px] h-8 bg-bodyBg border border-heartHover text-sm font-semibold text-center 
-              ${selectedCapacity === capacity ? 'bg-white text-bodyBg' : 'hover:bg-textWhite hover:text-bodyBg'}`}
-              onClick={() => handleCapacityChange(capacity)}
+              className={`w-[63px] h-8 bg-bodyBg border border-heartHover text-sm font-semibold text-center flex items-center justify-center
+              ${product.capacity === capacity ? 'bg-white text-bodyBg' : 'hover:bg-textWhite hover:text-bodyBg'}`}
             >
               {capacity}
-            </button>
+            </Link>
           ))}
         </div>
 
@@ -131,14 +128,13 @@ export const ProductOptions: React.FC<Props> = ({
 
         <div className="flex items-center space-x-2">
           <p className="text-[32px] text-left font-extrabold text-textWhite">
-            ${selectedProduct.priceDiscount}
+            ${product.priceDiscount}
           </p>
-          {selectedProduct.priceRegular !== selectedProduct.priceDiscount &&
-            hasDiscount && (
-              <p className="text-[22px] text-left font-semibold text-textGray line-through">
-                ${selectedProduct.priceRegular}
-              </p>
-            )}
+          {product.priceRegular !== product.priceDiscount && hasDiscount && (
+            <p className="text-[22px] text-left font-semibold text-textGray line-through">
+              ${product.priceRegular}
+            </p>
+          )}
         </div>
 
         <div className="flex flex-1 items-center justify-between space-x-2 w-full mt-4 mb-8">
@@ -152,7 +148,6 @@ export const ProductOptions: React.FC<Props> = ({
                 'bg-transparent border border-heartHover'
               : 'bg-heartGray border border-transparent hover:bg-heartHover'
             }`}
-            onClick={handleClick}
           >
             <Heart
               style={{
