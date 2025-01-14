@@ -1,44 +1,43 @@
+import { fetchProducts } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Phone } from '@/types';
-import axios from 'axios';
-import { FC, useEffect, useState } from 'react';
+import { useQuery } from '@tanstack/react-query';
+import { FC } from 'react';
 
-const ProductsPage: FC = () => {
-  const [phones, setPhones] = useState<Phone[]>([]);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
+type Props = {
+  category: string;
+};
 
-  useEffect(() => {
-    axios
-      .get('/api/phones.json')
-      .then((response) => {
-        setPhones(response.data);
-      })
-      .catch((err) => {
-        console.error('Error fetching the data:', err);
-        setError('Failed to load data');
-      })
-      .finally(() => {
-        setIsLoading(false);
-      });
-  }, []);
+const ProductsPage: FC<Props> = ({ category }) => {
+  const {
+    data: products,
+    isLoading,
+    isError,
+    error,
+  } = useQuery<Phone[]>({
+    queryKey: [category],
+    queryFn: () => fetchProducts(`/api/${category}.json`),
+  });
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (isError) {
+    return <div>Error fetching products: {error.message}</div>;
+  }
 
   return (
     <div>
       <h1>Products Page</h1>
-      {error && <div style={{ color: 'red' }}>{error}</div>}
-      {isLoading && <div>Loading...</div>}
-      {!isLoading && !error && phones.length > 0 && (
+      {products && products?.length > 0 ?
         <ProductGrid>
-          {phones.map((phone) => (
-            <ProductCard key={phone.id} product={phone} />
+          {products?.map((product) => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </ProductGrid>
-      )}
-      {!isLoading && !error && phones.length === 0 && (
-        <div>No products available</div>
-      )}
+      : <div>No products available</div>}
     </div>
   );
 };
