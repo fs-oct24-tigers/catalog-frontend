@@ -1,5 +1,4 @@
 import React from 'react';
-import { useState } from 'react';
 import {
   Card,
   CardContent,
@@ -8,23 +7,18 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card';
-import { Button } from '../ui/button';
-import { Heart } from 'lucide-react';
+
 import { Product } from '@/types';
 import { Link } from 'react-router-dom';
+import ProductButtons from './ProductButtons';
 
 type Props = {
   product: Product;
 };
 
 const ProductCard: React.FC<Props> = ({ product }) => {
-  const [selected, setSelected] = useState(false);
-
   const hasDiscount = true;
 
-  const handleClick = () => {
-    setSelected(!selected);
-  };
   return (
     <Card className="w-[272px] flex flex-col space-y-2 p-8">
       <CardHeader className="flex flex-col items-center space-y-2 m-0 p-0">
@@ -84,27 +78,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       </CardContent>
 
       <CardFooter className="flex flex-1 justify-between items-center w-full p-0 m-0 space-x-2">
-        <Button className="text-sm font-bold text-textWhite flex-grow">
-          Add to cart
-        </Button>
-
-        <div
-          className={`w-10 h-10 flex items-center justify-center ${
-            selected ?
-              'bg-transparent border border-heartHover'
-            : 'bg-heartGray border border-transparent hover:bg-heartHover'
-          }`}
-          onClick={handleClick}
-        >
-          <Heart
-            style={{
-              width: '17px',
-              height: '15px',
-              fill: selected ? 'red' : '',
-              stroke: selected ? 'none' : '',
-            }}
-          />
-        </div>
+        <ProductButtons product={product} />
       </CardFooter>
     </Card>
   );

@@ -1,12 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../../types';
-import { Button } from '../ui/button';
-import { Heart } from 'lucide-react';
 import { Color } from '../../types';
-import { useDispatch } from 'react-redux';
-import { addToCart } from '@/features/cart';
-import { useAppSelector } from '@/app/hooks';
+import ProductButtons from '../product/ProductButtons';
 
 type Props = {
   category: string;
@@ -20,47 +16,6 @@ export const ProductOptions: React.FC<Props> = ({
   product,
   properties,
 }) => {
-  const prods = useAppSelector((state) => state.cart);
-  const dispatch = useDispatch();
-  const handleAddToCart = () => {
-    dispatch(addToCart(product));
-    console.log('prods', prods);
-  };
-
-  const selected = false;
-  // const navigate = useNavigate();
-
-  // const handleClick = () => {
-  //   setSelected(!selected);
-  // };
-
-  // const handleCapacityChange = (capacity: string) => {
-  //   setSelectedCapacity(capacity);
-
-  //   const updatedProduct = products.find(
-  //     (phone) =>
-  //       phone.capacity === capacity &&
-  //       phone.namespaceId === product.namespaceId,
-  //   );
-
-  //   if (updatedProduct) {
-  //     setSelectedProduct(updatedProduct);
-  //   }
-  // };
-
-  // const handleColorChange = (color: Color) => {
-  //   const updateProduct = products.find(
-  //     (phone) =>
-  //       phone.color === color &&
-  //       phone.capacity === selectedCapacity &&
-  //       phone.namespaceId === product.namespaceId,
-  //   );
-
-  //   if (updateProduct) {
-  //     navigate(`/${category}/${updateProduct.id}`);
-  //   }
-  // };
-
   const colorOptions: Record<Color, string> = {
     green: '#056434',
     black: '#2C2C2C',
@@ -148,29 +103,7 @@ export const ProductOptions: React.FC<Props> = ({
         </div>
 
         <div className="flex flex-1 items-center justify-between space-x-2 w-full mt-4 mb-8">
-          <Button
-            onClick={handleAddToCart}
-            className="text-sm font-bold text-textWhite flex-grow text-left"
-          >
-            Add to cart
-          </Button>
-
-          <div
-            className={`w-10 h-10 flex items-center justify-center ${
-              selected ?
-                'bg-transparent border border-heartHover'
-              : 'bg-heartGray border border-transparent hover:bg-heartHover'
-            }`}
-          >
-            <Heart
-              style={{
-                width: '17px',
-                height: '15px',
-                fill: selected ? 'red' : '',
-                stroke: selected ? 'none' : '',
-              }}
-            />
-          </div>
+          <ProductButtons product={product} />
         </div>
 
         {properties.map((property, index) => (
