@@ -5,7 +5,7 @@ import { NotFoundPage } from '@/components/NotFoundPage';
 import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
 import { useQuery } from '@tanstack/react-query';
-import { Phone } from '@/types';
+import { Product } from '@/types';
 import { get } from '@/api/fetchProducts';
 
 type Props = {
@@ -20,7 +20,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     isLoading,
     isError,
     error,
-  } = useQuery<Phone[]>({
+  } = useQuery<Product[]>({
     queryKey: [category],
     queryFn: () => get(`/api/${category}.json`),
   });
@@ -68,6 +68,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         </div>
         <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[512px]">
           <ProductOptions
+            category={category}
             product={product}
             products={productVariants || []}
             properties={properties}

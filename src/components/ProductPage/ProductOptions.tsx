@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { Phone } from '../../types';
+import { Link, useNavigate } from 'react-router-dom';
+import { Product } from '../../types';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
 import { Color } from '../../types';
 
 type Props = {
-  product: Phone;
-  products: Phone[];
+  category: string;
+  product: Product;
+  products: Product[];
   properties: { name: string; value: string }[];
 };
 
 export const ProductOptions: React.FC<Props> = ({
+  category,
   product,
   products,
   properties,
@@ -48,9 +50,7 @@ export const ProductOptions: React.FC<Props> = ({
     );
 
     if (updateProduct) {
-      navigate(
-        `/phones/${updateProduct.id}?color=${color}&capacity=${selectedCapacity}`,
-      );
+      navigate(`/${category}/${updateProduct.id}`);
     }
   };
 
@@ -91,10 +91,11 @@ export const ProductOptions: React.FC<Props> = ({
 
       <div className="flex flex-col lg:w-[320px] sm:w-[288px] md:w-[237px]">
         <div className="flex space-x-2 mt-2">
-          {selectedProduct.colorsAvailable.map((color, index) => (
-            <div
-              key={index}
-              className="flex w-9 h-9 items-center justify-center rounded-full"
+          {selectedProduct.colorsAvailable.map((color) => (
+            <Link
+              to={`/${category}/${product.namespaceId}-${product.capacity.toLowerCase()}-${color}`}
+              key={color}
+              className="flex w-9 h-9 items-center justify-center rounded-full cursor-pointer"
               style={{ backgroundColor: colorOptions[color as Color] }}
               onClick={() => handleColorChange(color as Color)}
             >
@@ -104,7 +105,7 @@ export const ProductOptions: React.FC<Props> = ({
                   style={{ backgroundColor: colorOptions[color as Color] }}
                 />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
