@@ -8,9 +8,10 @@ import { Breadcrumbs } from '@/components/BreadCrumbs';
 
 type Props = {
   category: string;
+  title: string;
 };
 
-const ProductsPage: FC<Props> = ({ category }) => {
+const ProductsPage: FC<Props> = ({ category, title }) => {
   const {
     data: products,
     isLoading,
@@ -32,7 +33,9 @@ const ProductsPage: FC<Props> = ({ category }) => {
   return (
     <div>
       <Breadcrumbs category={category} />
-      <h1>Products Page</h1>
+      <h1 className="text-[22px] sm:text-[32px] font-extrabold text-textWhite mb-6 mt-6">
+        {title}
+      </h1>
       {products && products?.length > 0 ?
         <ProductGrid>
           {products?.map((product) => (

@@ -44,6 +44,10 @@ export interface ApiPhone {
   image?: string;
 }
 
+export interface TitlePageProps {
+  title: string;
+}
+
 export type Color =
   | 'green'
   | 'black'

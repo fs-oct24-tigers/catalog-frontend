@@ -16,14 +16,19 @@ const Root = () => {
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-          <Route index element={<HomePage />} />
+          <Route index element={<HomePage title="Gadgets store!" />} />
           {categories.map((category) => (
             <Route key={category} path={category}>
               <Route
                 index
                 element={
                   <ErrorBoundary>
-                    <ProductsPage category={category} />
+                    <ProductsPage
+                      category={category}
+                      title={
+                        category.charAt(0).toUpperCase() + category.slice(1)
+                      }
+                    />
                   </ErrorBoundary>
                 }
               />
@@ -31,8 +36,11 @@ const Root = () => {
             </Route>
           ))}
 
-          <Route path="cart" element={<CartPage />} />
-          <Route path="favourites" element={<FavoritesPage />} />
+          <Route path="cart" element={<CartPage title="Cart" />} />
+          <Route
+            path="favourites"
+            element={<FavoritesPage title="Favourites" />}
+          />
           <Route path="home" element={<Navigate to="/" replace />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
