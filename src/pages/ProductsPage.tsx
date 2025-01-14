@@ -1,4 +1,5 @@
 import { fetchProducts } from '@/api/fetchProducts';
+import { Breadcrumbs } from '@/components/BreadCrumbs';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Phone } from '@/types';
@@ -30,6 +31,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
 
   return (
     <div>
+      <Breadcrumbs category={category} />
       <h1>Products Page</h1>
       {products && products?.length > 0 ?
         <ProductGrid>

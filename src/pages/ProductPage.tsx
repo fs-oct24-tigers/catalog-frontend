@@ -5,6 +5,7 @@ import { ProductAbout } from '../components/ProductPage/ProductAbout';
 import { NotFoundPage } from '@/components/NotFoundPage';
 import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
+import { Breadcrumbs } from '@/components/BreadCrumbs';
 
 const ProductPage: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -38,6 +39,7 @@ const ProductPage: React.FC = () => {
 
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
+      <Breadcrumbs category={product.category} productName={product.name} />
       <div className="flex flaex-col lg:flex-row lg:gap-x-16 gap-y-16">
         <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
           <PageGallery images={product.images} />
