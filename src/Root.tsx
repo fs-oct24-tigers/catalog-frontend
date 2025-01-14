@@ -27,7 +27,7 @@ const Root = () => {
                   </ErrorBoundary>
                 }
               />
-              <Route path=":id" element={<ProductPage />} />
+              <Route path=":id" element={<ProductPage category={category} />} />
             </Route>
           ))}
 
