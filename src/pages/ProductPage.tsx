@@ -25,6 +25,8 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     queryFn: () => get(`/api/${category}.json`),
   });
 
+  const product = products?.find((product) => product.id === id);
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -32,8 +34,6 @@ const ProductPage: React.FC<Props> = ({ category }) => {
   if (isError) {
     return <div>Error fetching products: {error.message}</div>;
   }
-
-  const product = products?.find((product) => product.id === id);
 
   if (!product) {
     return <NotFoundPage />;
