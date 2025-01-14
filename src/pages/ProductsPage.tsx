@@ -6,6 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
+import ProductCounter from '@/components/ProductCounter/ProductCounter';
 
 type Props = {
   category: string;
@@ -30,10 +31,13 @@ const ProductsPage: FC<Props> = ({ category }) => {
     return <div>Error fetching products: {error.message}</div>;
   }
 
+  const productCount = products?.length || 0;
+
   return (
     <div>
       <Breadcrumbs category={category} />
       <HeaderTitle category={category} />
+      <ProductCounter count={productCount} />
       {products && products?.length > 0 ?
         <ProductGrid>
           {products?.map((product) => (
