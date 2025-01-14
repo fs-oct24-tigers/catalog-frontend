@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import { Swiper as SwiperType } from 'swiper';
-import { Phone, ApiPhone } from '@/types';
+import { Product, ApiPhone } from '@/types';
 import { filterProducts } from './filterProducts';
 
 interface PhonesSliderProps {
@@ -32,7 +32,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
     queryFn: () => get(apiEndpoint),
   });
 
-  const products: Phone[] = filterProducts(
+  const products: Product[] = filterProducts(
     (response || []).map((item: ApiPhone) => ({
       id: item.id || item.itemId || '',
       category: item.category,

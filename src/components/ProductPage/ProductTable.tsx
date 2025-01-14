@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/table';
 
 interface ProductSpecs {
-  specs: { name: string; value: string }[];
+  specs: { name: string; value: string | undefined }[];
 }
 
 export const ProductTable: React.FC<ProductSpecs> = ({ specs }) => {
