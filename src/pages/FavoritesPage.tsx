@@ -1,6 +1,9 @@
+import { Breadcrumbs } from '@/components/BreadCrumbs';
+
 const FavoritesPage = () => {
   return (
-    <div>
+    <div className="container">
+      <Breadcrumbs category="Favourites" />
       <h1>FavoritesPage</h1>
     </div>
   );
