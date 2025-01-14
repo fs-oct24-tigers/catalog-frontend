@@ -4,6 +4,9 @@ import { Product } from '../../types';
 import { Button } from '../ui/button';
 import { Heart } from 'lucide-react';
 import { Color } from '../../types';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '@/features/cart';
+import { useAppSelector } from '@/app/hooks';
 
 type Props = {
   category: string;
@@ -17,6 +20,13 @@ export const ProductOptions: React.FC<Props> = ({
   product,
   properties,
 }) => {
+  const prods = useAppSelector((state) => state.cart);
+  const dispatch = useDispatch();
+  const handleAddToCart = () => {
+    dispatch(addToCart(product));
+    console.log('prods', prods);
+  };
+
   const selected = false;
   // const navigate = useNavigate();
 
@@ -138,7 +148,10 @@ export const ProductOptions: React.FC<Props> = ({
         </div>
 
         <div className="flex flex-1 items-center justify-between space-x-2 w-full mt-4 mb-8">
-          <Button className="text-sm font-bold text-textWhite flex-grow text-left">
+          <Button
+            onClick={handleAddToCart}
+            className="text-sm font-bold text-textWhite flex-grow text-left"
+          >
             Add to cart
           </Button>
 
