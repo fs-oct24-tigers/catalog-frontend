@@ -3,27 +3,46 @@ export type Description = {
   text: string[];
 };
 
-export type Product = {
+export type Phone = {
   id: string;
   category: string;
-  namespaceId: string;
+  namespaceId?: string;
   name: string;
-  capacityAvailable: string[];
+  capacityAvailable?: string[];
   capacity: string;
   priceRegular: number;
   priceDiscount: number;
-  colorsAvailable: string[];
+  colorsAvailable?: string[];
   color: string;
   images: string[];
-  description: Description[];
-  screen: string;
-  resolution: string;
-  processor: string;
-  ram: string;
-  camera: string;
-  zoom: string;
-  cell: string[];
+  description?: Description[];
+  screen?: string;
+  resolution?: string;
+  processor?: string;
+  ram?: string;
+  camera?: string;
+  zoom?: string;
+  cell?: string[];
+  year: number;
 };
+
+export interface ApiPhone {
+  id?: string;
+  itemId?: string;
+  category: string;
+  name: string;
+  capacity: string;
+  priceRegular?: number;
+  fullPrice?: number;
+  priceDiscount?: number;
+  price?: number;
+  screen: string;
+  ram: string;
+  color: string;
+  year?: number;
+  images?: string[];
+  image?: string;
+}
 
 export type Color =
   | 'green'
