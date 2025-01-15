@@ -54,7 +54,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
 
   return (
     <div className="w-full mb-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto ml-4">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-white text-3xl font-bold">{title}</h2>
           <div className="flex gap-2">
@@ -89,14 +89,18 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
             slidesPerView={4}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
-              320: { slidesPerView: 1 },
-              640: { slidesPerView: 2 },
-              768: { slidesPerView: 3 },
+              320: { slidesPerView: 1.4 },
+              640: { slidesPerView: 2.4 },
+              768: { slidesPerView: 2.4 },
               1024: { slidesPerView: 4 },
             }}
+            className="swiper-container"
           >
             {products.map((product) => (
-              <SwiperSlide key={product.id}>
+              <SwiperSlide
+                key={product.id}
+                className="swiper-slide flex-shrink-1"
+              >
                 <ProductCard product={product} />
               </SwiperSlide>
             ))}

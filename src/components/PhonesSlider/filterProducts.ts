@@ -8,7 +8,7 @@ export const filterProducts = (
     if (filterType === 'newModels') {
       return product.year > 2017;
     } else if (filterType === 'hotPrices') {
-      return product.priceRegular - (product.priceDiscount || 0) > 100;
+      return product.priceRegular - (product.priceDiscount || 0) > 50;
     }
     return true;
   });
