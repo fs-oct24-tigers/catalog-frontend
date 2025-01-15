@@ -7,6 +7,7 @@ interface TitleProps {
   isAdditionalTextBlock?: boolean;
   prefix?: string;
   category?: string;
+  isHomePage?: boolean;
 }
 
 export const HeaderTitle: React.FC<TitleProps> = ({
@@ -16,6 +17,7 @@ export const HeaderTitle: React.FC<TitleProps> = ({
   isAdditionalTextBlock = false,
   prefix,
   category,
+  isHomePage,
 }) => {
   const renderMainText = () => {
     if (category) {
@@ -27,15 +29,24 @@ export const HeaderTitle: React.FC<TitleProps> = ({
   };
 
   return (
-    <h1
-      className={`text-[22px] sm:text-[32px] font-extrabold text-textWhite mb-6 mt-6 ${className}`}
+    <div
+      className={`
+      flex flex-col
+      ${isHomePage ? 'pt-6 md:pt-8 xl:pt-14' : ''}
+    `}
     >
-      {renderMainText()}{' '}
-      {additionalText && (
-        <span className={isAdditionalTextBlock ? 'block sm:inline' : 'inline'}>
-          {additionalText}
-        </span>
-      )}
-    </h1>
+      <h1
+        className={`text-h1Mobile sm:text-h1 font-extrabold text-textWhite mb-2 ${className}`}
+      >
+        {renderMainText()}{' '}
+        {additionalText && (
+          <span
+            className={isAdditionalTextBlock ? 'block sm:inline' : 'inline'}
+          >
+            {additionalText}
+          </span>
+        )}
+      </h1>
+    </div>
   );
 };
