@@ -11,6 +11,8 @@ import { get } from '@/api/fetchProducts';
 import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
 
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
+import { BackButton } from '@/components/BackButton/BackButton';
+
 type Props = {
   category: string;
 };
@@ -68,6 +70,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
       <div>
+        <BackButton />
         <Breadcrumbs category={product.category} productName={product.name} />
         <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
       </div>
