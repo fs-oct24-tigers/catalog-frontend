@@ -1,8 +1,10 @@
 import { useAppSelector } from '@/app/hooks';
-import React from 'react';
+import React, { useState } from 'react';
+import { ModalSuccess } from '../ModalSuccess/ModalSuccess';
 
 const CartTotal: React.FC = () => {
   const cartProducts = useAppSelector((state) => state.cart);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -16,15 +18,32 @@ const CartTotal: React.FC = () => {
     0,
   );
 
+  const handleCheckout = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false);
+  };
+
   return (
     <div className="flex flex-col mt-6 lg:mt-0 lg:w-1/3 bg-pageBg border border-gray-700 p-6">
       <h1 className="self-center text-4xl font-bold">${totalPrice}</h1>
       <p className="self-center mt-4 text-gray-400">
         Total items: {totalItems}
       </p>
-      <button className="mt-6 h-[48px] w-full bg-btnPrimary hover:bg-btnHover text-white py-2 px-4">
+      <button
+        onClick={handleCheckout}
+        className="mt-6 h-[48px] w-full bg-btnPrimary hover:bg-btnHover text-white py-2 px-4"
+      >
         Checkout
       </button>
+
+      <ModalSuccess
+        isOpen={isModalOpen}
+        onClose={handleCloseModal}
+        message={`You have successfully checked out ${totalItems} items for a total of $${totalPrice}.`}
+      />
     </div>
   );
 };
