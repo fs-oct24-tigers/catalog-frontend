@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Product } from '../../types';
 import { Color } from '../../types';
 import ProductButtons from '../product/ProductButtons';
+import { colorOptions } from '@/constants';
 
 type Props = {
   category: string;
@@ -16,27 +17,6 @@ export const ProductOptions: React.FC<Props> = ({
   product,
   properties,
 }) => {
-  const colorOptions: Record<Color, string> = {
-    green: '#056434',
-    black: '#2C2C2C',
-    red: '#DC143C',
-    yellow: '#FFCC00',
-    white: '#E0FFFF',
-    purple: '#7B68EE',
-    spacegray: '#3D3D3D',
-    midnightgreen: '#008000',
-    gold: '#CD853F',
-    silver: '#808080',
-    rosegold: '#DDA0DD',
-    coral: '#FFA500',
-    midnight: '#008080',
-    spaceblack: '#2F4F4F',
-    blue: '#00BFFF',
-    pink: '#FA9BCB',
-    graphite: '#5B5B5B',
-    sierrablue: '#4682B4',
-  };
-
   const hasDiscount = true;
 
   return (

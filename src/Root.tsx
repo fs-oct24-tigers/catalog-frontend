@@ -8,12 +8,14 @@ import CartPage from './pages/CartPage';
 import FavoritesPage from './pages/FavoritesPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import { NotFoundPage } from './components/NotFoundPage';
+import ScrollToTop from './components/ScrollToTop';
 
 const categories = ['phones', 'tablets', 'accessories'];
 
 const Root = () => {
   return (
     <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<App />}>
           <Route index element={<HomePage />} />
