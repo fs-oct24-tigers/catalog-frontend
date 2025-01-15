@@ -11,11 +11,19 @@ import {
 
 const options = [16, 32, 64, 128];
 
-const PagesQuantitySelect: React.FC = ({ onSelect }) => {
+type Props = {
+  perPage: number;
+  handlePerPageChange: (value: number) => void;
+};
+
+const PagesQuantitySelect: React.FC<Props> = ({
+  perPage,
+  handlePerPageChange,
+}) => {
   return (
-    <Select onValueChange={onSelect}>
-      <SelectTrigger className="w-[180px]">
-        <SelectValue placeholder={options[0]} />
+    <Select onValueChange={(value) => handlePerPageChange(Number(value))}>
+      <SelectTrigger className="w-[128px]">
+        <SelectValue placeholder={perPage} />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
