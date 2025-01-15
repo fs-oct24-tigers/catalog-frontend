@@ -6,7 +6,7 @@ export const perPageSlice = createSlice({
   name: 'perPage',
   initialState,
   reducers: {
-    changePerPage: (state, action: PayloadAction<number>) => {
+    changePerPage: (_, action: PayloadAction<number>) => {
       return action.payload;
     },
   },
