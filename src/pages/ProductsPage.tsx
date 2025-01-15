@@ -36,7 +36,10 @@ const ProductsPage: FC<Props> = ({ category }) => {
   return (
     <div>
       <Breadcrumbs category={category} />
-      <HeaderTitle category={category} />
+      <HeaderTitle
+        category={category}
+        prefix={category === 'phones' ? 'Mobile' : undefined}
+      />
       <ProductCounter count={productCount} />
       {products && products?.length > 0 ?
         <ProductGrid>
