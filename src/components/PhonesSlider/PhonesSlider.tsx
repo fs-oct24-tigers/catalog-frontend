@@ -87,6 +87,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
           <Swiper
             spaceBetween={24}
             slidesPerView={4}
+            loop={true}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
               320: { slidesPerView: 1.4 },
