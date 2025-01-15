@@ -2,7 +2,7 @@ import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Product } from '@/types';
-import { useQuery } from '@tanstack/react-query';
+import { useQuery, keepPreviousData } from '@tanstack/react-query';
 import { FC } from 'react';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
@@ -33,6 +33,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
   } = useQuery<Product[]>({
     queryKey: [category, currentPage, perPage],
     queryFn: () => get(`/api/${category}.json`, currentPage, +perPage),
+    placeholderData: keepPreviousData,
   });
 
   if (isLoading) {

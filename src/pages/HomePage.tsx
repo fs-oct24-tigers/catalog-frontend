@@ -16,7 +16,7 @@ const HomePage = () => {
       <PhonesSlider
         title="Brand new models"
         apiEndpoint="/api/accessories.json"
-        filterType="newModels"
+        filterType="hotPrices"
       />
       <Categories />
       <PhonesSlider
