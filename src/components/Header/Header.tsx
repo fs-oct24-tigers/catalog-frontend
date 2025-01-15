@@ -47,11 +47,11 @@ const Header: React.FC = () => {
         role="navigation"
         aria-label="main navigation"
       >
-        <div className="flex  items-center justify-between gap-6 ">
+        <div className="flex items-center gap-[64px] ">
           <Logo />
           {navLinks.map(({ name, pathName }) => (
             <div
-              className={cn('size-max h-16 flex items-center hidden sm:flex')}
+              className={cn(' size-max h-16 flex items-center hidden sm:flex')}
               key={name}
             >
               <Link

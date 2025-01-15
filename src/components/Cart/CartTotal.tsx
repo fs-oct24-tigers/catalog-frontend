@@ -5,7 +5,9 @@ const CartTotal: React.FC = () => {
   const cartProducts = useAppSelector((state) => state.cart);
 
   const totalPrice = cartProducts.reduce(
-    (acc, product) => acc + product.priceDiscount || product.priceRegular,
+    (acc, product) =>
+      acc + product.priceDiscount * product.quantity ||
+      product.priceRegular * product.quantity,
     0,
   );
 
