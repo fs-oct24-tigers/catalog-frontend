@@ -28,16 +28,19 @@ export const ProductTable: React.FC<ProductSpecs> = ({ specs }) => {
         </tr>
       </TableHeader>
       <TableBody>
-        {specs.map((spec, index) => (
-          <TableRow key={index}>
-            <TableCell className="text-textGray text-sm font-semibold pt-2">
-              {spec.name}
-            </TableCell>
-            <TableCell className="text-right text-textWhite pt-2">
-              {spec.value}
-            </TableCell>
-          </TableRow>
-        ))}
+        {specs.map(
+          (spec, index) =>
+            spec.value && (
+              <TableRow key={index}>
+                <TableCell className="text-textGray text-sm font-semibold pt-2">
+                  {spec.name}
+                </TableCell>
+                <TableCell className="text-right text-textWhite pt-2">
+                  {spec.value}
+                </TableCell>
+              </TableRow>
+            ),
+        )}
       </TableBody>
     </Table>
   );

@@ -5,7 +5,6 @@ import ProductCard from '../components/product/ProductCard';
 
 const FavoritesPage = () => {
   const favoriteProducts = useAppSelector((state) => state.favorites);
-  console.log(favoriteProducts);
 
   return (
     <div className="container">

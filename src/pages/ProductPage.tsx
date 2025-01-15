@@ -62,6 +62,8 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     { name: 'RAM', value: product.ram },
   ];
 
+  const description = product.description || [];
+
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
       <Breadcrumbs category={product.category} productName={product.name} />
@@ -81,7 +83,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
 
       <div className="flex flex-col lg:flex-row lg:gap-x-16 mt-16">
         <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[560px]">
-          <ProductAbout />
+          <ProductAbout description={description} />
         </div>
         <div className="w-full sm:w-[287px] md;w-[592px] lg:w-[512px]">
           <ProductTable specs={specs} />
