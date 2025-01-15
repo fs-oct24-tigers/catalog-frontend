@@ -10,6 +10,7 @@ const HomePage = () => {
         mainText="Welcome to Nice"
         additionalText="Gadgets store!"
         isAdditionalTextBlock={true}
+        isHomePage={true}
       />
       <BannerSwiper />
       <PhonesSlider
