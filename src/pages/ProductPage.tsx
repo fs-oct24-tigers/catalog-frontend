@@ -83,6 +83,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         <PhonesSlider
           title="You may also like"
           apiEndpoint="/api/phones.json"
+          filterType="hotPrices"
         />
       </div>
     </div>
