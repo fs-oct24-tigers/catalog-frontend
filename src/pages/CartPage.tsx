@@ -7,7 +7,6 @@ import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 const CartPage = () => {
   const cartProducts = useAppSelector((state) => state.cart);
   const cartIsEmpty = cartProducts.length === 0;
-  console.log(cartIsEmpty);
 
   return (
     <div className="container mx-auto p-6">
