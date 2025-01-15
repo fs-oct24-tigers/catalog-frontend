@@ -87,7 +87,6 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
           <Swiper
             spaceBetween={24}
             slidesPerView={4}
-            loop={true}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
               320: { slidesPerView: 1.4 },
@@ -95,13 +94,9 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
               768: { slidesPerView: 2.4 },
               1024: { slidesPerView: 4 },
             }}
-            className="swiper-container"
           >
             {products.map((product) => (
-              <SwiperSlide
-                key={product.id}
-                className="swiper-slide flex-shrink-1"
-              >
+              <SwiperSlide key={product.id}>
                 <ProductCard product={product} />
               </SwiperSlide>
             ))}
