@@ -6,7 +6,7 @@ import { useQuery } from '@tanstack/react-query';
 import { get } from '@/api/fetchProducts';
 import ProductCard from '@/components/product/ProductCard';
 import { Swiper as SwiperType } from 'swiper';
-import { Product } from '@/types';
+import { ApiPhone, Product } from '@/types';
 import { filterProducts } from './filterProducts';
 
 interface PhonesSliderProps {
@@ -32,8 +32,25 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
     queryFn: () => get(apiEndpoint),
   });
 
+  // const products: Product[] = filterProducts(
+  //   (response || []).map((item: Product) => item),
+  //   filterType,
+  // );
+
   const products: Product[] = filterProducts(
-    (response || []).map((item: Product) => item),
+    (response || []).map((item: ApiPhone) => ({
+      id: item.id || item.itemId || '',
+      category: item.category,
+      name: item.name,
+      capacity: item.capacity,
+      priceRegular: item.priceRegular || item.fullPrice || 0,
+      priceDiscount: item.priceDiscount || item.price || 0,
+      screen: item.screen,
+      ram: item.ram,
+      color: item.color,
+      year: item.year || 2019,
+      images: item.images || (item.image ? [item.image] : []),
+    })),
     filterType,
   );
 
