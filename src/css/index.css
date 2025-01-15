@@ -100,3 +100,16 @@
 html {
   font-family: 'Mont', sans-serif;
 }
+
+@keyframes progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-progress {
+  animation: progress 3s linear forwards;
+}

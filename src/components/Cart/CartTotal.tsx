@@ -1,10 +1,10 @@
 import { useAppSelector } from '@/app/hooks';
 import React, { useState } from 'react';
-import { ModalSuccess } from '../ModalSuccess/ModalSuccess';
+import Notification from '@/Notification/Notification';
 
 const CartTotal: React.FC = () => {
   const cartProducts = useAppSelector((state) => state.cart);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [showNotification, setShowNotification] = useState(false);
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -19,11 +19,7 @@ const CartTotal: React.FC = () => {
   );
 
   const handleCheckout = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+    setShowNotification(true);
   };
 
   return (
@@ -39,11 +35,15 @@ const CartTotal: React.FC = () => {
         Checkout
       </button>
 
-      <ModalSuccess
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        message={`You have successfully checked out ${totalItems} items for a total of $${totalPrice}.`}
-      />
+      {/* Notification */}
+      {showNotification && (
+        <Notification
+          message="Notification"
+          description="Your order has been successfully processed."
+          onClose={() => setShowNotification(false)}
+          duration={3000}
+        />
+      )}
     </div>
   );
 };
