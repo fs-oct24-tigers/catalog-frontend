@@ -9,6 +9,7 @@ import { useQuery } from '@tanstack/react-query';
 import { Product } from '@/types';
 import { get } from '@/api/fetchProducts';
 import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
+import { getSpecs, getProperties } from '@/constants';
 
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import { BackButton } from '@/components/BackButton/BackButton';
@@ -48,24 +49,9 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     (product) => product.namespaceId === product.namespaceId,
   );
 
-  const specs = [
-    { name: 'Screen', value: product.screen },
-    { name: 'Resolution', value: product.resolution },
-    { name: 'Processor', value: product.processor },
-    { name: 'RAM', value: product.ram },
-    { name: 'Camera', value: product.camera },
-    { name: 'Zoom', value: product.zoom },
-    { name: 'Cell', value: product.cell?.join(', ') },
-  ];
-
-  const properties = [
-    { name: 'Screen', value: product.screen },
-    { name: 'Resolution', value: product.resolution },
-    { name: 'Processor', value: product.processor },
-    { name: 'RAM', value: product.ram },
-  ];
-
   const description = product.description || [];
+  const specs = getSpecs(product);
+  const properties = getProperties(product);
 
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
@@ -74,7 +60,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         <Breadcrumbs category={product.category} productName={product.name} />
         <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
       </div>
-      <div className="flex flaex-col lg:flex-row lg:gap-x-16 gap-y-16">
+      <div className="flex flex-col lg:flex-row lg:gap-x-16 gap-y-16">
         <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
           <PageGallery images={product.images} />
         </div>

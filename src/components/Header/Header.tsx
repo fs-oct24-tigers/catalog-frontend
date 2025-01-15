@@ -57,7 +57,7 @@ const Header: React.FC = () => {
               <Link
                 to={pathName}
                 className={cn('text-textGray hover:text-textWhite', {
-                  'text-textWhite': location.pathname === pathName,
+                  'text-textWhite': location.pathname.includes(pathName),
                 })}
               >
                 {name}

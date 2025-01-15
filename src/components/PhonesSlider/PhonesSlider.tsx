@@ -37,6 +37,23 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
     filterType,
   );
 
+  // const products: Product[] = filterProducts(
+  //   (response || []).map((item: ApiPhone) => ({
+  //     id: item.id || item.itemId || '',
+  //     category: item.category,
+  //     name: item.name,
+  //     capacity: item.capacity,
+  //     priceRegular: item.priceRegular || item.fullPrice || 0,
+  //     priceDiscount: item.priceDiscount || item.price || 0,
+  //     screen: item.screen,
+  //     ram: item.ram,
+  //     color: item.color,
+  //     year: item.year || 2019,
+  //     images: item.images || (item.image ? [item.image] : []),
+  //   })),
+  //   filterType,
+  // );
+
   const handleNext = () => swiperRef.current?.slideNext();
   const handlePrev = () => swiperRef.current?.slidePrev();
 
