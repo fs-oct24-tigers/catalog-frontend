@@ -62,4 +62,5 @@ export type Color =
   | 'blue'
   | 'pink'
   | 'graphite'
-  | 'sierrablue';
+  | 'sierrablue'
+  | 'starlight';
