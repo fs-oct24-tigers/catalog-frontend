@@ -1,9 +1,9 @@
-import { Phone } from '@/types';
+import { Product } from '@/types';
 
 export const filterProducts = (
-  products: Phone[],
+  products: Product[],
   filterType?: 'newModels' | 'hotPrices',
-): Phone[] => {
+): Product[] => {
   return products.filter((product) => {
     if (filterType === 'newModels') {
       return product.year > 2017;
