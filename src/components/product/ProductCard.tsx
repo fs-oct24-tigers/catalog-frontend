@@ -24,7 +24,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       <CardHeader className="flex flex-col items-center space-y-2 m-0 p-0">
         <CardTitle className="flex justify-center items-center m-0 p-0">
           <div className="w-[208px] h-[196px]">
-            <Link to={product.id}>
+            <Link to={`/${product.category}/${product.id}`}>
               <img
                 src={product.images[0]}
                 alt="iPhone"
@@ -36,7 +36,9 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
         <CardDescription className="m-0 p-0">
           <h2 className="w-[208px] text-sm font-semibold text-textWhite py-0">
-            <Link to={product.id}>{product.name}</Link>
+            <Link to={`/${product.category}/${product.id}`}>
+              {product.name}
+            </Link>
           </h2>
         </CardDescription>
       </CardHeader>
