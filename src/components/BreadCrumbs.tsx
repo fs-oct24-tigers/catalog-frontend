@@ -2,11 +2,11 @@ import { Home } from 'lucide-react';
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
+import { NavLink } from 'react-router-dom';
 
 interface BreadcrumbsProps {
   category?: string;
@@ -19,24 +19,21 @@ export const Breadcrumbs = ({ category, productName }: BreadcrumbsProps) => {
       <Breadcrumb>
         <BreadcrumbList className="text-small">
           <BreadcrumbItem>
-            <BreadcrumbLink
-              href="/"
-              className="text-textGray hover:text-textWhite"
-            >
+            <NavLink to="/" className="text-textGray hover:text-textWhite">
               <Home size={16} />
-            </BreadcrumbLink>
+            </NavLink>
           </BreadcrumbItem>
 
           {category && (
             <>
               <BreadcrumbSeparator className="text-textGray" />
               <BreadcrumbItem>
-                <BreadcrumbLink
-                  href={`/${category}`}
+                <NavLink
+                  to={`/${category}`}
                   className="text-textGray hover:text-textWhite"
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
-                </BreadcrumbLink>
+                </NavLink>
               </BreadcrumbItem>
             </>
           )}

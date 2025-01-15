@@ -10,6 +10,7 @@ import { Product } from '@/types';
 import { get } from '@/api/fetchProducts';
 import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
 
+import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 type Props = {
   category: string;
 };
@@ -52,7 +53,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     { name: 'RAM', value: product.ram },
     { name: 'Camera', value: product.camera },
     { name: 'Zoom', value: product.zoom },
-    { name: 'Cell', value: product.cell.join(', ') },
+    { name: 'Cell', value: product.cell?.join(', ') },
   ];
 
   const properties = [
@@ -62,9 +63,14 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     { name: 'RAM', value: product.ram },
   ];
 
+  const description = product.description || [];
+
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
-      <Breadcrumbs category={product.category} productName={product.name} />
+      <div>
+        <Breadcrumbs category={product.category} productName={product.name} />
+        <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
+      </div>
       <div className="flex flaex-col lg:flex-row lg:gap-x-16 gap-y-16">
         <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
           <PageGallery images={product.images} />
@@ -81,7 +87,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
 
       <div className="flex flex-col lg:flex-row lg:gap-x-16 mt-16">
         <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[560px]">
-          <ProductAbout />
+          <ProductAbout description={description} />
         </div>
         <div className="w-full sm:w-[287px] md;w-[592px] lg:w-[512px]">
           <ProductTable specs={specs} />

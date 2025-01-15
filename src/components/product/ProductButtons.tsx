@@ -5,6 +5,7 @@ import { Heart } from 'lucide-react';
 import { useAppSelector } from '@/app/hooks';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/features/cart';
+import { addToFavorites } from '@/features/favorites';
 
 type Props = {
   product: Product;
@@ -12,6 +13,7 @@ type Props = {
 
 const ProductButtons: React.FC<Props> = ({ product }) => {
   const cartProducts = useAppSelector((state) => state.cart);
+  const favoriteProducts = useAppSelector((state) => state.favorites);
 
   const isInCart = cartProducts.some(
     (cartProduct) => cartProduct.id === product.id,
@@ -22,6 +24,17 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
       return;
     }
     dispatch(addToCart(product));
+  };
+
+  const isInFavorites = favoriteProducts.some(
+    (favoriteProduct) => favoriteProduct.id === product.id,
+  );
+
+  const handleAddToFavorites = () => {
+    if (isInFavorites) {
+      return;
+    }
+    dispatch(addToFavorites(product));
   };
   return (
     <>
@@ -35,17 +48,18 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
 
       <div
         className={`w-10 h-10 flex items-center justify-center ${
-          isInCart ?
+          isInFavorites ?
             'bg-transparent border border-heartHover'
           : 'bg-heartGray border border-transparent hover:bg-heartHover'
         }`}
+        onClick={handleAddToFavorites}
       >
         <Heart
           style={{
             width: '17px',
             height: '15px',
-            fill: isInCart ? 'red' : '',
-            stroke: isInCart ? 'none' : '',
+            fill: isInFavorites ? 'red' : '',
+            stroke: isInFavorites ? 'none' : '',
           }}
         />
       </div>
