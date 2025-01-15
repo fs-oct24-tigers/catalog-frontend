@@ -52,7 +52,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     { name: 'RAM', value: product.ram },
     { name: 'Camera', value: product.camera },
     { name: 'Zoom', value: product.zoom },
-    { name: 'Cell', value: product.cell.join(', ') },
+    { name: 'Cell', value: product.cell?.join(', ') },
   ];
 
   const properties = [

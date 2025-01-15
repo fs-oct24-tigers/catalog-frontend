@@ -8,7 +8,7 @@ type Props = {
   category: string;
   product: Product;
   products: Product[];
-  properties: { name: string; value: string }[];
+  properties: { name: string; value: string | undefined }[];
 };
 
 export const ProductOptions: React.FC<Props> = ({
@@ -53,7 +53,7 @@ export const ProductOptions: React.FC<Props> = ({
 
       <div className="flex flex-col lg:w-[320px] sm:w-[288px] md:w-[237px]">
         <div className="flex space-x-2 mt-2">
-          {product.colorsAvailable.map((color) => (
+          {product.colorsAvailable?.map((color) => (
             <Link
               to={`/${category}/${product.namespaceId}-${product.capacity.toLowerCase()}-${color}`}
               key={color}
@@ -77,7 +77,7 @@ export const ProductOptions: React.FC<Props> = ({
         </div>
 
         <div className="flex space-x-2 mt-2">
-          {product.capacityAvailable.map((capacity) => (
+          {product.capacityAvailable?.map((capacity) => (
             <Link
               to={`/${category}/${product.namespaceId}-${capacity.toLowerCase()}-${product.color}`}
               key={capacity}
