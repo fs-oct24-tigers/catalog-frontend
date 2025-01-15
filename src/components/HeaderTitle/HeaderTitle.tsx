@@ -22,7 +22,7 @@ export const HeaderTitle: React.FC<TitleProps> = ({
   const renderMainText = () => {
     if (category) {
       return prefix ?
-          `${prefix} ${category.charAt(0).toUpperCase() + category.slice(1)}`
+          `${prefix} ${category}`
         : category.charAt(0).toUpperCase() + category.slice(1);
     }
     return mainText;
