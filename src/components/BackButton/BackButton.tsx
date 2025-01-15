@@ -7,10 +7,10 @@ export const BackButton = () => {
   return (
     <button
       onClick={() => navigate(-1)}
-      className="inline-flex items-center gap-x-1 text-textSecondaryGray hover:text-textWhite transition-colors"
+      className="inline-flex items-center justify-center gap-x-1 mb-4"
     >
-      <ChevronLeft className="h-5 w-5" />
-      <span className="text-sm font-semibold">Back</span>
+      <ChevronLeft className="h-3 w-3" />
+      <span className="text-small font-semibold -mb-[1px]">Back</span>
     </button>
   );
 };

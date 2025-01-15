@@ -56,8 +56,8 @@ const ProductPage: React.FC<Props> = ({ category }) => {
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
       <div>
-        <BackButton />
         <Breadcrumbs category={product.category} productName={product.name} />
+        <BackButton />
         <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
       </div>
       <div className="flex flex-col lg:flex-row lg:gap-x-16 gap-y-16">
