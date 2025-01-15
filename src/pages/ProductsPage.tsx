@@ -30,7 +30,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
     isError,
     error,
   } = useQuery<Product[]>({
-    queryKey: [category, currentPage, perPage],
+    queryKey: [category, currentPage, perPage, currentSort],
     queryFn: () => get(`/api/${category}.json`, currentPage, +perPage),
     placeholderData: keepPreviousData,
   });
