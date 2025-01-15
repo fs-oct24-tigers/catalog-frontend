@@ -11,6 +11,8 @@ import PagesQuantitySelect from '@/components/PagesQuantitySelect';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '@/app/hooks';
 import { changePerPage } from '@/features/perPage';
+import SortingSelect from '@/components/SortingSelect';
+import { sortProducts } from '@/utils/sortProducts';
 
 type Props = {
   category: string;
@@ -19,10 +21,7 @@ type Props = {
 const ProductsPage: FC<Props> = ({ category }) => {
   const dispatch = useDispatch();
   const perPage = useAppSelector((state) => state.perPage);
-  const handlePerPageChange = (perPage: number) => {
-    dispatch(changePerPage(perPage));
-  };
-
+  const currentSort = useAppSelector((state) => state.sorting);
   const currentPage = 0;
 
   const {
@@ -35,6 +34,10 @@ const ProductsPage: FC<Props> = ({ category }) => {
     queryFn: () => get(`/api/${category}.json`, currentPage, +perPage),
   });
 
+  const handlePerPageChange = (perPage: number) => {
+    dispatch(changePerPage(perPage));
+  };
+
   if (isLoading) {
     return <div>Loading...</div>;
   }
@@ -44,22 +47,23 @@ const ProductsPage: FC<Props> = ({ category }) => {
   }
 
   const productCount = products?.length || 0;
+  const sortedProducts = products ? sortProducts(products, currentSort) : [];
 
   return (
-    <div>
+    <div className="container">
       <Breadcrumbs category={category} />
-      <HeaderTitle
-        category={category}
-        prefix={category === 'phones' ? 'Mobile' : undefined}
-      />
+      <HeaderTitle mainText={category} prefix="Category" category={category} />
       <ProductCounter count={productCount} />
-      <PagesQuantitySelect
-        perPage={perPage}
-        handlePerPageChange={handlePerPageChange}
-      />
-      {products && products?.length > 0 ?
+      <div className="flex gap-4 items-center mb-4">
+        <SortingSelect />
+        <PagesQuantitySelect
+          perPage={perPage}
+          handlePerPageChange={handlePerPageChange}
+        />
+      </div>
+      {sortedProducts && sortedProducts.length > 0 ?
         <ProductGrid>
-          {products?.map((product) => (
+          {sortedProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </ProductGrid>
