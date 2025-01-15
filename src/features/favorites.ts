@@ -1,29 +1,25 @@
 import { Product } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-type CartProduct = Product;
-
-const initialState: CartProduct[] = [];
+const initialState: Product[] = [];
 
 export const favoritesSlice = createSlice({
   name: 'favorites',
   initialState,
   reducers: {
-    addToFavorites: (state, action: PayloadAction<Product>) => {
+    toggleFavorite: (state, action: PayloadAction<Product>) => {
       const existProduct = state.find(
         (product) => product.id === action.payload.id,
       );
 
-      if (!existProduct) {
-        state.push(action.payload);
+      if (existProduct) {
+        return state.filter((product) => product.id !== action.payload.id);
       }
-    },
 
-    removeFromFavorites: (state, action: PayloadAction<string>) => {
-      return state.filter((product) => product.id !== action.payload);
+      state.push(action.payload);
     },
   },
 });
 
-export const { addToFavorites } = favoritesSlice.actions;
+export const { toggleFavorite } = favoritesSlice.actions;
 export default favoritesSlice.reducer;

@@ -5,7 +5,7 @@ import { Heart } from 'lucide-react';
 import { useAppSelector } from '@/app/hooks';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/features/cart';
-import { addToFavorites } from '@/features/favorites';
+import { toggleFavorite } from '@/features/favorites';
 
 type Props = {
   product: Product;
@@ -30,11 +30,8 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     (favoriteProduct) => favoriteProduct.id === product.id,
   );
 
-  const handleAddToFavorites = () => {
-    if (isInFavorites) {
-      return;
-    }
-    dispatch(addToFavorites(product));
+  const handleToggleFavorites = () => {
+    dispatch(toggleFavorite(product));
   };
   return (
     <>
@@ -52,7 +49,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
             'bg-transparent border border-heartHover'
           : 'bg-heartGray border border-transparent hover:bg-heartHover'
         }`}
-        onClick={handleAddToFavorites}
+        onClick={handleToggleFavorites}
       >
         <Heart
           style={{
