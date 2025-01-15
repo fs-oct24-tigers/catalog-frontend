@@ -69,7 +69,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     <div className="flex flex-col gap-y-16 mx-auto">
       <div>
         <Breadcrumbs category={product.category} productName={product.name} />
-        <HeaderTitle mainText={product.name} />
+        <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
       </div>
       <div className="flex flaex-col lg:flex-row lg:gap-x-16 gap-y-16">
         <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
