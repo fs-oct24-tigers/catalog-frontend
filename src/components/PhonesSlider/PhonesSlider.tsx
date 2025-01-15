@@ -8,12 +8,7 @@ import ProductCard from '@/components/product/ProductCard';
 import { Swiper as SwiperType } from 'swiper';
 import { Product } from '@/types';
 import { filterProducts } from './filterProducts';
-
-interface PhonesSliderProps {
-  title: string;
-  apiEndpoint: string;
-  filterType?: 'newModels' | 'hotPrices';
-}
+import { PhonesSliderProps } from '@/types';
 
 const PhonesSlider: React.FC<PhonesSliderProps> = ({
   title,

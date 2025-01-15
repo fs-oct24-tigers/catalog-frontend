@@ -44,6 +44,19 @@ export interface ApiPhone {
   image?: string;
 }
 
+export interface ModalProps {
+  isOpen: boolean;
+  onClose: () => void;
+  message?: string;
+  children?: React.ReactNode;
+}
+
+export interface PhonesSliderProps {
+  title: string;
+  apiEndpoint: string;
+  filterType?: 'newModels' | 'hotPrices';
+}
+
 export type Color =
   | 'green'
   | 'black'

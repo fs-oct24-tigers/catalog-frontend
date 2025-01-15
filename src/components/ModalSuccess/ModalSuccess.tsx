@@ -1,14 +1,9 @@
 import React from 'react';
 import { Modal } from './Modal';
 import { CheckCircle } from 'lucide-react';
+import { ModalProps } from '@/types';
 
-interface ModalSuccessProps {
-  isOpen: boolean;
-  onClose: () => void;
-  message: string;
-}
-
-export const ModalSuccess: React.FC<ModalSuccessProps> = ({
+export const ModalSuccess: React.FC<ModalProps> = ({
   isOpen,
   onClose,
   message,
