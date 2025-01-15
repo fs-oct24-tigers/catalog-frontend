@@ -11,7 +11,10 @@ const CartTotal: React.FC = () => {
     0,
   );
 
-  const totalItems = cartProducts.length;
+  const totalItems = cartProducts.reduce(
+    (acc, product) => acc + product.quantity,
+    0,
+  );
 
   return (
     <div className="flex flex-col mt-6 lg:mt-0 lg:w-1/3 bg-pageBg border border-gray-700 p-6">
