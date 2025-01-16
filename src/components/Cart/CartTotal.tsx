@@ -1,7 +1,8 @@
-import { useAppSelector } from '@/app/hooks';
+import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import React from 'react';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { clearCart } from '@/features/cart';
 
 const toastConfig = {
   position: 'top-right' as const,
@@ -11,11 +12,14 @@ const toastConfig = {
   pauseOnHover: true,
   draggable: true,
   progress: undefined,
-  theme: 'gray',
+  style: {
+    backgroundColor: '#111827',
+  },
 };
 
 const CartTotal: React.FC = () => {
   const cartProducts = useAppSelector((state) => state.cart);
+  const dispatch = useAppDispatch();
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -40,6 +44,7 @@ const CartTotal: React.FC = () => {
         ...toastConfig,
         toastId: 'order-success',
       });
+      dispatch(clearCart());
     }
   };
 

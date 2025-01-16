@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import '@/css/index.css';
 
 const BannerSwiper: React.FC = () => {
   const sliderImages = [
@@ -129,7 +130,7 @@ const BannerSwiper: React.FC = () => {
                   >
                     {index === 0 ?
                       <div className="flex flex-col md:flex-row h-[300px] sm:h-[400px] lg:h-[400px]">
-                        <div className="hidden md:flex w-full md:w-[450px] flex-shrink-1 relative flex flex-col items-center justify-between h-full ml-4 py-4 md:py-4">
+                        <div className="hidden md:flex w-full md:w-[450px] flex-shrink-1 relative flex flex-col items-center justify-between h-full ml-6 py-4 md:py-4">
                           <div className="w-full h-full bg-gray-800 rounded-3xl p-8 flex flex-col justify-between">
                             <div className="text-left">
                               <p className="text-purple-500 text-2xl md:text-4xl font-bold mb-2">
@@ -153,9 +154,9 @@ const BannerSwiper: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="w-full md:w-1/2 flex-shrink-1 relative flex flex-col items-center justify-between h-full py-4 md:py-8">
+                        <div className="w-full md:w-1/2 flex-shrink-1 relative flex flex-col items-center justify-between h-full md:ml-8 py-4 md:py-8">
                           <div className="text-center">
-                            <h2 className="text-white text-2xl md:text-4xl font-bold mb-4">
+                            <h2 className="gradient-text text-4xl font-bold mb-4">
                               iPhone 14 Pro
                             </h2>
                             <p className="text-gray-400 text-sm md:text-xl">
@@ -164,7 +165,7 @@ const BannerSwiper: React.FC = () => {
                           </div>
                           <img
                             src={image.url || '/placeholder.svg'}
-                            className="w-auto h-auto max-h-full object-contain"
+                            className="w-auto h-auto max-h-full object-contain self-end"
                             alt={image.alt}
                           />
                         </div>
