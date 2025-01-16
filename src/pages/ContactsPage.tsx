@@ -1,10 +1,10 @@
 import React from 'react';
 import tigerImage from '../../public/img/tiger3.png';
-import creator1Image from '../../public/img/creator1.jpg';
-import creator2Image from '../../public/img/creator2.jpg';
-import creator3Image from '../../public/img/creator3.jpg';
-import creator4Image from '../../public/img/creator4.jpg';
-import creator5Image from '../../public/img/creator5.jpg';
+import creator1Image from '../../public/img/creator1.png';
+import creator2Image from '../../public/img/creator2.png';
+import creator3Image from '../../public/img/creator3.png';
+import creator4Image from '../../public/img/creator4.png';
+import creator5Image from '../../public/img/creator5.png';
 
 const ContactsPage: React.FC = () => {
   return (
