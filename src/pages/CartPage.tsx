@@ -9,18 +9,19 @@ const CartPage = () => {
   const cartIsEmpty = cartProducts.length === 0;
 
   return (
-    <div className="container mx-auto p-6">
-      <HeaderTitle mainText="Cart" />
-
+    <>
       {cartIsEmpty ?
         <CartEmpty />
-      : <div className="flex flex-col lg:flex-row lg:items-start lg:gap-6">
-          <CartProducts />
+      : <div className="container mx-auto p-6">
+          <HeaderTitle mainText="Cart" />
+          <div className="flex flex-col lg:flex-row lg:items-start lg:gap-6">
+            <CartProducts />
 
-          <CartTotal />
+            <CartTotal />
+          </div>
         </div>
       }
-    </div>
+    </>
   );
 };
 
