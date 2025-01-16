@@ -1,10 +1,21 @@
 import { useAppSelector } from '@/app/hooks';
-import React, { useState } from 'react';
-import { ModalSuccess } from '../ModalSuccess/ModalSuccess';
+import React from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const toastConfig = {
+  position: 'top-right' as const,
+  autoClose: 3000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: 'gray',
+};
 
 const CartTotal: React.FC = () => {
   const cartProducts = useAppSelector((state) => state.cart);
-  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -19,11 +30,17 @@ const CartTotal: React.FC = () => {
   );
 
   const handleCheckout = () => {
-    setIsModalOpen(true);
-  };
-
-  const handleCloseModal = () => {
-    setIsModalOpen(false);
+    if (totalItems === 0) {
+      toast.error('Your cart is empty!', {
+        ...toastConfig,
+        toastId: 'cart-empty',
+      });
+    } else {
+      toast.success('Your order has been successfully placed!', {
+        ...toastConfig,
+        toastId: 'order-success',
+      });
+    }
   };
 
   return (
@@ -33,17 +50,11 @@ const CartTotal: React.FC = () => {
         Total items: {totalItems}
       </p>
       <button
-        onClick={handleCheckout}
         className="mt-6 h-[48px] w-full bg-btnPrimary hover:bg-btnHover text-white py-2 px-4"
+        onClick={handleCheckout}
       >
         Checkout
       </button>
-
-      <ModalSuccess
-        isOpen={isModalOpen}
-        onClose={handleCloseModal}
-        message={`You have successfully checked out ${totalItems} items for a total of $${totalPrice}.`}
-      />
     </div>
   );
 };

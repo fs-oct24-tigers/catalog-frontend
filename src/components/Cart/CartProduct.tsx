@@ -8,6 +8,8 @@ import { Minus, Plus, X } from 'lucide-react';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import cn from 'classnames';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {
   product: CartProduct;
@@ -18,6 +20,17 @@ const CartProduct: React.FC<Props> = ({ product }) => {
 
   const deleteFromCart = () => {
     dispatch(removeFromCart(product.id));
+    toast.success('Product removed from cart!', {
+      position: 'top-right',
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: 'gray',
+      toastId: `removed-${product.id}`, // Unique ID for the toast
+    });
   };
 
   const handleIncrement = () => {

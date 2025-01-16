@@ -6,6 +6,8 @@ import { useAppSelector } from '@/app/hooks';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '@/features/cart';
 import { toggleFavorite } from '@/features/favorites';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type Props = {
   product: Product;
@@ -21,9 +23,45 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   const dispatch = useDispatch();
   const handleAddToCart = () => {
     if (isInCart) {
+      toast.info('Product is already in the cart!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'gray',
+        toastId: 'product-in-cart',
+      });
       return;
     }
     dispatch(addToCart(product));
+    if (isInFavorites) {
+      toast.info('Product removed from favorites!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'gray',
+        toastId: 'product-removed-favorites',
+      });
+    } else {
+      toast.success('Product added to cart!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'gray',
+        toastId: 'product-added-cart',
+      });
+    }
   };
 
   const isInFavorites = favoriteProducts.some(
@@ -32,6 +70,29 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
 
   const handleToggleFavorites = () => {
     dispatch(toggleFavorite(product));
+    if (isInFavorites) {
+      toast.info('Product removed from favorites!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'gray',
+      });
+    } else {
+      toast.success('Product added to favorites!', {
+        position: 'top-right',
+        autoClose: 3000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: 'gray',
+      });
+    }
   };
   return (
     <>
