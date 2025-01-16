@@ -5,10 +5,12 @@ import creator2Image from '../../public/img/creator2.png';
 import creator3Image from '../../public/img/creator3.png';
 import creator4Image from '../../public/img/creator4.png';
 import creator5Image from '../../public/img/creator5.png';
+import { Breadcrumbs } from '@/components/BreadCrumbs';
 
 const ContactsPage: React.FC = () => {
   return (
-    <div className="container mx-auto py-16 px-4">
+    <div className="container mx-auto py-2 px-4">
+      <Breadcrumbs category="Contacts" />
       <h1 className="text-2xl font-bold mb-4">Creators</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
