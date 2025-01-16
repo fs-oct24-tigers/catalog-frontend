@@ -11,7 +11,7 @@ const NotFoundPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center relative overflow-hidden">
+    <div className="min-h-[60vh] mt-4 lg:mt-20 flex flex-col items-center justify-center relative overflow-hidden">
       <div className="absolute w-full h-full">
         <div className="absolute top-1/4 left-1/4 w-4 h-4 bg-white rounded-full animate-float-slow opacity-50" />
         <div className="absolute top-1/3 right-1/3 w-2 h-2 bg-white rounded-full animate-float-medium opacity-30" />
