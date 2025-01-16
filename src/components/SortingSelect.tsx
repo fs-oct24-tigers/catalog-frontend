@@ -11,6 +11,8 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { changeSorting, SortType } from '@/features/sorting';
 
 const options: { value: SortType; label: string }[] = [
+  { value: 'newest', label: 'Newest' },
+  { value: 'oldest', label: 'Oldest' },
   { value: 'alphabetically', label: 'Alphabetically' },
   { value: 'cheapest', label: 'Cheapest' },
   { value: 'expensive', label: 'Most expensive' },
