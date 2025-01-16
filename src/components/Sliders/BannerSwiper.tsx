@@ -3,6 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Swiper from 'swiper';
 import 'swiper/swiper-bundle.css';
+import '@/css/index.css';
 
 const BannerSwiper: React.FC = () => {
   const sliderImages = [
@@ -129,22 +130,20 @@ const BannerSwiper: React.FC = () => {
                   >
                     {index === 0 ?
                       <div className="flex flex-col md:flex-row h-[300px] sm:h-[400px] lg:h-[400px]">
-                        <div className="hidden md:block w-full md:w-1/2 flex-shrink-1 flex items-center justify-center md:justify-start my-4">
-                          <div className="w-full md:w-[420px] h-full ml-0 md:ml-5 bg-gray-800 rounded-3xl p-8">
-                            <div className="text-left ml-0 md:ml-8 h-full flex flex-col justify-between">
-                              <div>
-                                <p className="text-purple-500 text-2xl md:text-4xl font-bold mb-2">
-                                  Now available
-                                </p>
-                                <p className="text-purple-500 text-xl md:text-3xl font-bold mb-6">
-                                  in our store! 👌
-                                </p>
-                                <p className="text-gray-400 text-sm md:text-l mb-6">
-                                  Be the first!
-                                </p>
-                              </div>
+                        <div className="hidden md:flex w-full md:w-[450px] flex-shrink-1 relative flex flex-col items-center justify-between h-full ml-6 py-4 md:py-4">
+                          <div className="w-full h-full bg-gray-800 rounded-3xl p-8 flex flex-col justify-between">
+                            <div className="text-left">
+                              <p className="text-purple-500 text-2xl md:text-4xl font-bold mb-2">
+                                Now available
+                              </p>
+                              <p className="text-purple-500 text-xl md:text-3xl font-bold mb-6">
+                                in our store! 👌
+                              </p>
+                              <p className="text-gray-400 text-sm md:text-l mb-6">
+                                Be the first!
+                              </p>
                             </div>
-                            <div className="absolute bottom-14 left-10 md:left-20">
+                            <div className="absolute bottom-14 left-10 text-center">
                               <Link
                                 to={image.link}
                                 className="inline-block bg-transparent border-[1.5px] border-gray-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-gray-700 hover:border-gray-700 font-semibold"
@@ -155,9 +154,9 @@ const BannerSwiper: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="w-full md:w-1/2 flex-shrink-1 relative flex flex-col items-center justify-between h-full py-4 md:py-8">
+                        <div className="w-full md:w-1/2 flex-shrink-1 relative flex flex-col items-center justify-between h-full md:ml-8 py-4 md:py-8">
                           <div className="text-center">
-                            <h2 className="text-white text-2xl md:text-4xl font-bold mb-4">
+                            <h2 className="gradient-text text-4xl font-bold mb-4">
                               iPhone 14 Pro
                             </h2>
                             <p className="text-gray-400 text-sm md:text-xl">
@@ -166,7 +165,7 @@ const BannerSwiper: React.FC = () => {
                           </div>
                           <img
                             src={image.url || '/placeholder.svg'}
-                            className="w-auto h-auto max-h-full object-contain"
+                            className="w-auto h-auto max-h-full object-contain self-end"
                             alt={image.alt}
                           />
                         </div>
@@ -180,7 +179,7 @@ const BannerSwiper: React.FC = () => {
                         <div className="absolute bottom-14 left-10 md:left-20">
                           <Link
                             to={image.link}
-                            className="inline-block bg-transparent border-[1.5px] border-gray-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-gray-700 hover:border-gray-700 font-semibold"
+                            className="hidden md:flex bg-transparent border-[1.5px] border-gray-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-gray-700 hover:border-gray-700 font-semibold"
                           >
                             {image.buttonText}
                           </Link>

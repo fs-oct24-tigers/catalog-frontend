@@ -5,12 +5,14 @@ import { NotFoundPage } from '@/components/NotFoundPage';
 import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
-import { useQuery } from '@tanstack/react-query';
-import { Product } from '@/types';
-import { get } from '@/api/fetchProducts';
-import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
+
+import PhonesSlider from '@/components/Sliders/ProductsSlider';
+import { getSpecs, getProperties } from '@/constants';
 
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
+import { BackButton } from '@/components/BackButton/BackButton';
+import useProductQuery from '@/hooks/useProductQuery';
+
 type Props = {
   category: string;
 };
@@ -18,14 +20,8 @@ type Props = {
 const ProductPage: React.FC<Props> = ({ category }) => {
   const { id } = useParams<{ id: string }>();
 
-  const {
-    data: products,
-    isLoading,
-    isError,
-    error,
-  } = useQuery<Product[]>({
-    queryKey: [category],
-    queryFn: () => get(`/api/${category}.json`),
+  const { products, isLoading, isError } = useProductQuery({
+    category,
   });
 
   const product = products?.find((product) => product.id === id);
@@ -35,7 +31,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
   }
 
   if (isError) {
-    return <div>Error fetching products: {error.message}</div>;
+    return <div>Error fetching products</div>;
   }
 
   if (!product) {
@@ -46,32 +42,18 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     (product) => product.namespaceId === product.namespaceId,
   );
 
-  const specs = [
-    { name: 'Screen', value: product.screen },
-    { name: 'Resolution', value: product.resolution },
-    { name: 'Processor', value: product.processor },
-    { name: 'RAM', value: product.ram },
-    { name: 'Camera', value: product.camera },
-    { name: 'Zoom', value: product.zoom },
-    { name: 'Cell', value: product.cell?.join(', ') },
-  ];
-
-  const properties = [
-    { name: 'Screen', value: product.screen },
-    { name: 'Resolution', value: product.resolution },
-    { name: 'Processor', value: product.processor },
-    { name: 'RAM', value: product.ram },
-  ];
-
   const description = product.description || [];
+  const specs = getSpecs(product);
+  const properties = getProperties(product);
 
   return (
     <div className="flex flex-col gap-y-16 mx-auto">
       <div>
         <Breadcrumbs category={product.category} productName={product.name} />
+        <BackButton />
         <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
       </div>
-      <div className="flex flaex-col lg:flex-row lg:gap-x-16 gap-y-16">
+      <div className="flex flex-col lg:flex-row lg:gap-x-16 gap-y-16">
         <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
           <PageGallery images={product.images} />
         </div>
@@ -97,6 +79,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         <PhonesSlider
           title="You may also like"
           apiEndpoint="/api/phones.json"
+          filterType="hotPrices"
         />
       </div>
     </div>

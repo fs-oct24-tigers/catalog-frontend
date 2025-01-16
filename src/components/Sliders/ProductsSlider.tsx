@@ -1,42 +1,30 @@
 import React, { useRef } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Swiper as SwiperType } from 'swiper';
+import useSliderQuery from '@/hooks/useSliderQuery';
+
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { useQuery } from '@tanstack/react-query';
-import { get } from '@/api/fetchProducts';
-import ProductCard from '@/components/product/ProductCard';
-import { Swiper as SwiperType } from 'swiper';
+import ProductCard from '@/components/Product/ProductCard';
 import { Product } from '@/types';
-import { filterProducts } from './filterProducts';
-
-interface PhonesSliderProps {
-  title: string;
-  apiEndpoint: string;
-  filterType?: 'newModels' | 'hotPrices';
-}
+import { filterProducts } from '../../utils/filterProducts';
+import { PhonesSliderProps } from '@/types';
 
 const PhonesSlider: React.FC<PhonesSliderProps> = ({
   title,
   apiEndpoint,
   filterType,
 }) => {
-  const swiperRef = useRef<SwiperType | null>(null);
-
-  const {
-    data: response,
-    isLoading,
-    isError,
-    error,
-  } = useQuery<Product[]>({
-    queryKey: ['products', apiEndpoint],
-    queryFn: () => get(apiEndpoint),
+  const { products, isLoading, isError } = useSliderQuery({
+    apiEndpoint,
   });
 
-  const products: Product[] = filterProducts(
-    (response || []).map((item: Product) => item),
+  const filteredProducts: Product[] = filterProducts(
+    (products || []).map((item: Product) => item),
     filterType,
   );
 
+  const swiperRef = useRef<SwiperType | null>(null);
   const handleNext = () => swiperRef.current?.slideNext();
   const handlePrev = () => swiperRef.current?.slidePrev();
 
@@ -68,13 +56,12 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
         {isLoading ?
           <div className="text-white">Loading...</div>
         : isError ?
-          <div className="text-red-500">
-            Failed to load products. Error: {error?.message}
-          </div>
+          <div className="text-red-500">Failed to load products</div>
         : products.length > 0 ?
           <Swiper
             spaceBetween={24}
             slidesPerView={4}
+            loop={true}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
               320: { slidesPerView: 1.4 },
@@ -83,7 +70,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
               1024: { slidesPerView: 4 },
             }}
           >
-            {products.map((product) => (
+            {filteredProducts.map((product) => (
               <SwiperSlide key={product.id}>
                 <ProductCard product={product} />
               </SwiperSlide>

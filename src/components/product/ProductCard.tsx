@@ -26,7 +26,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           <div className="w-[208px] h-[196px]">
             <Link to={`/${product.category}/${product.id}`}>
               <img
-                src={product.images[0]}
+                src={`/${product.images[0]}`}
                 alt="iPhone"
                 className="w-full h-full object-contain"
               />
