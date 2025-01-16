@@ -12,6 +12,8 @@ const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
   { name: 'TABLETS', pathName: '/tablets' },
   { name: 'ACCESSORIES', pathName: '/accessories' },
+  { pathName: '/favourites' },
+  { pathName: '/cart' },
 ];
 
 const Header: React.FC = () => {
@@ -51,14 +53,20 @@ const Header: React.FC = () => {
           <Logo />
           {navLinks.map(({ name, pathName }) => (
             <div
-              className={cn(' size-max h-16 flex items-center hidden sm:flex')}
+              className={cn(
+                'relative size-max h-16 flex items-center hidden sm:flex',
+              )}
               key={name}
             >
               <Link
                 to={pathName}
-                className={cn('text-textGray hover:text-textWhite', {
-                  'text-textWhite': location.pathname.includes(pathName),
-                })}
+                className={cn(
+                  'text-textGray hover:text-textWhite leading-[55px] ',
+                  {
+                    'text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite':
+                      location.pathname === pathName,
+                  },
+                )}
               >
                 {name}
               </Link>
