@@ -28,7 +28,10 @@ const ProductPage: React.FC<Props> = ({ category }) => {
     error,
   } = useQuery<Product[]>({
     queryKey: [category],
-    queryFn: () => get(`/api/${category}.json`),
+    queryFn: async () => {
+      const response = await get(`/api/${category}.json`);
+      return response.products;
+    },
   });
 
   const product = products?.find((product) => product.id === id);

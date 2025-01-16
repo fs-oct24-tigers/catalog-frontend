@@ -24,7 +24,10 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
     error,
   } = useQuery<Product[]>({
     queryKey: ['products', apiEndpoint],
-    queryFn: () => get(apiEndpoint),
+    queryFn: async () => {
+      const response = await get(apiEndpoint);
+      return response.products;
+    },
   });
 
   const products: Product[] = filterProducts(
