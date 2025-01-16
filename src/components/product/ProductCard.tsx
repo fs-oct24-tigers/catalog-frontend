@@ -59,7 +59,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
         <div className="flex justify-between items-center w-[208px]">
           <span className="text-xs font-bold text-textGray">Screen</span>
-          <span className="text-[11px] font-bold text-textWhite">
+          <span className="text-xs font-bold text-textWhite">
             {product.screen}
           </span>
         </div>

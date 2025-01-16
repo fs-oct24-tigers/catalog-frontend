@@ -9,6 +9,7 @@ import FavoritesPage from './pages/FavoritesPage';
 import ErrorBoundary from './components/ErrorBoundary';
 import { NotFoundPage } from './components/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
+import ContactsPage from './pages/ContactsPage';
 
 const categories = ['phones', 'tablets', 'accessories'];
 
@@ -36,6 +37,7 @@ const Root = () => {
           <Route path="cart" element={<CartPage />} />
           <Route path="favourites" element={<FavoritesPage />} />
           <Route path="home" element={<Navigate to="/" replace />} />
+          <Route path="contacts" element={<ContactsPage />} />
           <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
