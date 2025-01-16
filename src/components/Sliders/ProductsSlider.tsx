@@ -5,7 +5,7 @@ import useSliderQuery from '@/hooks/useSliderQuery';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import ProductCard from '@/components/Product/ProductCard';
+import ProductCard from '@/components/product/ProductCard';
 import { Product } from '@/types';
 import { filterProducts } from '../../utils/filterProducts';
 import { PhonesSliderProps } from '@/types';

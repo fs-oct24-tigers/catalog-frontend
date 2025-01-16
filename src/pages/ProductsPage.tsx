@@ -2,7 +2,7 @@ import { FC } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import usePagedQuery from '@/hooks/usePagedQuery';
-import ProductCard from '@/components/Product/ProductCard';
+import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';

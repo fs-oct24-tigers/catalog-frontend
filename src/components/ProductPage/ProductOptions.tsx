@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../../types';
 import { Color } from '../../types';
-import ProductButtons from '../Product/ProductButtons';
+import ProductButtons from '../product/ProductButtons';
 import { colorOptions } from '@/constants';
 
 type Props = {
