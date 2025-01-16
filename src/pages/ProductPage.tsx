@@ -5,14 +5,13 @@ import { NotFoundPage } from '@/components/NotFoundPage';
 import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
-import { useQuery } from '@tanstack/react-query';
-import { Product } from '@/types';
-import { get } from '@/api/fetchProducts';
-import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
+
+import PhonesSlider from '@/components/Sliders/ProductsSlider';
 import { getSpecs, getProperties } from '@/constants';
 
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import { BackButton } from '@/components/BackButton/BackButton';
+import useProductQuery from '@/hooks/useProductQuery';
 
 type Props = {
   category: string;
@@ -21,17 +20,8 @@ type Props = {
 const ProductPage: React.FC<Props> = ({ category }) => {
   const { id } = useParams<{ id: string }>();
 
-  const {
-    data: products,
-    isLoading,
-    isError,
-    error,
-  } = useQuery<Product[]>({
-    queryKey: [category],
-    queryFn: async () => {
-      const response = await get(`/api/${category}.json`);
-      return response.products;
-    },
+  const { products, isLoading, isError } = useProductQuery({
+    category,
   });
 
   const product = products?.find((product) => product.id === id);
@@ -41,7 +31,7 @@ const ProductPage: React.FC<Props> = ({ category }) => {
   }
 
   if (isError) {
-    return <div>Error fetching products: {error.message}</div>;
+    return <div>Error fetching products</div>;
   }
 
   if (!product) {

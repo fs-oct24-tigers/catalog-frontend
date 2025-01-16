@@ -6,8 +6,7 @@ export const filterProducts = (
 ): Product[] => {
   return products.filter((product) => {
     if (filterType === 'newModels') {
-      return product.priceRegular - (product.priceDiscount || 0) > 50;
-      // return product.year > 2017;
+      return product.year > 2017;
     } else if (filterType === 'hotPrices') {
       return product.priceRegular - (product.priceDiscount || 0) > 50;
     }
