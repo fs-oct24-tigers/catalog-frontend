@@ -1,10 +1,21 @@
 import { useAppSelector } from '@/app/hooks';
-import React, { useState } from 'react';
-import Notification from '@/Notification/Notification';
+import React from 'react';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+const toastConfig = {
+  position: 'top-right' as const,
+  autoClose: 3000,
+  hideProgressBar: false,
+  closeOnClick: true,
+  pauseOnHover: true,
+  draggable: true,
+  progress: undefined,
+  theme: 'gray',
+};
 
 const CartTotal: React.FC = () => {
   const cartProducts = useAppSelector((state) => state.cart);
-  const [showNotification, setShowNotification] = useState(false);
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -19,7 +30,17 @@ const CartTotal: React.FC = () => {
   );
 
   const handleCheckout = () => {
-    setShowNotification(true);
+    if (totalItems === 0) {
+      toast.error('Your cart is empty!', {
+        ...toastConfig,
+        toastId: 'cart-empty',
+      });
+    } else {
+      toast.success('Your order has been successfully placed!', {
+        ...toastConfig,
+        toastId: 'order-success',
+      });
+    }
   };
 
   return (
@@ -29,21 +50,11 @@ const CartTotal: React.FC = () => {
         Total items: {totalItems}
       </p>
       <button
-        onClick={handleCheckout}
         className="mt-6 h-[48px] w-full bg-btnPrimary hover:bg-btnHover text-white py-2 px-4"
+        onClick={handleCheckout}
       >
         Checkout
       </button>
-
-      {/* Notification */}
-      {showNotification && (
-        <Notification
-          message="Notification"
-          description="Your order has been successfully processed."
-          onClose={() => setShowNotification(false)}
-          duration={3000}
-        />
-      )}
     </div>
   );
 };
