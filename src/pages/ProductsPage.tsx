@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
 import usePagedQuery from '@/hooks/usePagedQuery';
 import ProductCard from '@/components/Product/ProductCard';
-import ProductGrid from '@/components/Product/ProductGrid';
+import ProductGrid from '@/components/product/ProductGrid';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import ProductCounter from '@/components/ProductCounter/ProductCounter';
@@ -35,12 +35,17 @@ const ProductsPage: FC<Props> = ({ category }) => {
 
   const handlePerPageChange = (perPage: number) => {
     dispatch(changePerPage(perPage));
-    setSearchParams({ page: '1', perPage: perPage.toString() });
+    setSearchParams({
+      page: '1',
+      perPage: perPage.toString(),
+      sort: currentSort,
+    });
   };
   const handlePageChange = ({ selected }: { selected: number }) => {
     setSearchParams({
       page: (selected + 1).toString(),
       perPage: perPage.toString(),
+      sort: currentSort,
     });
   };
 

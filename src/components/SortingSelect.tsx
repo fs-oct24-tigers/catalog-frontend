@@ -9,6 +9,7 @@ import {
 } from './ui/select';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { changeSorting, SortType } from '@/features/sorting';
+import { useNavigate, useLocation } from 'react-router-dom';
 
 const options: { value: SortType; label: string }[] = [
   { value: 'newest', label: 'Newest' },
@@ -21,9 +22,15 @@ const options: { value: SortType; label: string }[] = [
 const SortingSelect: React.FC = () => {
   const dispatch = useAppDispatch();
   const currentSort = useAppSelector((state) => state.sorting);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const handleValueChange = (value: string) => {
     dispatch(changeSorting(value as SortType));
+
+    const searchParams = new URLSearchParams(location.search);
+    searchParams.set('sort', value);
+    navigate(`${location.pathname}?${searchParams.toString()}`);
   };
 
   return (
