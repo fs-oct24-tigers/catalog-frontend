@@ -28,8 +28,10 @@ const CartProduct: React.FC<Props> = ({ product }) => {
       pauseOnHover: true,
       draggable: true,
       progress: undefined,
-      theme: 'gray',
-      toastId: `removed-${product.id}`, // Unique ID for the toast
+      style: {
+        backgroundColor: '#111827',
+      },
+      toastId: `removed-${product.id}`,
     });
   };
 
