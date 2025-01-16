@@ -1,5 +1,5 @@
 import BannerSwiper from '@/components/Sliders/BannerSwiper';
-import { Categories } from '@/components/Product/Categories';
+import { Categories } from '@/components/product/Categories';
 import PhonesSlider from '@/components/Sliders/ProductsSlider';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 

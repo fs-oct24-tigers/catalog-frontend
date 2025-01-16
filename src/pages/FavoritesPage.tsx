@@ -1,7 +1,7 @@
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import { useAppSelector } from '@/app/hooks';
-import ProductCard from '../components/Product/ProductCard';
+import ProductCard from '../components/product/ProductCard';
 
 const FavoritesPage = () => {
   const favoriteProducts = useAppSelector((state) => state.favorites);
