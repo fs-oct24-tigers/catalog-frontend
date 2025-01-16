@@ -1,6 +1,6 @@
-import BannerSwiper from '@/components/BannerSwiper/BannerSwiper';
-import { Categories } from '@/components/product/Categories';
-import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
+import BannerSwiper from '@/components/Sliders/BannerSwiper';
+import { Categories } from '@/components/Product/Categories';
+import PhonesSlider from '@/components/Sliders/ProductsSlider';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 
 const HomePage = () => {

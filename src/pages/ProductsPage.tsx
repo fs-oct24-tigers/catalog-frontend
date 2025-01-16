@@ -1,19 +1,17 @@
-import { get } from '@/api/fetchProducts';
-import ProductCard from '@/components/product/ProductCard';
-import ProductGrid from '@/components/product/ProductGrid';
-import { Product } from '@/types';
-import { useQuery } from '@tanstack/react-query';
 import { FC } from 'react';
+import { useDispatch } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
+import usePagedQuery from '@/hooks/usePagedQuery';
+import ProductCard from '@/components/Product/ProductCard';
+import ProductGrid from '@/components/Product/ProductGrid';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import ProductCounter from '@/components/ProductCounter/ProductCounter';
 import PagesQuantitySelect from '@/components/PagesQuantitySelect';
-import { useDispatch } from 'react-redux';
 import { useAppSelector } from '@/app/hooks';
 import { changePerPage } from '@/features/perPage';
 import SortingSelect from '@/components/SortingSelect';
 import { sortProducts } from '@/utils/sortProducts';
-import { useSearchParams } from 'react-router-dom';
 import Pagination from '@/components/Pagination';
 
 type Props = {
@@ -28,30 +26,22 @@ const ProductsPage: FC<Props> = ({ category }) => {
   const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get('page')) || 1;
 
-  type QueryData = {
-    products: Product[];
-    totalCount: number;
-  };
-  const { data, isLoading, isError, error } = useQuery<QueryData>({
-    queryKey: [category, currentPage - 1, perPage, currentSort],
-    queryFn: async () => {
-      const response = await get(
-        `/api/${category}.json`,
-        currentPage - 1,
-        +perPage,
-      ); // Adjust for 0-based index
-      return {
-        products: response.products,
-        totalCount: response.totalCount,
-      };
-    },
+  const { products, totalCount, isLoading, isError } = usePagedQuery({
+    category,
+    currentPage,
+    perPage,
+    currentSort,
   });
-
-  const { products, totalCount } = data || { products: [], totalCount: 0 };
 
   const handlePerPageChange = (perPage: number) => {
     dispatch(changePerPage(perPage));
     setSearchParams({ page: '1', perPage: perPage.toString() });
+  };
+  const handlePageChange = ({ selected }: { selected: number }) => {
+    setSearchParams({
+      page: (selected + 1).toString(),
+      perPage: perPage.toString(),
+    });
   };
 
   if (isLoading) {
@@ -59,17 +49,10 @@ const ProductsPage: FC<Props> = ({ category }) => {
   }
 
   if (isError) {
-    return <div>Error fetching products: {error.message}</div>;
+    return <div>Error fetching products</div>;
   }
 
-  const sortedProducts = products ? sortProducts(products, currentSort) : [];
-
-  const handlePageChange = ({ selected }: { selected: number }) => {
-    setSearchParams({
-      page: (selected + 1).toString(),
-      perPage: perPage.toString(),
-    }); // ReactPaginate uses 0-based index
-  };
+  const sortedProducts = products && sortProducts(products, currentSort);
 
   return (
     <div className="container">
