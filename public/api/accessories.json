@@ -39,7 +39,8 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2017
   },
   {
     "id": "apple-watch-series-3-42mm-space-gray",
@@ -81,7 +82,8 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2017
   },
   {
     "id": "apple-watch-series-3-38mm-gold",
@@ -123,7 +125,8 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2017
   },
   {
     "id": "apple-watch-series-3-42mm-gold",
@@ -165,7 +168,8 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2017
   },
   {
     "id": "apple-watch-series-3-38mm-silver",
@@ -207,7 +211,8 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2017
   },
   {
     "id": "apple-watch-series-3-42mm-silver",
@@ -249,7 +254,8 @@
     "resolution": "272x340",
     "processor": "Apple S3",
     "ram": "768MB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2017
   },
   {
     "id": "apple-watch-series-6-40mm-space-gray",
@@ -291,7 +297,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-44mm-space-gray",
@@ -333,7 +340,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-40mm-silver",
@@ -375,7 +383,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-44mm-silver",
@@ -417,7 +426,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-40mm-gold",
@@ -459,7 +469,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-44mm-gold",
@@ -501,7 +512,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-40mm-blue",
@@ -543,7 +555,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-44mm-blue",
@@ -585,7 +598,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-40mm-red",
@@ -627,7 +641,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-6-44mm-red",
@@ -669,7 +684,8 @@
     "resolution": "324x394",
     "processor": "Apple S6",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-series-5-40mm-silver",
@@ -711,7 +727,8 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-5-44mm-silver",
@@ -753,7 +770,8 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-5-40mm-gold",
@@ -795,7 +813,8 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-5-44mm-gold",
@@ -837,7 +856,8 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-5-40mm-space-gray",
@@ -879,7 +899,8 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-5-44mm-space-gray",
@@ -921,7 +942,8 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-4-40mm-silver",
@@ -963,7 +985,8 @@
     "resolution": "324x394",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-4-44mm-silver",
@@ -1005,7 +1028,8 @@
     "resolution": "368x448",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-4-40mm-gold",
@@ -1047,7 +1071,8 @@
     "resolution": "324x394",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-4-44mm-gold",
@@ -1089,7 +1114,8 @@
     "resolution": "368x448",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-4-40mm-space-gray",
@@ -1131,7 +1157,8 @@
     "resolution": "324x394",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-series-4-44mm-space-gray",
@@ -1173,7 +1200,8 @@
     "resolution": "368x448",
     "processor": "Apple S4",
     "ram": "0.75GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2019
   },
   {
     "id": "apple-watch-se-40mm-silver",
@@ -1215,7 +1243,8 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-se-44mm-silver",
@@ -1257,7 +1286,8 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-se-40mm-gold",
@@ -1299,7 +1329,8 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-se-44mm-gold",
@@ -1341,7 +1372,8 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-se-40mm-space-gray",
@@ -1383,7 +1415,8 @@
     "resolution": "324x394",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-watch-se-44mm-space-gray",
@@ -1425,6 +1458,7 @@
     "resolution": "368x448",
     "processor": "Apple S5",
     "ram": "1GB",
-    "cell": ["Wi-Fi", "Bluetooth", "LTE"]
+    "cell": ["Wi-Fi", "Bluetooth", "LTE"],
+    "year": 2020
   }
 ]

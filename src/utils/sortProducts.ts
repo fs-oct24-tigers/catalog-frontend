@@ -14,6 +14,12 @@ export const sortProducts = (products: Product[], sortType: SortType) => {
     case 'alphabetically':
       return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
 
+    case 'newest':
+      return sortedProducts.sort((a, b) => b.year - a.year);
+
+    case 'oldest':
+      return sortedProducts.sort((a, b) => a.year - b.year);
+
     default:
       return sortedProducts;
   }
