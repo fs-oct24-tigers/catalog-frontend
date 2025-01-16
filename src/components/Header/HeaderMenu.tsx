@@ -19,13 +19,17 @@ export const HeaderMenu: React.FC<Props> = ({ handleCloseMenu }) => {
   return (
     <menu className="h-screen relative z-20 bg-bodyBg">
       {navLinks.map(({ name, pathName }) => (
-        <div className="flex justify-center py-4 " key={name}>
+        <div className=" flex justify-center py-4 " key={name}>
           <NavLink
             onClick={handleCloseMenu}
             to={pathName}
-            className={cn('text-textGray hover:text-textWhite', {
-              'text-textWhite': location.pathname === pathName,
-            })}
+            className={cn(
+              'relative text-textGray hover:text-textWhite leading-[55px]',
+              {
+                'text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite':
+                  location.pathname.includes(pathName),
+              },
+            )}
           >
             {name}
           </NavLink>
