@@ -55,7 +55,7 @@ export const PageGallery = ({ images }: PageGalleryProps) => {
 
   return (
     <>
-      <div className="flex flex-col sm:flex-row">
+      <div className="flex flex-col sm:flex-row justify-center items-center">
         <div className="hidden sm:flex flex-col gap-2 lg:gap-4 max-h-[464px] overflow-y-auto">
           {images.map((image, index) => (
             <Thumbnail

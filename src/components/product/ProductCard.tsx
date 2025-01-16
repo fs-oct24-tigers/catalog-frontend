@@ -20,7 +20,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
   const hasDiscount = true;
 
   return (
-    <Card className="w-[272px] flex flex-col space-y-2 p-8">
+    <Card className="w-full max-w-[272px] flex flex-col space-y-2 p-8 shadow-md self-center justify-center items-center h-full">
       <CardHeader className="flex flex-col items-center space-y-2 m-0 p-0">
         <CardTitle className="flex justify-center items-center m-0 p-0">
           <div className="w-[208px] h-[196px]">

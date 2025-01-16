@@ -53,11 +53,11 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         <BackButton />
         <HeaderTitle mainText={product.name} className="text-h3 sm:text-h2" />
       </div>
-      <div className="flex flex-col lg:flex-row lg:gap-x-16 gap-y-16">
+      <div className="flex flex-col sm:flex-row lg:gap-x-16 gap-y-16 justify-center ">
         <div className="w-full lg:w-[560px] md:w-[592px] sm:w-[287px]">
           <PageGallery images={product.images} />
         </div>
-        <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[512px]">
+        <div className="w-full sm:w-[287px] md:w-[592px] lg:w-[512px] justify-center items-center">
           <ProductOptions
             category={category}
             product={product}
