@@ -71,3 +71,11 @@ export type Color =
   | 'sierrablue'
   | 'starlight'
   | 'skyblue';
+
+export type Category = {
+  id: number;
+  title: string;
+  count: number;
+  image: string;
+  path: string;
+};

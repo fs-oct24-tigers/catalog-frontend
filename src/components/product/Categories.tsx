@@ -1,32 +1,25 @@
 import { CategoryCard } from './CategoryCard';
-
-export type Category = {
-  id: number;
-  title: string;
-  models: string;
-  image: string;
-  path: string;
-};
+import { Category } from '@/types';
 
 const categories: Category[] = [
   {
     id: 1,
     title: 'Mobile phones',
-    models: '95 models',
+    count: 95,
     image: '/img/category-phones-new.png',
     path: '/phones',
   },
   {
     id: 2,
     title: 'Tablets',
-    models: '24 models',
+    count: 24,
     image: '/img/category-tablets-new.png',
     path: '/tablets',
   },
   {
     id: 3,
     title: 'Accessories',
-    models: '100 models',
+    count: 100,
     image: '/img/category-accessories-new.png',
     path: '/accessories',
   },
