@@ -10,8 +10,7 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { NotFoundPage } from './components/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
-
-const categories = ['phones', 'tablets', 'accessories'];
+import { categories } from './constants';
 
 const Root = () => {
   return (

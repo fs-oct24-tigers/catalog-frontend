@@ -1,16 +1,68 @@
-import { useState } from 'react';
-import { Search } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { Search, X } from 'lucide-react';
+import useSearchQuery from '@/hooks/useSearchQuery';
+import { categories } from '@/constants';
+import { Link } from 'react-router-dom';
+import { debounce } from 'lodash';
 
 export const SearchProduct = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [inputValue, setInputValue] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+
+  const searchRef = useRef<HTMLDivElement>(null);
 
   const handleSearchToggle = () => {
     setIsSearchOpen(!isSearchOpen);
   };
 
+  const handleSearchClose = () => {
+    setIsSearchOpen(false);
+    setInputValue('');
+    setSearchQuery('');
+  };
+
+  const debouncedSetSearchQuery = useCallback(
+    debounce((query: string) => setSearchQuery(query), 300),
+    [],
+  );
+
+  useEffect(() => {
+    debouncedSetSearchQuery(inputValue);
+    return () => debouncedSetSearchQuery.cancel();
+  }, [inputValue, debouncedSetSearchQuery]);
+
+  const handleSearchQuery = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  };
+
+  const { products } = useSearchQuery({
+    categories,
+    searchQuery,
+  });
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        searchRef.current &&
+        !searchRef.current.contains(event.target as Node)
+      ) {
+        handleSearchClose();
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
   return (
-    <div className="flex flex-row-reverse items-center relative">
+    <div
+      ref={searchRef}
+      className="flex flex-row-reverse items-center relative"
+    >
       <div className="h-16 flex justify-center items-center">
         <button
           onClick={handleSearchToggle}
@@ -21,18 +73,45 @@ export const SearchProduct = () => {
       </div>
 
       {isSearchOpen && (
-        <div className="top-0 right-0 bg-gray-800 w-[300px] shadow-sm rounded-md">
+        <div className="flex items-center top-0 right-0  w-[300px] shadow-sm">
           <input
             type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            value={inputValue}
+            onChange={handleSearchQuery}
             placeholder="Search products..."
-            className="w-full px-4 py-2 text-white bg-bodyBg rounded-md focus:outline-none focus:border-textWhite"
+            className="w-full px-4 py-2 text-white bg-bodyBg focus:outline-none focus:border-textWhite"
           />
+          {!!inputValue.length && (
+            <div className="cursor-pointer" onClick={handleSearchClose}>
+              <X size={20} />
+            </div>
+          )}
         </div>
       )}
-      {searchQuery.length > 3 && (
-        <div className="absolute w-[500px] h-[500px] top-16 bg-gray-800"></div>
+      {inputValue.length > 3 && (
+        <div className="absolute w-[500px] h-[500px] top-16 bg-gray-800 overflow-y-scroll">
+          {products.map((product) => (
+            <Link
+              onClick={handleSearchClose}
+              to={`/${product.category}/${product.id}`}
+              key={product.id}
+              className="flex items-center"
+            >
+              <img
+                src={`/${product.images[0]}`}
+                alt={product.name}
+                className="w-12 h-12"
+              />
+              <p>{product.name}</p>
+            </Link>
+          ))}
+        </div>
+      )}
+
+      {inputValue.length > 2 && products.length === 0 && (
+        <div className="absolute w-[500px] h-[500px] top-16 bg-gray-800">
+          <p>No products found</p>
+        </div>
       )}
     </div>
   );
