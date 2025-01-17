@@ -79,7 +79,7 @@ export default {
         uppercase: ['12px', { lineHeight: '11px', letterSpacing: '0.04em' }],
       },
       maxWidth: {
-        xl: '1136px',
+        xl: '1200px',
       },
       container: {
         center: true,
@@ -87,7 +87,7 @@ export default {
           'sm': '600px',
           'md': '700px',
           'lg': '900px',
-          'xl': '1136px',
+          'xl': '1200px',
           '2xl': '1400px',
         },
       },

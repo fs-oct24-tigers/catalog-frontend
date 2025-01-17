@@ -30,9 +30,9 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
 
   return (
     <div className="w-full mb-24 overflow-hidden">
-      <div className="max-w-7xl mx-auto ml-4">
+      <div className="max-w-7xl mx-auto">
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-white text-3xl font-bold">{title}</h2>
+          <h2 className="text-h3 sm:text-h2 font-extrabold">{title}</h2>
           <div className="flex gap-2">
             <Button
               variant="outline"
