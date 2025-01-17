@@ -17,6 +17,7 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { clearCart } from '@/features/cart';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '@/css/index.css';
 
 interface PurchaseModalProps {
   open: boolean;
@@ -32,8 +33,9 @@ const toastConfig = {
   draggable: true,
   progress: undefined,
   style: {
-    backgroundColor: '#111827',
+    backgroundColor: '#161827',
   },
+  className: 'custom-toast',
 };
 
 export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {

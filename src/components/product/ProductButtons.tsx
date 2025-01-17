@@ -33,8 +33,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-in-cart',
       });
       return;
@@ -50,8 +51,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-removed-favorites',
       });
     } else {
@@ -64,8 +66,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-added-cart',
       });
     }
@@ -88,8 +91,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
       });
     } else {
       toast.success('Product added to favorites!', {
@@ -101,8 +105,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
       });
     }
   };
