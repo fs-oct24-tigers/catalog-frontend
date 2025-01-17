@@ -29,7 +29,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
   const handlePrev = () => swiperRef.current?.slidePrev();
 
   return (
-    <div className="w-full mb-20 overflow-hidden">
+<div className="w-full mb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto ml-4">
         <div className="flex justify-between items-center mb-8">
           <h2 className="text-h3 sm:text-h2 font-extrabold text-textWhite mb-6">

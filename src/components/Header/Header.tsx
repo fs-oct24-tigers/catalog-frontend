@@ -7,6 +7,7 @@ import { HeaderCartButton } from './HeaderCartButton';
 import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
+import { SearchProduct } from './SearchProduct';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -73,7 +74,11 @@ const Header: React.FC = () => {
             </div>
           ))}
         </div>
+
         <div className="flex">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+            <SearchProduct />
+          </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
