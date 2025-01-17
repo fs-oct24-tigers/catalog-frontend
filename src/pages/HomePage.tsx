@@ -1,6 +1,6 @@
-import BannerSwiper from '@/components/BannerSwiper/BannerSwiper';
+import BannerSwiper from '@/components/Sliders/BannerSwiper';
 import { Categories } from '@/components/product/Categories';
-import PhonesSlider from '@/components/PhonesSlider/PhonesSlider';
+import PhonesSlider from '@/components/Sliders/ProductsSlider';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 
 const HomePage = () => {
@@ -16,7 +16,7 @@ const HomePage = () => {
       <PhonesSlider
         title="Brand new models"
         apiEndpoint="/api/accessories.json"
-        filterType="newModels"
+        filterType="hotPrices"
       />
       <Categories />
       <PhonesSlider

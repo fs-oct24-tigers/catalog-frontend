@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Main: React.FC<Props> = ({ children }) => {
-  return <main className="max-w-xl mx-auto relative">{children}</main>;
+  return <main className="max-w-xl mx-auto relative px-4">{children}</main>;
 };
 
 export default Main;

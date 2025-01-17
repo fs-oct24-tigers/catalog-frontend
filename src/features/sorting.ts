@@ -1,8 +1,13 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-export type SortType = 'alphabetically' | 'cheapest' | 'expensive';
+export type SortType =
+  | 'alphabetically'
+  | 'cheapest'
+  | 'expensive'
+  | 'newest'
+  | 'oldest';
 
-const initialState: SortType = 'expensive';
+const initialState: SortType = 'newest' as SortType;
 
 export const sortingSlice = createSlice({
   name: 'sorting',

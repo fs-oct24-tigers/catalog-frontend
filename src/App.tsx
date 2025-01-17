@@ -2,6 +2,8 @@ import { Outlet } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import Main from './components/Main';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   return (
@@ -11,6 +13,7 @@ export const App = () => {
         <Outlet />
       </Main>
       <Footer />
+      <ToastContainer />
     </div>
   );
 };

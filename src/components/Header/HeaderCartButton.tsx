@@ -1,12 +1,14 @@
 import { useAppSelector } from '@/app/hooks';
 import { ShoppingBag } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
+import cn from 'classnames';
 
 type Props = {
   handleCloseMenu: () => void;
 };
 
 export const HeaderCartButton: React.FC<Props> = ({ handleCloseMenu }) => {
+  const location = useLocation();
   const cartProducts = useAppSelector((state) => state.cart);
 
   const totalItems = cartProducts.reduce(
@@ -18,7 +20,11 @@ export const HeaderCartButton: React.FC<Props> = ({ handleCloseMenu }) => {
     <NavLink
       onClick={handleCloseMenu}
       to="/cart"
-      className="flex grow justify-center"
+      className={cn(
+        'relative flex grow justify-center',
+        location.pathname === '/cart' &&
+          "after:content-[''] after:absolute after:block after:bottom-[2px] after:w-full after:h-[2px] after:bg-textWhite",
+      )}
     >
       <div className="flex items-center justify-center w-16 h-16 hover:bg-lineGray grow border-r border-gray-700">
         <div className="relative">

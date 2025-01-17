@@ -23,7 +23,7 @@ export type Product = {
   camera?: string;
   zoom?: string;
   cell?: string[];
-  year?: number;
+  year: number;
 };
 
 export interface ApiPhone {
@@ -42,6 +42,12 @@ export interface ApiPhone {
   year?: number;
   images?: string[];
   image?: string;
+}
+
+export interface PhonesSliderProps {
+  title: string;
+  apiEndpoint: string;
+  filterType?: 'newModels' | 'hotPrices';
 }
 
 export type Color =

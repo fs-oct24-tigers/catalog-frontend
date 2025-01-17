@@ -100,3 +100,9 @@
 html {
   font-family: 'Mont', sans-serif;
 }
+
+.gradient-text {
+  background: -webkit-linear-gradient(150deg, #eb2a2a, #6519a0);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

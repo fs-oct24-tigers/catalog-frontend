@@ -44,9 +44,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-128gb-green",
     "category": "phones",
@@ -92,9 +92,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-128gb-purple",
     "category": "phones",
@@ -140,9 +140,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-128gb-red",
     "category": "phones",
@@ -188,9 +188,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-128gb-white",
     "category": "phones",
@@ -236,9 +236,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-128gb-yellow",
     "category": "phones",
@@ -284,9 +284,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-256gb-black",
     "category": "phones",
@@ -332,9 +332,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-256gb-green",
     "category": "phones",
@@ -380,9 +380,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-256gb-purple",
     "category": "phones",
@@ -428,9 +428,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-256gb-red",
     "category": "phones",
@@ -476,9 +476,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-256gb-white",
     "category": "phones",
@@ -524,9 +524,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-256gb-yellow",
     "category": "phones",
@@ -572,9 +572,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-64gb-black",
     "category": "phones",
@@ -620,9 +620,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-64gb-green",
     "category": "phones",
@@ -668,9 +668,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-64gb-purple",
     "category": "phones",
@@ -716,9 +716,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-64gb-red",
     "category": "phones",
@@ -764,9 +764,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-64gb-white",
     "category": "phones",
@@ -812,9 +812,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-64gb-yellow",
     "category": "phones",
@@ -860,9 +860,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-256gb-gold",
     "category": "phones",
@@ -906,9 +906,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-256gb-midnightgreen",
     "category": "phones",
@@ -953,9 +953,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-256gb-silver",
     "category": "phones",
@@ -999,9 +999,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-256gb-spacegray",
     "category": "phones",
@@ -1045,9 +1045,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-512gb-gold",
     "category": "phones",
@@ -1091,9 +1091,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-512gb-midnightgreen",
     "category": "phones",
@@ -1138,9 +1138,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-512gb-silver",
     "category": "phones",
@@ -1184,9 +1184,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-512gb-spacegray",
     "category": "phones",
@@ -1230,9 +1230,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-64gb-gold",
     "category": "phones",
@@ -1276,9 +1276,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-64gb-midnightgreen",
     "category": "phones",
@@ -1323,9 +1323,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-64gb-silver",
     "category": "phones",
@@ -1369,9 +1369,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-64gb-spacegray",
     "category": "phones",
@@ -1415,9 +1415,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-256gb-gold",
     "category": "phones",
@@ -1461,9 +1461,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-256gb-midnightgreen",
     "category": "phones",
@@ -1507,9 +1507,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-256gb-silver",
     "category": "phones",
@@ -1553,9 +1553,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-256gb-spacegray",
     "category": "phones",
@@ -1599,9 +1599,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-512gb-gold",
     "category": "phones",
@@ -1645,9 +1645,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-512gb-midnightgreen",
     "category": "phones",
@@ -1691,9 +1691,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-512gb-silver",
     "category": "phones",
@@ -1737,9 +1737,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-512gb-spacegray",
     "category": "phones",
@@ -1783,9 +1783,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-64gb-gold",
     "category": "phones",
@@ -1829,9 +1829,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-64gb-midnightgreen",
     "category": "phones",
@@ -1875,9 +1875,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-64gb-silver",
     "category": "phones",
@@ -1921,9 +1921,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-11-pro-max-64gb-spacegray",
     "category": "phones",
@@ -1967,9 +1967,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2019
   },
-
   {
     "id": "apple-iphone-7-32gb-black",
     "category": "phones",
@@ -2015,9 +2015,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-32gb-gold",
     "category": "phones",
@@ -2063,9 +2063,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-32gb-rosegold",
     "category": "phones",
@@ -2111,9 +2111,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-32gb-silver",
     "category": "phones",
@@ -2159,9 +2159,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-plus-32gb-black",
     "category": "phones",
@@ -2207,9 +2207,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-plus-32gb-gold",
     "category": "phones",
@@ -2255,9 +2255,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-plus-32gb-rosegold",
     "category": "phones",
@@ -2303,9 +2303,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-7-plus-32gb-silver",
     "category": "phones",
@@ -2351,9 +2351,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2016
   },
-
   {
     "id": "apple-iphone-8-64gb-gold",
     "category": "phones",
@@ -2398,9 +2398,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2017
   },
-
   {
     "id": "apple-iphone-8-64gb-silver",
     "category": "phones",
@@ -2445,9 +2445,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2017
   },
-
   {
     "id": "apple-iphone-8-64gb-spacegray",
     "category": "phones",
@@ -2492,9 +2492,9 @@
     "ram": "2GB",
     "camera": "12 Mp + 7 Mp",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2017
   },
-
   {
     "id": "apple-iphone-xr-128gb-coral",
     "category": "phones",
@@ -2540,9 +2540,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-128gb-red",
     "category": "phones",
@@ -2588,9 +2588,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-128gb-white",
     "category": "phones",
@@ -2636,9 +2636,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-128gb-yellow",
     "category": "phones",
@@ -2684,9 +2684,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-64gb-coral",
     "category": "phones",
@@ -2730,9 +2730,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-64gb-red",
     "category": "phones",
@@ -2778,9 +2778,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-64gb-white",
     "category": "phones",
@@ -2826,9 +2826,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xr-64gb-yellow",
     "category": "phones",
@@ -2874,9 +2874,9 @@
     "ram": "3GB",
     "camera": "12 Mp + 7 MP",
     "zoom": "Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-256gb-gold",
     "category": "phones",
@@ -2922,9 +2922,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-256gb-spacegray",
     "category": "phones",
@@ -2970,9 +2970,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-64gb-gold",
     "category": "phones",
@@ -3018,9 +3018,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-64gb-spacegray",
     "category": "phones",
@@ -3066,9 +3066,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-max-256gb-gold",
     "category": "phones",
@@ -3114,9 +3114,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 7MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-max-256gb-silver",
     "category": "phones",
@@ -3162,9 +3162,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 7MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-max-256gb-spacegray",
     "category": "phones",
@@ -3210,9 +3210,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 7MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-max-64gb-gold",
     "category": "phones",
@@ -3258,9 +3258,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 7MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-max-64gb-silver",
     "category": "phones",
@@ -3306,9 +3306,9 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 7MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
-
   {
     "id": "apple-iphone-xs-max-64gb-spacegray",
     "category": "phones",
@@ -3354,7 +3354,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp + 7MP",
     "zoom": "Digital, 10x / Optical, 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2018
   },
   {
     "id": "apple-iphone-14-128gb-midnight",
@@ -3401,7 +3402,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-256gb-midnight",
@@ -3448,7 +3450,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-512gb-midnight",
@@ -3495,7 +3498,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-128gb-yellow",
@@ -3542,7 +3546,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-256gb-yellow",
@@ -3589,7 +3594,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-512gb-yellow",
@@ -3636,7 +3642,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-128gb-purple",
@@ -3683,7 +3690,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-256gb-purple",
@@ -3730,7 +3738,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-512gb-purple",
@@ -3777,7 +3786,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-128gb-spaceblack",
@@ -3824,7 +3834,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-256gb-spaceblack",
@@ -3871,7 +3882,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-512gb-spaceblack",
@@ -3918,7 +3930,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-1tb-spaceblack",
@@ -3965,7 +3978,8 @@
     "ram": "6GB",
     "camera": "48 Mp + 12 Mp + 12MP + 12Mp",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-12-64gb-black",
@@ -4010,7 +4024,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-128gb-black",
@@ -4055,7 +4070,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-256gb-black",
@@ -4100,7 +4116,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-64gb-purple",
@@ -4145,7 +4162,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-128gb-purple",
@@ -4190,7 +4208,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-256gb-purple",
@@ -4235,7 +4254,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-64gb-red",
@@ -4280,7 +4300,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-128gb-red",
@@ -4325,7 +4346,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-256gb-red",
@@ -4370,7 +4392,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-64gb-white",
@@ -4415,7 +4438,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-128gb-white",
@@ -4460,7 +4484,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-12-256gb-white",
@@ -4505,7 +4530,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-64gb-midnight",
@@ -4550,7 +4576,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-128gb-midnight",
@@ -4595,7 +4622,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-256gb-midnight",
@@ -4640,7 +4668,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-64gb-pink",
@@ -4685,7 +4714,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-128gb-pink",
@@ -4730,7 +4760,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-256gb-pink",
@@ -4775,7 +4806,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-64gb-white",
@@ -4820,7 +4852,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-128gb-white",
@@ -4865,7 +4898,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-256gb-white",
@@ -4910,7 +4944,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-64gb-blue",
@@ -4955,7 +4990,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-128gb-blue",
@@ -5000,7 +5036,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-mini-256gb-blue",
@@ -5045,7 +5082,8 @@
     "ram": "4GB",
     "camera": "12 Mp + 12 Mp",
     "zoom": "Optical, 2x; Digital, 5x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2020
   },
   {
     "id": "apple-iphone-13-pro-max-128gb-sierrablue",
@@ -5096,7 +5134,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-256gb-sierrablue",
@@ -5147,7 +5186,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-512gb-sierrablue",
@@ -5198,7 +5238,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-1tb-sierrablue",
@@ -5244,7 +5285,8 @@
     "ram": "6GB",
     "camera": "48 Mp + 12 Mp + 12MP + 12Mp",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-128gb-graphite",
@@ -5295,7 +5337,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-256gb-graphite",
@@ -5346,7 +5389,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-512gb-graphite",
@@ -5397,7 +5441,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-1tb-graphite",
@@ -5443,7 +5488,8 @@
     "ram": "6GB",
     "camera": "48 Mp + 12 Mp + 12MP + 12Mp",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-128gb-gold",
@@ -5494,7 +5540,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-256gb-gold",
@@ -5545,7 +5592,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-512gb-gold",
@@ -5596,7 +5644,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12 Mp",
     "zoom": "Optical, 3x; Digital, up to 15x",
-    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"]
+    "cell": ["GSM", "CDMA", "HSPA", "EVDO", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-13-pro-max-1tb-gold",
@@ -5642,7 +5691,8 @@
     "ram": "6GB",
     "camera": "48 Mp + 12 Mp + 12MP + 12Mp",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-128gb-gold",
@@ -5689,7 +5739,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-256gb-gold",
@@ -5736,7 +5787,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-512gb-gold",
@@ -5783,7 +5835,8 @@
     "ram": "6GB",
     "camera": "12 Mp + 12 Mp + 12MP",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   },
   {
     "id": "apple-iphone-14-pro-1tb-gold",
@@ -5830,6 +5883,7 @@
     "ram": "6GB",
     "camera": "48 Mp + 12 Mp + 12MP + 12Mp",
     "zoom": "Digital 5x, Optical 2x",
-    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"]
+    "cell": ["GPRS", "EDGE", "WCDMA", "UMTS", "HSPA", "LTE", "5G"],
+    "year": 2022
   }
 ]
