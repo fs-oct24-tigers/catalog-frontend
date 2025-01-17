@@ -106,3 +106,35 @@ html {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+@media (max-width: 600px) {
+  .swiper-slide .flex-row {
+    flex-direction: column;
+  }
+
+  .swiper-slide .flex-row > div:first-child {
+    display: none;
+  }
+
+  .swiper-slide .flex-row > div:last-child {
+    width: 100%;
+    align-items: center;
+  }
+
+  .swiper-slide .flex-row > div:last-child img {
+    align-self: center;
+  }
+
+  .swiper-container {
+    margin: 0;
+  }
+
+  .swiper-container .swiper-slide {
+    padding: 0;
+  }
+
+  .swiper-container .swiper-slide img {
+    width: 100%;
+    height: auto;
+  }
+}

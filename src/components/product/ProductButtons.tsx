@@ -40,7 +40,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     }
     dispatch(addToCart(product));
     if (isInFavorites) {
-      toast.info('Product removed from favorites!', {
+      toast.info('Product added to cart!', {
         position: 'top-right',
         autoClose: 3000,
         hideProgressBar: false,
