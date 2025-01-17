@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   return (
-    <div data-cy="app" className="flex flex-col min-h-screen">
+    <div data-cy="app">
       <Header />
       <Main>
         <Outlet />
