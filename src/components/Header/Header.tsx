@@ -48,13 +48,11 @@ const Header: React.FC = () => {
         role="navigation"
         aria-label="main navigation"
       >
-        <div className="flex items-center gap-[64px] ">
+        <div className="flex items-center gap-[60px] ">
           <Logo handleCloseMenu={handleCloseMenu} />
           {navLinks.map(({ name, pathName }) => (
             <div
-              className={cn(
-                'relative size-max h-16 flex items-center hidden sm:flex',
-              )}
+              className={cn('relative h-16 flex items-center hidden md:flex')}
               key={name}
             >
               <Link
@@ -74,17 +72,17 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden md:flex border-l border-gray-700">
             <SearchProduct />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden md:flex border-l border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex">
+          <div className="h-16 flex justify-between items-center hidden md:flex">
             <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
 
-          <div className="flex sm:hidden" onClick={handleMenu}>
+          <div className="flex md:hidden" onClick={handleMenu}>
             {!isMenuOpen ?
               <HeaderMenuButton />
             : <HeaderCloseButton />}
