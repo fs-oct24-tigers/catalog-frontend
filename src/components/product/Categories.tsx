@@ -28,7 +28,7 @@ const categories: Category[] = [
 export const Categories: React.FC = () => {
   return (
     <section className="mb-14 sm:mb-16 xl:mb-20">
-      <div className="container mx-auto px-4 sm:px-0 flex flex-col items-center">
+      <div className="container mx-auto sm:px-0 flex flex-col items-center">
         <div className="w-fit">
           <h2 className="text-h3 sm:text-h2 font-extrabold text-textWhite mb-6">
             Shop by Category

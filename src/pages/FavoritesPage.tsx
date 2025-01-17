@@ -8,7 +8,6 @@ const FavoritesPage = () => {
   const favoritesIsEmpty = favoriteProducts.length === 0;
 
   return (
-
     <div className="container">
       <Breadcrumbs category="Favourites" />
 
@@ -43,7 +42,6 @@ const FavoritesPage = () => {
           </div>
         </>
       }
-
     </div>
   );
 };

@@ -1,4 +1,3 @@
-
 import { useAppSelector } from '@/app/hooks';
 import { CartEmpty } from '@/components/Cart/CartEmpty';
 import { BackButton } from '@/components/BackButton/BackButton';
@@ -10,7 +9,7 @@ import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 const CartPage = () => {
   const cartProducts = useAppSelector((state) => state.cart);
   const cartIsEmpty = cartProducts.length === 0;
-  
+
   return (
     <>
       {cartIsEmpty ?
