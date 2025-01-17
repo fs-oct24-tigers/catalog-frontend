@@ -46,3 +46,5 @@ export const getProperties = (product: Product) => {
     { name: 'RAM', value: product.ram },
   ];
 };
+
+export const categories = ['phones', 'tablets', 'accessories'];
