@@ -22,6 +22,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   );
   const dispatch = useDispatch();
   const handleAddToCart = () => {
+    toast.dismiss();
     if (isInCart) {
       toast.info('Product is already in the cart!', {
         position: 'top-right',
@@ -75,6 +76,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   );
 
   const handleToggleFavorites = () => {
+    toast.dismiss();
     dispatch(toggleFavorite(product));
     if (isInFavorites) {
       toast.info('Product removed from favorites!', {

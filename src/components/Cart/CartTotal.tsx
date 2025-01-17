@@ -34,6 +34,7 @@ const CartTotal: React.FC = () => {
   );
 
   const handleCheckout = () => {
+    toast.dismiss();
     if (totalItems === 0) {
       toast.error('Your cart is empty!', {
         ...toastConfig,
