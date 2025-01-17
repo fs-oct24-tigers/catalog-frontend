@@ -7,12 +7,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 export const App = () => {
   return (
-    <div data-cy="app">
+    <div data-cy="app" className="flex flex-col min-h-screen">
       <Header />
       <Main>
         <Outlet />
       </Main>
-      <Footer />
+      <Footer className="mt-auto" />
       <ToastContainer />
     </div>
   );

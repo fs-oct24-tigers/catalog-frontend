@@ -4,13 +4,19 @@ import { Link } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
 import '@/css/index.css';
 
-const Footer: React.FC = () => {
+interface FooterProps {
+  className?: string;
+}
+
+const Footer: React.FC<FooterProps> = ({ className }) => {
   const scrollToTop = () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   return (
-    <footer className="mt-32 border-t border-gray-700 py-8 px-4 md:flex md:justify-between md:items-center sm:px-4 md:px-8 lg:px-[32px] 2xl:px-[152px]">
+    <footer
+      className={`border-t border-gray-700 py-8 px-4 md:flex md:justify-between md:items-center sm:px-4 md:px-8 lg:px-[32px] 2xl:px-[152px] ${className}`}
+    >
       <Link to="/" className="md:ml-24">
         <img src={logo} alt="logo" className="h-8" />
       </Link>
