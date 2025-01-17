@@ -7,6 +7,7 @@ import { HeaderCartButton } from './HeaderCartButton';
 import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
+import { Search } from 'lucide-react';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -16,6 +17,8 @@ const navLinks = [
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchProduct, setSearchProduct] = useState('');
 
   const location = useLocation();
 
@@ -25,6 +28,10 @@ const Header: React.FC = () => {
 
   const handleCloseMenu = () => {
     setIsMenuOpen(false);
+  };
+
+  const handleSearchToggle = () => {
+    setIsSearchOpen(!isSearchOpen);
   };
 
   useEffect(() => {
@@ -65,18 +72,41 @@ const Header: React.FC = () => {
             </div>
           ))}
         </div>
-        <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
-            <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
-          </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex">
-            <HeaderCartButton handleCloseMenu={handleCloseMenu} />
+
+        <div className="flex items-center">
+          <div className="h-16 flex justify-center items-center">
+            <button
+              onClick={handleSearchToggle}
+              className="flex items-center justify-center w-16 h-16 hover:bg-lineGray border-r border-gray-700"
+            >
+              <Search size={20} />
+            </button>
           </div>
 
-          <div className="flex sm:hidden" onClick={handleMenu}>
-            {!isMenuOpen ?
-              <HeaderMenuButton />
-            : <HeaderCloseButton />}
+          {isSearchOpen && (
+            <div className="absolute top-16 right-0 bg-gray-800 p-1 w-full sm:max-w-[300px] shadow-sm rounded-md">
+              <input
+                type="text"
+                value={searchProduct}
+                onChange={(e) => setSearchProduct(e.target.value)}
+                placeholder="Search products..."
+                className="w-full px-4 py-2 text-white bg-gray-900 rounded-md focus:outline-none focus:border-textWhite"
+              />
+            </div>
+          )}
+          <div className="flex">
+            <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+              <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
+            </div>
+            <div className="h-16 flex justify-between items-center hidden sm:flex">
+              <HeaderCartButton handleCloseMenu={handleCloseMenu} />
+            </div>
+
+            <div className="flex sm:hidden" onClick={handleMenu}>
+              {!isMenuOpen ?
+                <HeaderMenuButton />
+              : <HeaderCloseButton />}
+            </div>
           </div>
         </div>
       </nav>
