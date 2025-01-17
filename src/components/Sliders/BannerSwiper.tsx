@@ -19,13 +19,11 @@ const BannerSwiper: React.FC = () => {
       url: '/img/banner-accessories.png',
       alt: 'Latest smartphones displayed on wooden surface',
       link: '/accessories',
-      buttonText: 'ORDER NOW',
     },
     {
       url: '/img/banner-tablets.png',
       alt: 'Modern tablets and digital devices',
       link: '/tablets',
-      buttonText: 'ORDER NOW',
     },
   ];
 
@@ -42,20 +40,6 @@ const BannerSwiper: React.FC = () => {
       },
       slidesPerView: 1,
       spaceBetween: 10,
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
-        },
-        768: {
-          slidesPerView: 1,
-          spaceBetween: 30,
-        },
-        1024: {
-          slidesPerView: 1,
-          spaceBetween: 40,
-        },
-      },
       on: {
         slideChange: (swiper) => {
           setActiveIndex(swiper.realIndex);
@@ -106,11 +90,11 @@ const BannerSwiper: React.FC = () => {
 
   return (
     <div className="w-full mb-24">
-      <div className="flex justify-center py-8 md:block">
+      <div className="flex justify-center py-8">
         <div className="w-full max-w-7xl mx-auto">
           <div className="relative flex items-center justify-center gap-4 h-full">
             <button
-              className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-gray-800 border-gray-800 hover:bg-gray-700 hover:border-gray-700"
+              className="items-center justify-center cursor-pointer w-8 bg-icons border-2 bg-gray-800 border-gray-800 hover:bg-gray-700 hover:border-gray-700 hidden sm:flex"
               style={{ height: chevronHeight }}
               onClick={goToPrevSlide}
               aria-label="Previous slide"
@@ -129,24 +113,24 @@ const BannerSwiper: React.FC = () => {
                     key={index}
                   >
                     {index === 0 ?
-                      <div className="flex flex-col md:flex-row h-[300px] sm:h-[400px] lg:h-[400px]">
-                        <div className="hidden md:flex w-full md:w-[450px] flex-shrink-1 relative flex flex-col items-center justify-between h-full ml-6 py-4 md:py-4">
+                      <div className="flex flex-row h-[400px] justify-between">
+                        <div className="flex w-[40%] max-w-[450px] flex-shrink-1 relative flex-col items-center justify-between h-full ml-6 py-4 sm:flex">
                           <div className="w-full h-full bg-gray-800 rounded-3xl p-8 flex flex-col justify-between">
                             <div className="text-left">
-                              <p className="text-purple-500 text-2xl md:text-4xl font-bold mb-2">
+                              <p className="text-purple-500 text-4xl font-bold mb-2">
                                 Now available
                               </p>
-                              <p className="text-purple-500 text-xl md:text-3xl font-bold mb-6">
+                              <p className="text-purple-500 text-3xl font-bold mb-6">
                                 in our store! 👌
                               </p>
-                              <p className="text-gray-400 text-sm md:text-l mb-6">
+                              <p className="text-gray-400 text-l mb-6">
                                 Be the first!
                               </p>
                             </div>
-                            <div className="absolute bottom-14 left-10 text-center">
+                            <div className="absolute bottom-14 text-center">
                               <Link
                                 to={image.link}
-                                className="inline-block bg-transparent border-[1.5px] border-gray-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-gray-700 hover:border-gray-700 font-semibold"
+                                className="inline-block bg-transparent border-[1.5px] border-gray-600 text-white px-6 py-2 rounded-full hover:bg-gray-700 hover:border-gray-700 font-semibold"
                               >
                                 {image.buttonText}
                               </Link>
@@ -154,36 +138,32 @@ const BannerSwiper: React.FC = () => {
                           </div>
                         </div>
 
-                        <div className="w-full md:w-1/2 flex-shrink-1 relative flex flex-col items-center justify-between h-full md:ml-8 py-4 md:py-8">
+                        <div className="flex w-[60%] max-w-[600px] flex-shrink-1 relative flex-col items-center justify-between h-full py-4 mt-6">
                           <div className="text-center">
                             <h2 className="gradient-text text-4xl font-bold mb-4">
                               iPhone 14 Pro
                             </h2>
-                            <p className="text-gray-400 text-sm md:text-xl">
+                            <p className="text-gray-400 text-xl">
                               Pro. Beyond.
                             </p>
                           </div>
-                          <img
-                            src={image.url || '/placeholder.svg'}
-                            className="w-auto h-auto max-h-full object-contain self-end"
-                            alt={image.alt}
-                          />
-                        </div>
-                      </div>
-                    : <div className="relative h-[300px] sm:h-[400px] lg:h-[400px]">
-                        <img
-                          src={image.url || '/placeholder.svg'}
-                          className="w-full h-full object-cover"
-                          alt={image.alt}
-                        />
-                        <div className="absolute bottom-14 left-10 md:left-20">
-                          <Link
-                            to={image.link}
-                            className="hidden md:flex bg-transparent border-[1.5px] border-gray-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full hover:bg-gray-700 hover:border-gray-700 font-semibold"
-                          >
-                            {image.buttonText}
+                          <Link to={image.link}>
+                            <img
+                              src={image.url}
+                              className="w-full h-auto max-h-[300px] object-contain self-end"
+                              alt={image.alt}
+                            />
                           </Link>
                         </div>
+                      </div>
+                    : <div className="relative h-[400px]">
+                        <Link to={image.link}>
+                          <img
+                            src={image.url}
+                            className="w-full h-full object-cover"
+                            alt={image.alt}
+                          />
+                        </Link>
                       </div>
                     }
                   </div>
@@ -192,7 +172,7 @@ const BannerSwiper: React.FC = () => {
             </div>
 
             <button
-              className="hidden md:flex items-center justify-center cursor-pointer w-8 bg-icons border-1 bg-gray-800 border-gray-800 hover:bg-gray-700 hover:border-gray-700"
+              className="items-center justify-center cursor-pointer w-8 bg-icons border-1 bg-gray-800 border-gray-800 hover:bg-gray-700 hover:border-gray-700 hidden sm:flex"
               style={{ height: chevronHeight }}
               onClick={goToNextSlide}
               aria-label="Next slide"
