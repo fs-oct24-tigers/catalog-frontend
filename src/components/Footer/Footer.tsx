@@ -19,9 +19,9 @@ const Footer: React.FC = () => {
         <a href="#" className="footer-link">
           Github
         </a>
-        <a href="#" className="footer-link">
+        <Link to="/contacts" className="footer-link">
           Contacts
-        </a>
+        </Link>
         <a href="#" className="footer-link">
           Rights
         </a>
