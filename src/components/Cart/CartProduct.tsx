@@ -29,8 +29,9 @@ const CartProduct: React.FC<Props> = ({ product }) => {
       draggable: true,
       progress: undefined,
       style: {
-        backgroundColor: '#111827',
+        backgroundColor: '#161827',
       },
+      className: 'custom-toast',
       toastId: `removed-${product.id}`,
     });
   };

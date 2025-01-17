@@ -22,6 +22,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   );
   const dispatch = useDispatch();
   const handleAddToCart = () => {
+    toast.dismiss();
     if (isInCart) {
       toast.info('Product is already in the cart!', {
         position: 'top-right',
@@ -32,8 +33,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-in-cart',
       });
       return;
@@ -49,8 +51,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-removed-favorites',
       });
     } else {
@@ -63,8 +66,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-added-cart',
       });
     }
@@ -75,6 +79,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   );
 
   const handleToggleFavorites = () => {
+    toast.dismiss();
     dispatch(toggleFavorite(product));
     if (isInFavorites) {
       toast.info('Product removed from favorites!', {
@@ -86,8 +91,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
       });
     } else {
       toast.success('Product added to favorites!', {
@@ -99,8 +105,9 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
       });
     }
   };

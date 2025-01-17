@@ -138,3 +138,15 @@ html {
     height: auto;
   }
 }
+
+.custom-toast .Toastify__close-button {
+  color: #ccc;
+}
+
+.custom-toast .Toastify__progress-bar--success {
+  background-color: #eb2a2a;
+}
+
+.custom-toast .Toastify__progress-bar--info {
+  background-color: #eb2a2a;
+}
