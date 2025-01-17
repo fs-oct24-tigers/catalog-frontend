@@ -13,8 +13,6 @@ const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
   { name: 'TABLETS', pathName: '/tablets' },
   { name: 'ACCESSORIES', pathName: '/accessories' },
-  { pathName: '/favourites' },
-  { pathName: '/cart' },
 ];
 
 const Header: React.FC = () => {
@@ -51,7 +49,7 @@ const Header: React.FC = () => {
         aria-label="main navigation"
       >
         <div className="flex items-center gap-[64px] ">
-          <Logo />
+          <Logo handleCloseMenu={handleCloseMenu} />
           {navLinks.map(({ name, pathName }) => (
             <div
               className={cn(
