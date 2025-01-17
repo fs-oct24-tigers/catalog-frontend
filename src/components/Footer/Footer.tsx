@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '@/assets/logo.png';
+import logo from '@/../public/img/logo.png';
 import { Link } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
 import '@/css/index.css';
