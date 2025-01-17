@@ -14,7 +14,7 @@ const CartPage = () => {
     <>
       {cartIsEmpty ?
         <CartEmpty />
-      : <div className="container mx-auto p-6">
+      : <div className="container mx-auto pt-6 sm:pt-10">
           <BackButton />
           <HeaderTitle mainText="Cart" />
           <div className="flex flex-col lg:flex-row lg:items-start lg:gap-6">
