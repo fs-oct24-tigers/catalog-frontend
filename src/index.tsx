@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { Provider } from 'react-redux';
 import { store, persistor } from './app/store';
 import { PersistGate } from 'redux-persist/integration/react';
+import { AuthProvider } from './providers/AuthProvider';
 
 const queryClient = new QueryClient();
 
@@ -12,8 +13,10 @@ createRoot(document.getElementById('root') as HTMLElement).render(
   <QueryClientProvider client={queryClient}>
     <Provider store={store}>
       <PersistGate loading={<div>Loading...</div>} persistor={persistor}>
-        <Root />
-        {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+        <AuthProvider>
+          <Root />
+          {/* <ReactQueryDevtools initialIsOpen={false} /> */}
+        </AuthProvider>
       </PersistGate>
     </Provider>
   </QueryClientProvider>,
