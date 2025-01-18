@@ -39,6 +39,11 @@ export const ProductOptions: React.FC<Props> = ({
               key={color}
               className="flex w-9 h-9 items-center justify-center rounded-full cursor-pointer"
               style={{ backgroundColor: colorOptions[color as Color] }}
+              onMouseEnter={(e) => (e.currentTarget.style.background = 'white')}
+              onMouseLeave={(e) =>
+                (e.currentTarget.style.background =
+                  colorOptions[color as Color])
+              }
             >
               <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
                 <div

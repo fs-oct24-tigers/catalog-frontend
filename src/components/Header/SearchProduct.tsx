@@ -89,27 +89,31 @@ export const SearchProduct = () => {
         </div>
       )}
       {inputValue.length > 3 && (
-        <div className="absolute w-[500px] h-[500px] top-16 bg-gray-800 overflow-y-scroll">
+        <div className="absolute w-[500px] h-[300px] top-16 p-2 bg-gray-800 overflow-y-scroll">
           {products.map((product) => (
-            <Link
-              onClick={handleSearchClose}
-              to={`/${product.category}/${product.id}`}
+            <div
               key={product.id}
-              className="flex items-center"
+              className="flex items-center p-2 m-2 bg-bodyBg hover:bg-gray-600"
             >
-              <img
-                src={`/${product.images[0]}`}
-                alt={product.name}
-                className="w-12 h-12"
-              />
-              <p>{product.name}</p>
-            </Link>
+              <Link
+                onClick={handleSearchClose}
+                to={`/${product.category}/${product.id}`}
+                className="flex items-center"
+              >
+                <img
+                  src={`/${product.images[0]}`}
+                  alt={product.name}
+                  className="w-12 h-12"
+                />
+                <p>{product.name}</p>
+              </Link>
+            </div>
           ))}
         </div>
       )}
 
       {inputValue.length > 2 && products.length === 0 && (
-        <div className="absolute w-[500px] h-[500px] top-16 bg-gray-800">
+        <div className="absolute p-4 w-[500px] h-[50px] top-16 bg-gray-800">
           <p>No products found</p>
         </div>
       )}
