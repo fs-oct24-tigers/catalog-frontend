@@ -8,6 +8,7 @@ import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
 import { SearchProduct } from './SearchProduct';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -76,6 +77,9 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
+            <ThemeSwitcher />
+          </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
             <SearchProduct />
           </div>
