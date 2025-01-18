@@ -8,6 +8,7 @@ import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
 import { SearchProduct } from './SearchProduct';
+import { AuthButtons } from '../Auth/AuthButtons';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -85,8 +86,12 @@ const Header: React.FC = () => {
           <div className="h-16 flex justify-between items-center hidden sm:flex">
             <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
+          <div className="h-16 flex justify-between items-center hidden sm:flex">
+            <AuthButtons />
+          </div>
 
           <div className="flex sm:hidden" onClick={handleMenu}>
+            <AuthButtons />
             {!isMenuOpen ?
               <HeaderMenuButton />
             : <HeaderCloseButton />}
