@@ -3,15 +3,17 @@ import axios from 'axios';
 
 export const get = async (
   url: string,
-  page = 0,
-  perPage = -1,
+  page = 1, // page is 1-based for clarity
+  perPage = 16,
 ): Promise<{ products: Product[]; totalCount: number }> => {
   const response = await axios.get(url);
   const allProducts = response.data as Product[];
 
+  // Optional artificial delay for testing purposes
   // await new Promise((resolve) => setTimeout(resolve, 500));
 
-  const startIndex = page * perPage;
+  // Adjusting for 0-based indexing
+  const startIndex = (page - 1) * perPage;
   const endIndex = startIndex + perPage;
 
   return {

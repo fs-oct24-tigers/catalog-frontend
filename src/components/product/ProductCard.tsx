@@ -36,7 +36,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
         <CardDescription className="m-0 p-0">
           <h2 className="w-[208px] text-sm font-semibold text-textWhite py-0">
-            <Link to={`/${product.category}/${product.id}`}>
+            <Link to={`/${product.category}/${product.id}`} viewTransition>
               {product.name}
             </Link>
           </h2>

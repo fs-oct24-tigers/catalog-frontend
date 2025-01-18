@@ -16,7 +16,7 @@ type UseQueryProps = {
 
 const usePagedQuery = ({
   category,
-  currentPage,
+  currentPage = 1,
   perPage,
   currentSort,
 }: UseQueryProps) => {
