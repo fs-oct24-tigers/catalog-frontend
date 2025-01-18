@@ -20,12 +20,16 @@ const ContactsPage: React.FC = () => {
           role="Team leader, developer"
           title=""
         />
-        <CreatorCard
-          image={tigerImage}
-          name="Group"
-          role="Jun Tigers"
-          title="Group"
-        />
+
+        <div className="flex flex-col items-center p-6">
+          <img
+            src={tigerImage}
+            alt={'tiger'}
+            className="w-[150px] h-[150px] mb-2 rounded-md"
+          />
+          <h2 className="text-[22px] font-semibold text-white pt-4">Group</h2>
+          <p className="text-[36px] text-gray-400">Jun Tigers</p>
+        </div>
         <CreatorCard
           image={creator2Image}
           name="Andrii Yanchuk"
