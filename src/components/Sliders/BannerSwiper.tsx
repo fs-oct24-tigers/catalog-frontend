@@ -94,7 +94,7 @@ const BannerSwiper: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="relative flex items-center justify-center gap-4 h-full">
             <button
-              className="items-center justify-center cursor-pointer w-8 bg-icons border-2 slider-bg slider-border hover:slider-bg-h hover:slider-border-h hidden sm:flex"
+              className="items-center justify-center cursor-pointer w-8 bg-icons border-1 bg-bgGrayHigh border-borderGrayHigh hover:bg-bgGrayLight hover:border-borderGray hidden sm:flex"
               style={{ height: chevronHeight }}
               onClick={goToPrevSlide}
               aria-label="Previous slide"
@@ -115,7 +115,7 @@ const BannerSwiper: React.FC = () => {
                     {index === 0 ?
                       <div className="flex flex-row h-[400px] justify-between">
                         <div className="flex w-[40%] max-w-[450px] flex-shrink-1 relative flex-col items-center justify-between h-full ml-6 py-4 sm:flex">
-                          <div className="w-full h-full slider-bg rounded-3xl p-8 flex flex-col justify-between">
+                          <div className="w-full h-full bg-bgGrayHigh rounded-3xl p-8 flex flex-col justify-between">
                             <div className="text-left">
                               <p className="text-purple-500 text-4xl font-bold mb-2">
                                 Now available
@@ -130,7 +130,7 @@ const BannerSwiper: React.FC = () => {
                             <div className="absolute bottom-14 text-center">
                               <Link
                                 to={image.link}
-                                className="inline-block bg-transparent border-[1.5px] slider-bg-6 text-textWhite px-6 py-2 rounded-full hover:slider-bg-h hover:slider-border-h font-semibold"
+                                className="inline-block bg-transparent border-[1.5px] border-borderGrayLight text-textWhite px-6 py-2 rounded-full hover:bg-bgGrayLight hover:border-borderGray font-semibold"
                               >
                                 {image.buttonText}
                               </Link>
@@ -172,7 +172,7 @@ const BannerSwiper: React.FC = () => {
             </div>
 
             <button
-              className="items-center justify-center cursor-pointer w-8 bg-icons border-1 slider-bg slider-border hover:slider-bg-h hover:slider-border-h hidden sm:flex"
+              className="items-center justify-center cursor-pointer w-8 bg-icons border-1 bg-bgGrayHigh border-borderGrayHigh hover:bg-bgGrayLight hover:border-borderGray hidden sm:flex"
               style={{ height: chevronHeight }}
               onClick={goToNextSlide}
               aria-label="Next slide"
@@ -188,7 +188,7 @@ const BannerSwiper: React.FC = () => {
           <button
             key={index}
             className={`w-3 h-1 transition-all duration-300 ${
-              index === activeIndex ? 'bg-white w-4' : 'slider-bg-6'
+              index === activeIndex ? 'bg-white w-4' : 'bg-bgGrayLight'
             }`}
             onClick={() => goToSlide(index)}
             aria-label={`Go to slide ${index + 1}`}

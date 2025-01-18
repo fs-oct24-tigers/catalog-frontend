@@ -43,7 +43,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="border-b header-border h-16 relative z-50 ">
+    <header className="border-b border-borderGray h-16 relative z-50 ">
       <nav
         data-cy="nav"
         className="is-fixed-top has-shadow flex items-center justify-between"
@@ -76,10 +76,10 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l header-border">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
             <SearchProduct />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l header-border">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex">

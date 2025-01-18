@@ -36,13 +36,13 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
           </h2>
           <div className="flex gap-2 items-center justify-center">
             <button
-              className="flex items-center justify-center cursor-pointer bg-icons slider-bg hover:slider-bg-h border-0 w-8 h-8"
+              className="flex items-center justify-center cursor-pointer bg-icons bg-bgGrayHigh hover:bg-bgGrayLight border-0 w-8 h-8"
               onClick={handlePrev}
             >
               <ChevronLeft className="h-4 w-4 text-textWhite" />
             </button>
             <button
-              className="flex items-center justify-center cursor-pointer bg-icons slider-bg hover:slider-bg-h border-0 w-8 h-8"
+              className="flex items-center justify-center cursor-pointer bg-icons bg-bgGrayHigh hover:bg-bgGrayLight border-0 w-8 h-8"
               onClick={handleNext}
             >
               <ChevronRight className="h-4 w-4 text-textWhite" />

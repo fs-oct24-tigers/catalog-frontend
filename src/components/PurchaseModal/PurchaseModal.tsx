@@ -82,7 +82,7 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           <div className="overflow-x-auto">
             <Table className="min-w-full">
               <TableHeader>
-                <TableRow className="modal-bg-8">
+                <TableRow className="bg-bgGrayHigh">
                   <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
                     Product
                   </TableHead>
@@ -99,8 +99,8 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
                   <TableRow
                     key={product.id}
                     className={`${
-                      index % 2 === 0 ? 'modal-bg-7' : 'modal-bg-6'
-                    } hover:modal-bg-5 transition-colors`}
+                      index % 2 === 0 ? 'bg-bgGrayMd' : 'bg-bgGrayLight'
+                    } hover:bg-bgGrayLow transition-colors`}
                   >
                     <TableCell className="text-base sm:text-lg px-4 py-2">
                       {product.name}

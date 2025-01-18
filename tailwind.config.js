@@ -22,6 +22,13 @@ export default {
         textMutedGray: '#B4BDC3',
         btnBejge: '#FCDBC1',
         btnGreen: '#27AE60',
+        borderGray: '#374151',
+        borderGrayHigh: '#1F2937',
+        borderGrayLight: '#4B5563',
+        bgGrayLight: '#4B5563',
+        bgGrayMd: '#374151',
+        bgGrayHigh: '#1F2937',
+        bgGrayLow: '#6B7280',
 
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
