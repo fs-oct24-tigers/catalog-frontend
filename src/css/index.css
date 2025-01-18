@@ -66,16 +66,55 @@
   }
 }
 @layer components {
+  /* Text Styles */
   .footer-link {
     @apply text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400;
   }
 
+  .footer-text {
+    @apply text-xs font-bold text-gray-500 cursor-pointer whitespace-nowrap hover:text-gray-400;
+  }
+
+  /* Button Styles */
   .footer-button {
     @apply w-8 h-8 flex items-center justify-center bg-gray-800 text-white hover:bg-gray-700 transition-colors;
   }
 
-  .footer-text {
-    @apply text-xs font-bold text-gray-500 cursor-pointer whitespace-nowrap hover:text-gray-400;
+  /* Border Styles */
+  .header-border,
+  .footer-border,
+  .cart-border,
+  .search-border,
+  .slider-border-h {
+    @apply border-gray-700;
+  }
+
+  .slider-border {
+    @apply border-gray-800;
+  }
+
+  .slider-bg-6 {
+    @apply border-gray-600;
+  }
+
+  /* Background Styles */
+  .slider-bg,
+  .modal-bg-8 {
+    @apply bg-gray-800;
+  }
+
+  .slider-bg-h,
+  .modal-bg-7 {
+    @apply bg-gray-700;
+  }
+
+  .slider-bg-6,
+  .modal-bg-6 {
+    @apply bg-gray-600;
+  }
+
+  .modal-bg-5 {
+    @apply bg-gray-500;
   }
 }
 

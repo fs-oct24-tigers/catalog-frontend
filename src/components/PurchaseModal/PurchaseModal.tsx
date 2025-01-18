@@ -82,14 +82,14 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           <div className="overflow-x-auto">
             <Table className="min-w-full">
               <TableHeader>
-                <TableRow className="bg-gray-800">
-                  <TableHead className="text-white text-lg sm:text-xl px-4 py-2">
+                <TableRow className="modal-bg-8">
+                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
                     Product
                   </TableHead>
-                  <TableHead className="text-white text-lg sm:text-xl px-4 py-2">
+                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
                     Quantity
                   </TableHead>
-                  <TableHead className="text-white text-lg sm:text-xl px-4 py-2">
+                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
                     Price
                   </TableHead>
                 </TableRow>
@@ -99,8 +99,8 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
                   <TableRow
                     key={product.id}
                     className={`${
-                      index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-600'
-                    } hover:bg-gray-500 transition-colors`}
+                      index % 2 === 0 ? 'modal-bg-7' : 'modal-bg-6'
+                    } hover:modal-bg-5 transition-colors`}
                   >
                     <TableCell className="text-base sm:text-lg px-4 py-2">
                       {product.name}
@@ -126,13 +126,13 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
 
           <div className="flex justify-center gap-4 mt-8">
             <Button
-              className="bg-btnPrimary hover:bg-btnHover text-white px-6 sm:px-8 text-base sm:text-lg"
+              className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
               onClick={handleCheckout}
             >
               Confirm
             </Button>
             <Button
-              className="bg-btnPrimary hover:bg-btnHover text-white px-6 sm:px-8 text-base sm:text-lg"
+              className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
               onClick={() => onOpenChange(false)}
             >
               Cancel
