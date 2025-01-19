@@ -12,27 +12,8 @@ import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
 import { categories } from './constants';
 import { ProtectedRoute } from './components/ProtectedRoute';
-import { useEffect } from 'react';
 
 const Root = () => {
-  useEffect(() => {
-    window.onerror = function (msg, url, lineNo, columnNo, error) {
-      console.log(
-        'Error: ' +
-          msg +
-          '\nURL: ' +
-          url +
-          '\nLine: ' +
-          lineNo +
-          '\nColumn: ' +
-          columnNo +
-          '\nError object: ' +
-          JSON.stringify(error),
-      );
-      return false;
-    };
-  }, []);
-
   return (
     <ErrorBoundary>
       <Router>
