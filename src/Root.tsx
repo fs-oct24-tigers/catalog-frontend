@@ -12,50 +12,74 @@ import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
 import { categories } from './constants';
 import { ProtectedRoute } from './components/ProtectedRoute';
+import { useEffect } from 'react';
 
 const Root = () => {
-  return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<HomePage />} />
-          {categories.map((category) => (
-            <Route key={category} path={category}>
-              <Route
-                index
-                element={
-                  <ErrorBoundary>
-                    <ProductsPage category={category} />
-                  </ErrorBoundary>
-                }
-              />
-              <Route path=":id" element={<ProductPage category={category} />} />
-            </Route>
-          ))}
+  useEffect(() => {
+    window.onerror = function (msg, url, lineNo, columnNo, error) {
+      console.log(
+        'Error: ' +
+          msg +
+          '\nURL: ' +
+          url +
+          '\nLine: ' +
+          lineNo +
+          '\nColumn: ' +
+          columnNo +
+          '\nError object: ' +
+          JSON.stringify(error),
+      );
+      return false;
+    };
+  }, []);
 
-          <Route
-            path="cart"
-            element={
-              <ProtectedRoute>
-                <CartPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="favourites"
-            element={
-              <ProtectedRoute>
-                <FavoritesPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="home" element={<Navigate to="/" replace />} />
-          <Route path="contacts" element={<ContactsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </Router>
+  return (
+    <ErrorBoundary>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<HomePage />} />
+            {categories.map((category) => (
+              <Route key={category} path={category}>
+                <Route
+                  index
+                  element={
+                    <ErrorBoundary>
+                      <ProductsPage category={category} />
+                    </ErrorBoundary>
+                  }
+                />
+                <Route
+                  path=":id"
+                  element={<ProductPage category={category} />}
+                />
+              </Route>
+            ))}
+
+            <Route
+              path="cart"
+              element={
+                <ProtectedRoute>
+                  <CartPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="favourites"
+              element={
+                <ProtectedRoute>
+                  <FavoritesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="home" element={<Navigate to="/" replace />} />
+            <Route path="contacts" element={<ContactsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ErrorBoundary>
   );
 };
 
