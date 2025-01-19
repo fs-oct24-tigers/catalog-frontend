@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Product } from '../../types';
 import { Color } from '../../types';
@@ -17,10 +18,31 @@ export const ProductOptions: React.FC<Props> = ({
   product,
   properties,
 }) => {
+  const [activeColor, setActiveColor] = useState<string | null>(null);
+
+  const handleColorClick = (color: string) => {
+    setActiveColor(color);
+  };
+
+  const handleClickOutside = () => {
+    setActiveColor(null);
+  };
+
+  useEffect(() => {
+    const handleDocumentClick = () => handleClickOutside();
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    };
+  }, []);
+
   const hasDiscount = true;
 
   return (
-    <div className="flex flex-col lg:w-[512px] sm:w-[288px] md:w-[237px] text-left">
+    <div
+      className="flex flex-col lg:w-[512px] sm:w-[288px] md:w-[237px] text-left"
+      onClick={(e) => e.stopPropagation()}
+    >
       <div className="flex justify-between items-center w-full">
         <span className="text-xs font-bold text-textGray text-left">
           Available colors
@@ -37,13 +59,18 @@ export const ProductOptions: React.FC<Props> = ({
             <Link
               to={`/${category}/${product.namespaceId}-${product.capacity.toLowerCase()}-${color}`}
               key={color}
-              className="flex w-9 h-9 items-center justify-center rounded-full cursor-pointer"
+              className={`flex w-9 h-9 items-center justify-center rounded-full cursor-pointer 
+              ${activeColor === color ? 'border-2 border-white' : ''}`}
               style={{ backgroundColor: colorOptions[color as Color] }}
               onMouseEnter={(e) => (e.currentTarget.style.background = 'white')}
               onMouseLeave={(e) =>
                 (e.currentTarget.style.background =
                   colorOptions[color as Color])
               }
+              onClick={(e) => {
+                e.stopPropagation();
+                handleColorClick(color);
+              }}
             >
               <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
                 <div
