@@ -54,11 +54,11 @@ const CartProduct: React.FC<Props> = ({ product }) => {
     product.quantity * product.priceDiscount || product.priceRegular;
 
   return (
-    <div className="w-full bg-white border-2 dark:bg-cardBg p-4 flex items-center sm:flex-row flex-col">
+    <div className="w-full border-2 dark:border-0 dark:bg-cardBg p-4 flex items-center sm:flex-row flex-col">
       <div className="flex items-center w-full">
         <button
           onClick={deleteFromCart}
-          className="bg-slate-300 hover:bg-slate-500 dark:bg-gray-700 p-2 dark:hover:bg-gray-600 mr-4"
+          className="border-2 hover:border-slate-300 dark:border-0 dark:bg-gray-700 p-2 dark:hover:bg-gray-600 mr-4"
         >
           <X size={16} />
         </button>
@@ -70,7 +70,9 @@ const CartProduct: React.FC<Props> = ({ product }) => {
         </Link>
 
         <Link to={`/${product.category}/${product.id}`} className="flex-1">
-          <p className="text-lg">{product.name}</p>
+          <p className="text-slate-950 dark:text-textWhite text-lg">
+            {product.name}
+          </p>
         </Link>
       </div>
 
@@ -80,24 +82,28 @@ const CartProduct: React.FC<Props> = ({ product }) => {
             onClick={handleDecrement}
             disabled={product.quantity === 1}
             className={cn('w-8 h-8 flex items-center justify-center', {
-              'bg-slate-300 hover:bg-slate-500 dark:bg-gray-700 dark:hover:bg-gray-600 cursor-pointer':
+              'border-2 hover:border-slate-300 dark:border-0 dark:bg-gray-700 dark:hover:bg-gray-600 cursor-pointer':
                 product.quantity > 1,
-              'bg-slate-200 dark:bg-gray-800 cursor-default':
+              'bg-slate-100 dark:bg-gray-800 cursor-default':
                 product.quantity === 1,
             })}
           >
             <Minus size={16} />
           </button>
-          <div className="mx-4 w-[32px] text-center">{product.quantity}</div>
+          <div className="mx-4 w-[32px] text-slate-950 dark:text-textWhite text-center">
+            {product.quantity}
+          </div>
           <button
             onClick={handleIncrement}
-            className="w-8 h-8 flex items-center justify-center bg-slate-300 hover:bg-slate-500 dark:bg-gray-700 dark:hover:bg-gray-600"
+            className="w-8 h-8 flex items-center justify-center border-2 hover:border-slate-300 dark:border-0 dark:bg-gray-700 dark:hover:bg-gray-600"
           >
             <Plus size={16} />
           </button>
         </div>
 
-        <div className="w-[60px] ml-8 text-xl font-bold">${totalPrice}</div>
+        <div className="w-[60px] ml-8 text-slate-950 dark:text-textWhite text-xl font-bold">
+          ${totalPrice}
+        </div>
       </div>
     </div>
   );

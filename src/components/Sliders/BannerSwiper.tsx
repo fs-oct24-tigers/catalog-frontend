@@ -94,7 +94,7 @@ const BannerSwiper: React.FC = () => {
         <div className="w-full max-w-7xl mx-auto">
           <div className="relative flex items-center justify-center gap-4 h-full">
             <button
-              className="items-center justify-center cursor-pointer w-8 bg-icons border-1 bg-slate-300 hover:bg-slate-500 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:border-gray-700 hidden sm:flex"
+              className="items-center justify-center cursor-pointer w-8 bg-icons border-2 hover:border-slate-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:border-gray-700 dark:border-0 hidden sm:flex"
               style={{ height: chevronHeight }}
               onClick={goToPrevSlide}
               aria-label="Previous slide"
@@ -172,7 +172,7 @@ const BannerSwiper: React.FC = () => {
             </div>
 
             <button
-              className="items-center justify-center cursor-pointer w-8 bg-icons border-1 bg-slate-300 hover:bg-slate-500 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:border-gray-700 hidden sm:flex"
+              className="items-center justify-center cursor-pointer w-8 bg-icons border-2 hover:border-slate-300 dark:border-gray-800 dark:bg-gray-800 dark:hover:bg-gray-600 dark:hover:border-gray-700 dark:border-0 hidden sm:flex"
               style={{ height: chevronHeight }}
               onClick={goToNextSlide}
               aria-label="Next slide"

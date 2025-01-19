@@ -116,7 +116,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
       <Button
         variant={isInCart ? 'secondary' : 'default'}
         onClick={handleAddToCart}
-        className="text-sm font-bold text-textWhite flex-grow text-left"
+        className="text-sm font-bold text-slate-950 hover:border-slate-300 dark:text-textWhite border-2 dark:border-0 flex-grow text-left"
       >
         {isInCart ? 'Added to cart' : 'Add to cart'}
       </Button>
@@ -124,8 +124,8 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
       <div
         className={`w-10 h-10 flex items-center justify-center ${
           isInFavorites ?
-            'bg-transparent border border-heartHover'
-          : 'bg-heartGray border border-transparent hover:bg-heartHover'
+            'bg-transparent border-2 hover:border-slate-300 dark:border-heartHover'
+          : 'dark:bg-heartGray border-2 hover:border-slate-300 dark:border-transparent dark:hover:bg-heartHover'
         }`}
         onClick={handleToggleFavorites}
       >

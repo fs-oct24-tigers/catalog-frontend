@@ -64,7 +64,7 @@
 
   /* Button Styles */
   .footer-button {
-    @apply w-8 h-8 flex items-center justify-center bg-slate-300 hover:bg-slate-500 dark:bg-gray-800 text-white dark:hover:bg-gray-700 transition-colors;
+    @apply w-8 h-8 flex items-center justify-center border-2 hover:border-slate-300 dark:border-0 dark:bg-gray-800 text-white dark:hover:bg-gray-700 transition-colors;
   }
 }
 
