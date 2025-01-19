@@ -15,7 +15,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
 
   return (
     <footer
-      className={`border-t border-borderGray py-8 px-4 md:flex md:justify-between md:items-center sm:px-4 md:px-8 lg:px-[32px] 2xl:px-[152px] ${className}`}
+      className={`border-t dark:border-gray-700 py-8 px-4 md:flex md:justify-between md:items-center sm:px-4 md:px-8 lg:px-[32px] 2xl:px-[152px] ${className}`}
     >
       <Link to="/" className="md:ml-24">
         <img src={logo} alt="logo" className="h-8" />

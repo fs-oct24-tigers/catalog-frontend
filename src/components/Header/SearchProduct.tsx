@@ -66,7 +66,7 @@ export const SearchProduct = () => {
       <div className="h-16 flex justify-center items-center">
         <button
           onClick={handleSearchToggle}
-          className="flex items-center justify-center w-16 h-16 hover:bg-lineGray border-r border-gray-700"
+          className="flex items-center justify-center w-16 h-16 dark:hover:bg-lineGray dark:border-gray-700"
         >
           <Search size={20} />
         </button>
@@ -79,7 +79,7 @@ export const SearchProduct = () => {
             value={inputValue}
             onChange={handleSearchQuery}
             placeholder="Search products..."
-            className="w-full px-4 py-2 text-white bg-bodyBg focus:outline-none focus:border-textWhite"
+            className="w-full px-4 py-2 text-slate-600 dark:text-white dark:bg-bodyBg focus:outline-none focus:border-textWhite"
           />
           {!!inputValue.length && (
             <div className="cursor-pointer" onClick={handleSearchClose}>
@@ -89,11 +89,11 @@ export const SearchProduct = () => {
         </div>
       )}
       {inputValue.length > 3 && (
-        <div className="absolute w-[500px] h-[300px] top-16 p-2 bg-gray-800 overflow-y-scroll">
+        <div className="absolute w-[500px] h-[300px] top-16 p-2 dark:bg-gray-800 overflow-y-scroll">
           {products.map((product) => (
             <div
               key={product.id}
-              className="flex items-center p-2 m-2 bg-bodyBg hover:bg-gray-600"
+              className="flex items-center p-2 m-2 dark:bg-bodyBg dark:hover:bg-gray-600"
             >
               <Link
                 onClick={handleSearchClose}
@@ -113,7 +113,7 @@ export const SearchProduct = () => {
       )}
 
       {inputValue.length > 2 && products.length === 0 && (
-        <div className="absolute p-4 w-[500px] h-[50px] top-16 bg-gray-800">
+        <div className="absolute p-4 w-[500px] h-[50px] top-16 dark:bg-gray-800">
           <p>No products found</p>
         </div>
       )}

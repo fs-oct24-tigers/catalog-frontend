@@ -36,7 +36,7 @@ export const HeaderTitle: React.FC<TitleProps> = ({
     `}
     >
       <h1
-        className={`text-h1Mobile sm:text-h1 font-extrabold text-textWhite mb-2 ${className}`}
+        className={`text-h1Mobile sm:text-h1 font-extrabold text-slate-950 dark:text-textWhite mb-2 ${className}`}
       >
         {renderMainText()}{' '}
         {additionalText && (

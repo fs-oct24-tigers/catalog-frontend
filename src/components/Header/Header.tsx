@@ -45,7 +45,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="border-b border-borderGray h-16 relative z-50 ">
+    <header className="border-b dark:border-gray-700 h-16 relative z-50 ">
       <nav
         data-cy="nav"
         className="is-fixed-top has-shadow flex items-center justify-between"
@@ -64,9 +64,9 @@ const Header: React.FC = () => {
               <Link
                 to={pathName}
                 className={cn(
-                  'text-textGray hover:text-textWhite leading-[55px] ',
+                  'text-slate-600 hover:text-slate-950 dark:text-textGray dark:hover:text-textWhite leading-[55px] ',
                   {
-                    'text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite':
+                    'dark:text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-slate-950 dark:after:bg-textWhite':
                       location.pathname === pathName,
                   },
                 )}
@@ -78,13 +78,13 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
             <ThemeSwitcher />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
             <SearchProduct />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex">

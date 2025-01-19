@@ -55,16 +55,16 @@
 
   /* Text Styles */
   .footer-link {
-    @apply text-xs font-extrabold uppercase tracking-wider text-white hover:text-gray-400;
+    @apply text-xs font-extrabold uppercase tracking-wider text-slate-950 dark:text-white dark:hover:text-gray-400;
   }
 
   .footer-text {
-    @apply text-xs font-bold text-gray-500 cursor-pointer whitespace-nowrap hover:text-gray-400;
+    @apply text-xs font-bold text-slate-950 dark:text-gray-500 cursor-pointer whitespace-nowrap dark:hover:text-gray-400;
   }
 
   /* Button Styles */
   .footer-button {
-    @apply w-8 h-8 flex items-center justify-center bg-gray-800 text-white hover:bg-gray-700 transition-colors;
+    @apply w-8 h-8 flex items-center justify-center bg-slate-300 hover:bg-slate-500 dark:bg-gray-800 text-white dark:hover:bg-gray-700 transition-colors;
   }
 }
 

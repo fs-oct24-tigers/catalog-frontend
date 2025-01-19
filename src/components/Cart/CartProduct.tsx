@@ -54,11 +54,11 @@ const CartProduct: React.FC<Props> = ({ product }) => {
     product.quantity * product.priceDiscount || product.priceRegular;
 
   return (
-    <div className="w-full bg-cardBg p-4 flex items-center sm:flex-row flex-col">
+    <div className="w-full bg-white border-2 dark:bg-cardBg p-4 flex items-center sm:flex-row flex-col">
       <div className="flex items-center w-full">
         <button
           onClick={deleteFromCart}
-          className="bg-gray-700 p-2 hover:bg-gray-600 mr-4"
+          className="bg-slate-300 hover:bg-slate-500 dark:bg-gray-700 p-2 dark:hover:bg-gray-600 mr-4"
         >
           <X size={16} />
         </button>
@@ -80,9 +80,10 @@ const CartProduct: React.FC<Props> = ({ product }) => {
             onClick={handleDecrement}
             disabled={product.quantity === 1}
             className={cn('w-8 h-8 flex items-center justify-center', {
-              'bg-gray-700 hover:bg-gray-600 cursor-pointer':
+              'bg-slate-300 hover:bg-slate-500 dark:bg-gray-700 dark:hover:bg-gray-600 cursor-pointer':
                 product.quantity > 1,
-              'bg-gray-800 cursor-default': product.quantity === 1,
+              'bg-slate-200 dark:bg-gray-800 cursor-default':
+                product.quantity === 1,
             })}
           >
             <Minus size={16} />
@@ -90,7 +91,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
           <div className="mx-4 w-[32px] text-center">{product.quantity}</div>
           <button
             onClick={handleIncrement}
-            className="w-8 h-8 flex items-center justify-center bg-gray-700 hover:bg-gray-600"
+            className="w-8 h-8 flex items-center justify-center bg-slate-300 hover:bg-slate-500 dark:bg-gray-700 dark:hover:bg-gray-600"
           >
             <Plus size={16} />
           </button>
