@@ -15,47 +15,52 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 
 const Root = () => {
   return (
-    <Router>
-      <ScrollToTop />
-      <Routes>
-        <Route path="/" element={<App />}>
-          <Route index element={<HomePage />} />
-          {categories.map((category) => (
-            <Route key={category} path={category}>
-              <Route
-                index
-                element={
-                  <ErrorBoundary>
-                    <ProductsPage category={category} />
-                  </ErrorBoundary>
-                }
-              />
-              <Route path=":id" element={<ProductPage category={category} />} />
-            </Route>
-          ))}
+    <ErrorBoundary>
+      <Router>
+        <ScrollToTop />
+        <Routes>
+          <Route path="/" element={<App />}>
+            <Route index element={<HomePage />} />
+            {categories.map((category) => (
+              <Route key={category} path={category}>
+                <Route
+                  index
+                  element={
+                    <ErrorBoundary>
+                      <ProductsPage category={category} />
+                    </ErrorBoundary>
+                  }
+                />
+                <Route
+                  path=":id"
+                  element={<ProductPage category={category} />}
+                />
+              </Route>
+            ))}
 
-          <Route
-            path="cart"
-            element={
-              <ProtectedRoute>
-                <CartPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="favourites"
-            element={
-              <ProtectedRoute>
-                <FavoritesPage />
-              </ProtectedRoute>
-            }
-          />
-          <Route path="home" element={<Navigate to="/" replace />} />
-          <Route path="contacts" element={<ContactsPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Route>
-      </Routes>
-    </Router>
+            <Route
+              path="cart"
+              element={
+                <ProtectedRoute>
+                  <CartPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route
+              path="favourites"
+              element={
+                <ProtectedRoute>
+                  <FavoritesPage />
+                </ProtectedRoute>
+              }
+            />
+            <Route path="home" element={<Navigate to="/" replace />} />
+            <Route path="contacts" element={<ContactsPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Route>
+        </Routes>
+      </Router>
+    </ErrorBoundary>
   );
 };
 

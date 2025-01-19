@@ -5,6 +5,7 @@ import { useEffect, useState } from 'react';
 import { SUPABASE_URL, SUPABASE_KEY, CLERK_KEY } from '@/constants/auth';
 import type { Database } from '@/types/database';
 import { SupabaseContext } from './SupabaseContext';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
 const SupabaseProvider = ({ children }: { children: React.ReactNode }) => {
   const { session } = useSession();
@@ -39,8 +40,10 @@ const SupabaseProvider = ({ children }: { children: React.ReactNode }) => {
 
 export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
   return (
-    <ClerkProvider publishableKey={CLERK_KEY}>
-      <SupabaseProvider>{children}</SupabaseProvider>
-    </ClerkProvider>
+    <ErrorBoundary>
+      <ClerkProvider publishableKey={CLERK_KEY}>
+        <SupabaseProvider>{children}</SupabaseProvider>
+      </ClerkProvider>
+    </ErrorBoundary>
   );
 };
