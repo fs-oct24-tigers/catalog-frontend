@@ -23,7 +23,7 @@ const CartTotal: React.FC = () => {
   };
 
   return (
-    <div className="flex flex-col mt-6 lg:mt-0 lg:w-1/3 bg-pageBg border border-gray-700 p-6">
+    <div className="flex flex-col mt-6 lg:mt-0 lg:w-1/3 bg-pageBg border border-borderGray p-6">
       <h1 className="self-center text-4xl font-bold">
         ${totalPrice.toFixed(2)}
       </h1>

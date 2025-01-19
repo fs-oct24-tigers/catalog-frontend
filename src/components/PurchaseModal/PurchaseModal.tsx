@@ -26,7 +26,7 @@ interface PurchaseModalProps {
 
 const toastConfig = {
   position: 'top-right' as const,
-  autoClose: 3000,
+  autoClose: 1500,
   hideProgressBar: false,
   closeOnClick: true,
   pauseOnHover: true,
@@ -79,37 +79,46 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           </DialogTitle>
         </DialogHeader>
         <div className="mt-6">
-          <Table>
-            <TableHeader>
-              <TableRow>
-                <TableHead className="text-white text-lg sm:text-xl">
-                  Product
-                </TableHead>
-                <TableHead className="text-white text-lg sm:text-xl">
-                  Quantity
-                </TableHead>
-                <TableHead className="text-white text-lg sm:text-xl">
-                  Price
-                </TableHead>
-              </TableRow>
-            </TableHeader>
-            <TableBody>
-              {cartProducts.map((product) => (
-                <TableRow key={product.id}>
-                  <TableCell className="text-base sm:text-lg">
-                    {product.name}
-                  </TableCell>
-                  <TableCell className="text-base sm:text-lg">
-                    {product.quantity}
-                  </TableCell>
-                  <TableCell className="text-base sm:text-lg">
-                    $
-                    {(product.priceDiscount || product.priceRegular).toFixed(2)}
-                  </TableCell>
+          <div className="overflow-x-auto">
+            <Table className="min-w-full">
+              <TableHeader>
+                <TableRow className="bg-bgGrayHigh">
+                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                    Product
+                  </TableHead>
+                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                    Quantity
+                  </TableHead>
+                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                    Price
+                  </TableHead>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHeader>
+              <TableBody>
+                {cartProducts.map((product, index) => (
+                  <TableRow
+                    key={product.id}
+                    className={`${
+                      index % 2 === 0 ? 'bg-bgGrayMd' : 'bg-bgGrayLight'
+                    } hover:bg-bgGrayLow transition-colors`}
+                  >
+                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                      {product.name}
+                    </TableCell>
+                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                      {product.quantity}
+                    </TableCell>
+                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                      $
+                      {(product.priceDiscount || product.priceRegular).toFixed(
+                        2,
+                      )}
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </div>
 
           <div className="flex justify-end mt-6 text-lg sm:text-xl">
             <span>Total Price: ${totalPrice.toFixed(2)}</span>
@@ -117,13 +126,13 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
 
           <div className="flex justify-center gap-4 mt-8">
             <Button
-              className="bg-btnPrimary hover:bg-btnHover text-white px-6 sm:px-8 text-base sm:text-lg"
+              className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
               onClick={handleCheckout}
             >
               Confirm
             </Button>
             <Button
-              className="bg-btnPrimary hover:bg-btnHover text-white px-6 sm:px-8 text-base sm:text-lg"
+              className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
               onClick={() => onOpenChange(false)}
             >
               Cancel

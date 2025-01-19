@@ -9,6 +9,7 @@ import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
 import { SearchProduct } from './SearchProduct';
 import { AuthButtons } from '../Auth/AuthButtons';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -44,7 +45,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="border-b border-gray-700 h-16 relative z-50 ">
+    <header className="border-b border-borderGray h-16 relative z-50 ">
       <nav
         data-cy="nav"
         className="is-fixed-top has-shadow flex items-center justify-between"
@@ -77,10 +78,13 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
+            <ThemeSwitcher />
+          </div>
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
             <SearchProduct />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l border-borderGray">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex">

@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import logo from '/img/page-not-found.png';
 
-const NotFoundPage = () => {
+export const NotFoundPage = () => {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
@@ -63,5 +63,3 @@ const NotFoundPage = () => {
     </div>
   );
 };
-
-export default NotFoundPage;

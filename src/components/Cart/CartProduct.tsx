@@ -22,7 +22,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
     dispatch(removeFromCart(product.id));
     toast.success('Product removed from cart!', {
       position: 'top-right',
-      autoClose: 3000,
+      autoClose: 1500,
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

@@ -7,7 +7,7 @@ import ProductPage from './pages/ProductPage';
 import CartPage from './pages/CartPage';
 import FavoritesPage from './pages/FavoritesPage';
 import ErrorBoundary from './components/ErrorBoundary';
-import { NotFoundPage } from './components/NotFoundPage';
+import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
 import { categories } from './constants';
