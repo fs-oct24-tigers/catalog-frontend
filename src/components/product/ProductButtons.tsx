@@ -133,6 +133,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
           style={{
             width: '17px',
             height: '15px',
+            cursor: 'pointer',
             fill: isInFavorites ? 'red' : '',
             stroke: isInFavorites ? 'none' : '',
           }}
