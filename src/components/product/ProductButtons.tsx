@@ -26,7 +26,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     if (isInCart) {
       toast.info('Product is already in the cart!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -44,7 +44,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     if (isInFavorites) {
       toast.info('Product added to cart!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -59,7 +59,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     } else {
       toast.success('Product added to cart!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -84,7 +84,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     if (isInFavorites) {
       toast.info('Product removed from favorites!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -98,7 +98,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     } else {
       toast.success('Product added to favorites!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
