@@ -1,7 +1,7 @@
 import BannerSwiper from '@/components/Sliders/BannerSwiper';
 import { Categories } from '@/components/product/Categories';
-import PhonesSlider from '@/components/Sliders/ProductsSlider';
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
+import ProductsSlider from '@/components/Sliders/ProductsSlider';
 
 const HomePage = () => {
   return (
@@ -13,15 +13,15 @@ const HomePage = () => {
         isHomePage={true}
       />
       <BannerSwiper />
-      <PhonesSlider
+      <ProductsSlider
         title="Brand new models"
-        apiEndpoint="/api/accessories.json"
-        filterType="hotPrices"
+        category="accessories"
+        filterType="newModels"
       />
       <Categories />
-      <PhonesSlider
+      <ProductsSlider
         title="Hot prices"
-        apiEndpoint="/api/phones.json"
+        category="phones"
         filterType="hotPrices"
       />
     </div>

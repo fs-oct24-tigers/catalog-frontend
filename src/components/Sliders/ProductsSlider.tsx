@@ -1,22 +1,47 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Swiper as SwiperType } from 'swiper';
-import useSliderQuery from '@/hooks/useSliderQuery';
 
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
 import { Product } from '@/types';
 import { filterProducts } from '@/utils/filterProducts';
-import { PhonesSliderProps } from '@/types';
+import { getSliderProducts } from '@/api/apiProducts';
 
-const PhonesSlider: React.FC<PhonesSliderProps> = ({
+interface PhonesSliderProps {
+  title: string;
+  category: string;
+  filterType: 'newModels' | 'hotPrices';
+}
+
+const ProductsSlider: React.FC<PhonesSliderProps> = ({
   title,
-  apiEndpoint,
+  category,
   filterType,
 }) => {
-  const { products, isLoading, isError } = useSliderQuery({
-    apiEndpoint,
-  });
+  const [products, setProducts] = useState<Product[]>();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setIsLoading(true);
+      setIsError(false);
+
+      try {
+        const products = await getSliderProducts(category, filterType);
+
+        setProducts(products);
+      } catch (error) {
+        console.error('Failed to fetch product:', error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [category, filterType]);
 
   const filteredProducts: Product[] = filterProducts(
     (products || []).map((item: Product) => item),
@@ -54,7 +79,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
           <div className="text-slate-950 dark:text-textWhite">Loading...</div>
         : isError ?
           <div className="text-red-500">Failed to load products</div>
-        : products.length > 0 ?
+        : products && products.length > 0 ?
           <Swiper
             spaceBetween={24}
             slidesPerView={4}
@@ -68,7 +93,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
             }}
           >
             {filteredProducts.map((product) => (
-              <SwiperSlide key={product.id}>
+              <SwiperSlide key={product.itemId}>
                 <ProductCard product={product} />
               </SwiperSlide>
             ))}
@@ -79,4 +104,4 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
   );
 };
 
-export default PhonesSlider;
+export default ProductsSlider;

@@ -6,12 +6,14 @@ import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
 
-import PhonesSlider from '@/components/Sliders/ProductsSlider';
 import { getSpecs, getProperties } from '@/constants';
 
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import { BackButton } from '@/components/BackButton/BackButton';
-import useProductQuery from '@/hooks/useProductQuery';
+import { useEffect, useState } from 'react';
+import { getProduct } from '@/api/apiProducts';
+import { Product } from '@/types';
+import ProductsSlider from '@/components/Sliders/ProductsSlider';
 
 type Props = {
   category: string;
@@ -20,11 +22,32 @@ type Props = {
 const ProductPage: React.FC<Props> = ({ category }) => {
   const { id } = useParams<{ id: string }>();
 
-  const { products, isLoading, isError } = useProductQuery({
-    category,
-  });
+  const [product, setProduct] = useState<Product>();
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
 
-  const product = products?.find((product) => product.id === id);
+  useEffect(() => {
+    const fetchProduct = async () => {
+      setIsLoading(true);
+      setIsError(false);
+
+      try {
+        if (!id) {
+          throw new Error('Product ID is undefined');
+        }
+        const products = await getProduct(id);
+
+        setProduct(products);
+      } catch (error) {
+        console.error('Failed to fetch product:', error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProduct();
+  }, [id]);
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -37,10 +60,6 @@ const ProductPage: React.FC<Props> = ({ category }) => {
   if (!product) {
     return <NotFoundPage />;
   }
-
-  const productVariants = products?.filter(
-    (product) => product.namespaceId === product.namespaceId,
-  );
 
   const description = product.description || [];
   const specs = getSpecs(product);
@@ -61,7 +80,6 @@ const ProductPage: React.FC<Props> = ({ category }) => {
           <ProductOptions
             category={category}
             product={product}
-            products={productVariants || []}
             properties={properties}
           />
         </div>
@@ -76,9 +94,9 @@ const ProductPage: React.FC<Props> = ({ category }) => {
         </div>
       </div>
       <div>
-        <PhonesSlider
+        <ProductsSlider
           title="You may also like"
-          apiEndpoint="/api/phones.json"
+          category="phones"
           filterType="hotPrices"
         />
       </div>

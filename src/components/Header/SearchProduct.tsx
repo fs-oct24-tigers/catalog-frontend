@@ -1,14 +1,16 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { Search, X } from 'lucide-react';
-import useSearchQuery from '@/hooks/useSearchQuery';
-import { categories } from '@/constants';
+
 import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
+import { getSearchProducts } from '@/api/apiProducts';
+import { Product } from '@/types';
 
 export const SearchProduct = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const [products, setProducts] = useState<Product[]>();
 
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -36,10 +38,19 @@ export const SearchProduct = () => {
     setInputValue(e.target.value);
   };
 
-  const { products } = useSearchQuery({
-    categories,
-    searchQuery,
-  });
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const products = await getSearchProducts(searchQuery);
+
+        setProducts(products);
+      } catch (error) {
+        console.error('Failed to fetch product:', error);
+      }
+    };
+
+    fetchProduct();
+  }, [searchQuery]);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -90,29 +101,30 @@ export const SearchProduct = () => {
       )}
       {inputValue.length > 3 && (
         <div className="absolute w-[500px] h-[300px] top-16 p-2 border-2 dark:border-0 dark:bg-gray-800 overflow-y-scroll">
-          {products.map((product) => (
-            <div
-              key={product.id}
-              className="flex items-center p-2 m-2 border-2 hover:border-slate-300 dark:border-0 dark:bg-bodyBg dark:hover:bg-gray-600"
-            >
-              <Link
-                onClick={handleSearchClose}
-                to={`/${product.category}/${product.id}`}
-                className="flex items-center text-slate-900 dark:text-textWhite"
+          {products &&
+            products.map((product) => (
+              <div
+                key={product.itemId}
+                className="flex items-center p-2 m-2 border-2 hover:border-slate-300 dark:border-0 dark:bg-bodyBg dark:hover:bg-gray-600"
               >
-                <img
-                  src={`/${product.images[0]}`}
-                  alt={product.name}
-                  className="w-12 h-12"
-                />
-                <p>{product.name}</p>
-              </Link>
-            </div>
-          ))}
+                <Link
+                  onClick={handleSearchClose}
+                  to={`/${product.category}/${product.itemId}`}
+                  className="flex items-center text-slate-900 dark:text-textWhite"
+                >
+                  <img
+                    src={`/${product.images[0]}`}
+                    alt={product.name}
+                    className="w-12 h-12"
+                  />
+                  <p>{product.name}</p>
+                </Link>
+              </div>
+            ))}
         </div>
       )}
 
-      {inputValue.length > 2 && products.length === 0 && (
+      {inputValue.length > 2 && products?.length === 0 && (
         <div className="absolute p-4 w-[500px] h-[50px] top-16 text-slate-950 dark:text-textWhite dark:bg-gray-800">
           <p>No products found</p>
         </div>
