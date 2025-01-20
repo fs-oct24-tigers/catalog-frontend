@@ -19,7 +19,7 @@ export const useOrders = () => {
     supabase.auth.setSession({ access_token: token, refresh_token: '' });
 
     const orderProducts = products.map((product) => ({
-      id: product.id,
+      id: product.itemId,
       name: product.name,
       price: product.priceDiscount || product.priceRegular,
       quantity: product.quantity,

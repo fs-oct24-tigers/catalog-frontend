@@ -20,7 +20,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const deleteFromCart = () => {
-    dispatch(removeFromCart(product.id));
+    dispatch(removeFromCart(product.itemId));
     toast.success('Product removed from cart!', {
       position: 'top-right',
       autoClose: 1500,
@@ -33,7 +33,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
         backgroundColor: '#161827',
       },
       className: 'custom-toast',
-      toastId: `removed-${product.id}`,
+      toastId: `removed-${product.itemId}`,
     });
   };
 
@@ -41,14 +41,14 @@ const CartProduct: React.FC<Props> = ({ product }) => {
     if (product.quantity > 100) {
       return;
     }
-    dispatch(updateQuantity({ id: product.id, operation: 'plus' }));
+    dispatch(updateQuantity({ itemId: product.itemId, operation: 'plus' }));
   };
 
   const handleDecrement = () => {
     if (product.quantity === 1) {
       return;
     }
-    dispatch(updateQuantity({ id: product.id, operation: 'minus' }));
+    dispatch(updateQuantity({ itemId: product.itemId, operation: 'minus' }));
   };
 
   const totalPrice =

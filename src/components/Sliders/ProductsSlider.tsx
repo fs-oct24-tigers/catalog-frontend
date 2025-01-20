@@ -5,7 +5,6 @@ import { Swiper as SwiperType } from 'swiper';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import ProductCard from '@/components/product/ProductCard';
 import { Product } from '@/types';
-import { filterProducts } from '@/utils/filterProducts';
 import { getSliderProducts } from '@/api/apiProducts';
 
 interface PhonesSliderProps {
@@ -42,11 +41,6 @@ const ProductsSlider: React.FC<PhonesSliderProps> = ({
 
     fetchProduct();
   }, [category, filterType]);
-
-  const filteredProducts: Product[] = filterProducts(
-    (products || []).map((item: Product) => item),
-    filterType,
-  );
 
   const swiperRef = useRef<SwiperType | null>(null);
   const handleNext = () => swiperRef.current?.slideNext();
@@ -92,7 +86,7 @@ const ProductsSlider: React.FC<PhonesSliderProps> = ({
               1024: { slidesPerView: 4 },
             }}
           >
-            {filteredProducts.map((product) => (
+            {products.map((product) => (
               <SwiperSlide key={product.itemId}>
                 <ProductCard product={product} />
               </SwiperSlide>

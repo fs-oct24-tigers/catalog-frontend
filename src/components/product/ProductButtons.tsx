@@ -18,7 +18,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   const favoriteProducts = useAppSelector((state) => state.favorites);
 
   const isInCart = cartProducts.some(
-    (cartProduct) => cartProduct.id === product.id,
+    (cartProduct) => cartProduct.itemId === product.itemId,
   );
   const dispatch = useDispatch();
   const handleAddToCart = () => {
@@ -75,7 +75,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   };
 
   const isInFavorites = favoriteProducts.some(
-    (favoriteProduct) => favoriteProduct.id === product.id,
+    (favoriteProduct) => favoriteProduct.itemId === product.itemId,
   );
 
   const handleToggleFavorites = () => {

@@ -35,13 +35,6 @@ const ProductsPage: FC<Props> = ({ category }) => {
 
   const currentPage = Number(searchParams.get('page')) || 1;
 
-  // const { products, totalCount, isLoading, isError } = usePagedQuery({
-  //   category,
-  //   currentPage,
-  //   perPage,
-  //   currentSort,
-  // });
-
   useEffect(() => {
     const fetchProducts = async () => {
       setIsLoading(true);
@@ -84,15 +77,9 @@ const ProductsPage: FC<Props> = ({ category }) => {
     });
   };
 
-  // if (isLoading) {
-  //   return <div>Loading...</div>;
-  // }
-
   if (isError) {
     return <div>Error fetching products</div>;
   }
-
-  // const sortedProducts = products && sortProducts(products, currentSort);
 
   return (
     <div className="container">
@@ -107,8 +94,6 @@ const ProductsPage: FC<Props> = ({ category }) => {
         />
       </div>
       {isLoading && (
-        // Show Skeleton while loading
-
         <SkeletonTheme baseColor="#161827" highlightColor="#0f1121">
           <div className="m-auto grid gap-x-4 gap-y-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center place-items-center">
             {Array.from({ length: 16 }).map((_, index) => (
