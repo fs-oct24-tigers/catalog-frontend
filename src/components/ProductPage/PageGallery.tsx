@@ -3,6 +3,7 @@ import Lightbox from 'yet-another-react-lightbox';
 import { motion, AnimatePresence } from 'framer-motion';
 import { cn } from '@/lib/utils';
 import 'yet-another-react-lightbox/styles.css';
+import { SUPABASE_STORAGE_URL } from '@/constants/auth';
 
 interface PageGalleryProps {
   images: string[];
@@ -39,7 +40,7 @@ const Thumbnail = ({ src, isSelected, onClick, isMobile }: ThumbnailProps) => (
     aria-pressed={isSelected}
   >
     <img
-      src={`/${src}`}
+      src={`${SUPABASE_STORAGE_URL}/${src}`}
       alt="Product thumbnail"
       className="max-w-full max-h-full object-contain p-1 lg:p-2"
       loading="lazy"
@@ -51,7 +52,9 @@ export const PageGallery = ({ images }: PageGalleryProps) => {
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  const slides = images.map((image) => ({ src: `/${image}` }));
+  const slides = images.map((image) => ({
+    src: `${image}`,
+  }));
 
   return (
     <>
@@ -80,7 +83,7 @@ export const PageGallery = ({ images }: PageGalleryProps) => {
                 onClick={() => setIsLightboxOpen(true)}
               >
                 <img
-                  src={`/${images[selectedIndex]}`}
+                  src={`${SUPABASE_STORAGE_URL}/${images[selectedIndex]}`}
                   alt="Main product view"
                   className="w-full h-full object-contain"
                   draggable={false}

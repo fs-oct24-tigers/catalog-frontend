@@ -1,11 +1,5 @@
+import { SortType } from '@/types';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-
-export type SortType =
-  | 'alphabetically'
-  | 'cheapest'
-  | 'expensive'
-  | 'newest'
-  | 'oldest';
 
 const initialState: SortType = 'newest' as SortType;
 
