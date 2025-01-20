@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import { HeaderFavoritesButton } from '../Header/HeaderFavoritesButton';
 import { HeaderCartButton } from '../Header/HeaderCartButton';
@@ -21,19 +21,19 @@ export const HeaderMenu: React.FC<Props> = ({ handleCloseMenu }) => {
     <menu className="h-screen relative z-20 bg-white dark:bg-bodyBg">
       {navLinks.map(({ name, pathName }) => (
         <div className=" flex justify-center py-4 " key={name}>
-          <NavLink
+          <Link
             onClick={handleCloseMenu}
             to={pathName}
             className={cn(
-              'relative text-textGray hover:text-textWhite leading-[42px]',
+              'relative text-textGray hover:text-black dark:hover:text-textWhite leading-[42px]',
               {
-                'text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite':
+                'text-black dark:text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-black dark:after:bg-textWhite':
                   location.pathname.includes(pathName),
               },
             )}
           >
             {name}
-          </NavLink>
+          </Link>
         </div>
       ))}
       <footer className="flex justify-between items-center w-full border-t dark:border-gray-700 fixed inset-x-0 bottom-0">

@@ -90,8 +90,10 @@ const Header: React.FC = () => {
             <AuthButtons />
           </div>
 
-          <div className="flex text-slate-950 dark:text-textWhite md:hidden" onClick={handleMenu}>
-
+          <div
+            className="flex text-slate-950 dark:text-textWhite md:hidden"
+            onClick={handleMenu}
+          >
             {!isMenuOpen ?
               <HeaderMenuButton />
             : <HeaderCloseButton />}

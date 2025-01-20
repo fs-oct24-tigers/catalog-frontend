@@ -47,7 +47,7 @@ export const ThemeSwitcher = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-5 transition-colors duration-200"
+      className="flex items-center justify-center size-12 dark:hover:bg-lineGray"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ?
