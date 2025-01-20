@@ -9,14 +9,17 @@ import ErrorBoundary from '@/components/ErrorBoundary';
 
 const SupabaseProvider = ({ children }: { children: React.ReactNode }) => {
   const { session } = useSession();
-  const [supabase, setSupabase] = useState(() =>
+  const [supabaseClient, setSupabaseClient] = useState(() =>
     createClient<Database>(SUPABASE_URL, SUPABASE_KEY),
   );
 
   useEffect(() => {
-    const initSupabase = async () => {
-      if (session) {
-        const token = await session.getToken({ template: 'supabase' });
+    if (session?.getToken) {
+      const fetchToken = async () => {
+        const token = await session.getToken({
+          template: 'supabase',
+        });
+
         const newClient = createClient<Database>(SUPABASE_URL, SUPABASE_KEY, {
           global: {
             headers: {
@@ -24,15 +27,16 @@ const SupabaseProvider = ({ children }: { children: React.ReactNode }) => {
             },
           },
         });
-        setSupabase(newClient);
-      }
-    };
 
-    initSupabase();
+        setSupabaseClient(newClient);
+      };
+
+      fetchToken();
+    }
   }, [session]);
 
   return (
-    <SupabaseContext.Provider value={supabase}>
+    <SupabaseContext.Provider value={supabaseClient}>
       {children}
     </SupabaseContext.Provider>
   );

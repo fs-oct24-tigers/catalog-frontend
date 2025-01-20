@@ -16,8 +16,7 @@ import {
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { clearCart } from '@/features/cart';
 import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import '@/css/index.css';
+import { useOrders } from '@/hooks/useOrders';
 
 interface PurchaseModalProps {
   open: boolean;
@@ -41,6 +40,7 @@ const toastConfig = {
 export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
   const cartProducts = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+  const { createOrder } = useOrders();
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -48,25 +48,17 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
     0,
   );
 
-  const totalItems = cartProducts.reduce(
-    (acc, product) => acc + product.quantity,
-    0,
-  );
-
-  const handleCheckout = () => {
-    toast.dismiss();
-    if (totalItems === 0) {
-      toast.error('Your cart is empty!', {
-        ...toastConfig,
-        toastId: 'cart-empty',
-      });
-    } else {
-      toast.success('Your order has been successfully placed!', {
-        ...toastConfig,
-        toastId: 'order-success',
-      });
+  const handlePurchase = async () => {
+    try {
+      await createOrder(cartProducts, totalPrice);
       dispatch(clearCart());
       onOpenChange(false);
+      toast.success('Thank you for your purchase!', toastConfig);
+    } catch {
+      toast.error(
+        'Failed to process your order. Please try again.',
+        toastConfig,
+      );
     }
   };
 
@@ -127,7 +119,7 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           <div className="flex justify-center gap-4 mt-8">
             <Button
               className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
-              onClick={handleCheckout}
+              onClick={handlePurchase}
             >
               Confirm
             </Button>
