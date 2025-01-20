@@ -19,6 +19,7 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/css/index.css';
 import { SignInButton, useAuth } from '@clerk/clerk-react';
+import { useOrders } from '@/hooks/useOrders';
 
 interface PurchaseModalProps {
   open: boolean;
@@ -43,6 +44,7 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
   const cartProducts = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
   const { isSignedIn } = useAuth();
+  const { createOrder } = useOrders();
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -55,20 +57,32 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
     0,
   );
 
-  const handlePurchase = () => {
+  const handlePurchase = async () => {
     toast.dismiss();
     if (totalItems === 0) {
       toast.error('Your cart is empty!', {
         ...toastConfig,
         toastId: 'cart-empty',
       });
-    } else {
+      return;
+    }
+
+    try {
+      await createOrder(cartProducts, totalPrice);
+
       toast.success('Your order has been successfully placed!', {
         ...toastConfig,
         toastId: 'order-success',
       });
+
       dispatch(clearCart());
       onOpenChange(false);
+    } catch (error) {
+      toast.error('Failed to place order. Please try again.', {
+        ...toastConfig,
+        toastId: 'order-error',
+      });
+      console.error('Order creation failed:', error);
     }
   };
 
