@@ -11,7 +11,6 @@ import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
 import { categories } from './constants';
-import { ProtectedRoute } from './components/ProtectedRoute';
 
 const Root = () => {
   return (
@@ -38,22 +37,8 @@ const Root = () => {
               </Route>
             ))}
 
-            <Route
-              path="cart"
-              element={
-                <ProtectedRoute>
-                  <CartPage />
-                </ProtectedRoute>
-              }
-            />
-            <Route
-              path="favourites"
-              element={
-                <ProtectedRoute>
-                  <FavoritesPage />
-                </ProtectedRoute>
-              }
-            />
+            <Route path="favourites" element={<FavoritesPage />} />
+            <Route path="cart" element={<CartPage />} />
             <Route path="home" element={<Navigate to="/" replace />} />
             <Route path="contacts" element={<ContactsPage />} />
             <Route path="*" element={<NotFoundPage />} />

@@ -16,7 +16,9 @@ import {
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
 import { clearCart } from '@/features/cart';
 import { toast } from 'react-toastify';
-import { useOrders } from '@/hooks/useOrders';
+import 'react-toastify/dist/ReactToastify.css';
+import '@/css/index.css';
+import { SignInButton, useAuth } from '@clerk/clerk-react';
 
 interface PurchaseModalProps {
   open: boolean;
@@ -40,7 +42,7 @@ const toastConfig = {
 export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
   const cartProducts = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
-  const { createOrder } = useOrders();
+  const { isSignedIn } = useAuth();
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -48,23 +50,35 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
     0,
   );
 
-  const handlePurchase = async () => {
-    try {
-      await createOrder(cartProducts, totalPrice);
+  const totalItems = cartProducts.reduce(
+    (acc, product) => acc + product.quantity,
+    0,
+  );
+
+  const handlePurchase = () => {
+    toast.dismiss();
+    if (totalItems === 0) {
+      toast.error('Your cart is empty!', {
+        ...toastConfig,
+        toastId: 'cart-empty',
+      });
+    } else {
+      toast.success('Your order has been successfully placed!', {
+        ...toastConfig,
+        toastId: 'order-success',
+      });
       dispatch(clearCart());
       onOpenChange(false);
-      toast.success('Thank you for your purchase!', toastConfig);
-    } catch {
-      toast.error(
-        'Failed to process your order. Please try again.',
-        toastConfig,
-      );
     }
+  };
+
+  const handleSignInClick = () => {
+    onOpenChange(false);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] bg-cardBg border-cardBg">
+      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] bg-cardBg border-cardBg z-50">
         <DialogHeader>
           <DialogTitle className="text-xl sm:text-2xl text-center">
             Complete your purchase
@@ -117,12 +131,22 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           </div>
 
           <div className="flex justify-center gap-4 mt-8">
-            <Button
-              className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
-              onClick={handlePurchase}
-            >
-              Confirm
-            </Button>
+            {isSignedIn ?
+              <Button
+                className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
+                onClick={handlePurchase}
+              >
+                Purchase
+              </Button>
+            : <SignInButton mode="modal">
+                <Button
+                  className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
+                  onClick={handleSignInClick}
+                >
+                  Sign in to Checkout
+                </Button>
+              </SignInButton>
+            }
             <Button
               className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
               onClick={() => onOpenChange(false)}
