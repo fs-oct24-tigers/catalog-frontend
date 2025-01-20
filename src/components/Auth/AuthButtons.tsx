@@ -4,6 +4,7 @@ import {
   SignInButton,
   UserButton,
 } from '@clerk/clerk-react';
+import { UserIcon } from 'lucide-react';
 
 export const AuthButtons = () => {
   return (
@@ -11,7 +12,7 @@ export const AuthButtons = () => {
       <SignedOut>
         <SignInButton mode="modal">
           <div className="flex size-16 items-center justify-center border-x dark:border-gray-700 dark:hover:bg-lineGray cursor-pointer">
-            <span>Sign In</span>
+            <UserIcon />
           </div>
         </SignInButton>
       </SignedOut>
