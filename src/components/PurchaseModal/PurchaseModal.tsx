@@ -117,7 +117,7 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
               <TableBody>
                 {cartProducts.map((product, index) => (
                   <TableRow
-                    key={product.id}
+                    key={product.itemId}
                     className={`${
                       index % 2 === 0 ?
                         'bg-slate-100 dark:bg-gray-700'
