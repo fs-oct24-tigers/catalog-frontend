@@ -4,6 +4,7 @@ import defaultTheme from 'tailwindcss/defaultTheme';
 export default {
   darkMode: ['class'],
   content: ['./index.html', './src/**/*.{ts,tsx,js,jsx}'],
+  darkMode: 'class',
   theme: {
     extend: {
       colors: {
@@ -22,6 +23,26 @@ export default {
         textMutedGray: '#B4BDC3',
         btnBejge: '#FCDBC1',
         btnGreen: '#27AE60',
+
+        // text-slate-600
+        // hover:text-slate-950
+
+        light: {
+          bodyBg: '#FFFFFF',
+          cardBg: '#F8F9FA',
+          heartGray: '#E9ECEF',
+          heartHover: '#DEE2E6',
+          lineGray: '#CED4DA',
+          textPrimary: '#33333',
+          textSecondary: '#495057',
+          textMuted: '#6C757D',
+          borderLight: '#E9ECEF',
+          borderMedium: '#DEE2E6',
+          borderDark: '#CED4DA',
+          bgLight: '#F8F9FA',
+          bgMedium: '#E9ECEF',
+          bgDark: '#DEE2E6',
+        },
 
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',

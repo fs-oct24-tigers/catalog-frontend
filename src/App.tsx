@@ -4,16 +4,22 @@ import Footer from './components/Footer/Footer';
 import Main from './components/Main';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { ThemeProvider } from './components/ThemeSwitcher/ThemeSwitcher';
 
 export const App = () => {
   return (
-    <div data-cy="app" className="flex flex-col min-h-screen">
-      <Header />
-      <Main>
-        <Outlet />
-      </Main>
-      <Footer className="mt-auto" />
-      <ToastContainer />
-    </div>
+    <ThemeProvider>
+      <div
+        data-cy="app"
+        className="min-h-screen bg-light-bodyBg dark:bg-bodyBg text-light-textPrimary dark:text-textWhite"
+      >
+        <Header />
+        <Main>
+          <Outlet />
+        </Main>
+        <Footer className="sticky top-[100vh]" />
+        <ToastContainer />
+      </div>
+    </ThemeProvider>
   );
 };

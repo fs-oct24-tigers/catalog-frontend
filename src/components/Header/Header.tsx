@@ -8,6 +8,8 @@ import { HeaderMenuButton } from './HeaderMenuButton';
 import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
 import { SearchProduct } from './SearchProduct';
+import { AuthButtons } from '../Auth/AuthButtons';
+import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -41,7 +43,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="border-b border-gray-700 h-16 relative z-50 ">
+    <header className="border-b dark:border-gray-700 h-16 relative z-50 ">
       <nav
         data-cy="nav"
         className="is-fixed-top has-shadow flex items-center justify-between"
@@ -58,9 +60,9 @@ const Header: React.FC = () => {
               <Link
                 to={pathName}
                 className={cn(
-                  'text-textGray hover:text-textWhite leading-[55px] after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite after:scale-0',
+                  'text-slate-600 hover:text-slate-950 dark:text-textGray dark:hover:text-textWhite leading-[55px] after:scale-0',
                   {
-                    'text-textWhite after:scale-100  after:origin-center after:transition-transform after:duration-300':
+                    'dark:text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-slate-950 dark:after:bg-textWhite after:scale-100  after:origin-center after:transition-transform after:duration-300':
                       location.pathname === pathName,
                   },
                 )}
@@ -72,17 +74,25 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden md:flex border-l border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
+            <ThemeSwitcher />
+          </div>
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
             <SearchProduct />
           </div>
-          <div className="h-16 flex justify-between items-center hidden md:flex border-l border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
           <div className="h-16 flex justify-between items-center hidden md:flex">
             <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
+          <div className="h-16 flex justify-between items-center hidden sm:flex">
+            <AuthButtons />
+          </div>
 
-          <div className="flex md:hidden" onClick={handleMenu}>
+          <div className="flex sm:hidden" onClick={handleMenu}>
+            <AuthButtons />
+
             {!isMenuOpen ?
               <HeaderMenuButton />
             : <HeaderCloseButton />}

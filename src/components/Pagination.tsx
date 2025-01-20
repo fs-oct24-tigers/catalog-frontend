@@ -18,7 +18,7 @@ const Pagination: FC<Props> = ({
   const totalPages = Math.ceil(totalItems / perPage);
 
   return (
-    <div className="pagination">
+    <div className="pagination mt-10">
       <ReactPaginate
         pageCount={totalPages}
         pageRangeDisplayed={2}
@@ -30,7 +30,7 @@ const Pagination: FC<Props> = ({
         breakLabel="..."
         containerClassName="flex items-center justify-center space-x-2 mt-4"
         pageLinkClassName="flex items-center justify-center w-8 h-8 text-sm bg-cardBg hover:bg-heartHover"
-        activeLinkClassName="text-white bg-btnPrimary hover:bg-btnHover"
+        activeLinkClassName="text-white bg-violet-500 hover:bg-btnHover"
         previousLinkClassName="flex items-center justify-center w-8 h-8 bg-btnSecondary hover:bg-heartHover"
         nextLinkClassName="flex items-center justify-center w-8 h-8 bg-btnSecondary hover:bg-heartHover"
         breakClassName="px-4 py-2"
