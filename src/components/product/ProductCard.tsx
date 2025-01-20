@@ -34,9 +34,13 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           </div>
         </CardTitle>
 
-        <CardDescription className="m-0 p-0">
-          <h2 className="w-[208px] text-sm font-semibold text-slate-950 dark:text-textWhite py-0">
-            <Link to={`/${product.category}/${product.id}`} viewTransition>
+        <CardDescription
+          className="m-0 p-0 flex items-center"
+          style={{ height: '48px' }}
+        >
+          <h2 className="w-[208px] text-sm font-semibold text-textWhite py-0">
+            <Link to={`/${product.category}/${product.id}`}>
+
               {product.name}
             </Link>
           </h2>
