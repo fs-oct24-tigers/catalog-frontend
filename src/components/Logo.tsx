@@ -7,7 +7,7 @@ export const Logo = () => {
   return (
     <Link to="/">
       {theme === 'dark' ?
-        <img className="px-6 h-8" src="/img/logo.png" alt="Dark Logo" />
+        <img className="px-6 h-8" src="/img/logo.svg" alt="Dark Logo" />
       : <img
           className="px-6 h-8"
           src="/img/nice-gadgets-logo.svg"

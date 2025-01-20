@@ -141,6 +141,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
             fill: isInFavorites ? 'red' : '',
             stroke: isInFavorites ? 'none' : '',
           }}
+          className="text-slate-950 dark:text-textWhite"
         />
       </div>
     </>

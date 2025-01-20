@@ -104,7 +104,7 @@ export const ProductOptions: React.FC<Props> = ({
         <div className="h-0.5 bg-lineGray mt-6 mb-8" />
 
         <div className="flex items-center space-x-2">
-          <p className="text-[32px] text-left font-extrabold text-textWhite">
+          <p className="text-[32px] text-left font-extrabold text-slate-950 dark:text-textWhite">
             ${product.priceDiscount}
           </p>
           {product.priceRegular !== product.priceDiscount && hasDiscount && (
@@ -123,7 +123,7 @@ export const ProductOptions: React.FC<Props> = ({
             <span className="text-sm font-semibold text-textSecondaryGray text-left">
               {property.name}
             </span>
-            <span className="text-sm font-semibold text-textWhite text-right">
+            <span className="text-sm font-semibold text-slate-950 dark:text-textWhite text-right">
               {property.value}
             </span>
           </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '@/../public/img/logo.png';
+import logo from '@/../public/img/logo.svg';
 import lightLogo from '@/../public/img/nice-gadgets-logo.svg';
 import { Link } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
