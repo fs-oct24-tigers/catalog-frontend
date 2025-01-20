@@ -25,10 +25,10 @@ const FavoritesPage = () => {
               alt="Cart is empty"
               className="h-80 mb-8 animate-swing"
             />
-            <h2 className="text-2xl font-bold">
+            <h2 className="text-slate-950 dark:text-textWhite text-2xl font-bold">
               You don&apos;t have any favourite products
             </h2>
-            <p className="text-lg mt-4">
+            <p className="text-slate-950 dark:text-textWhite text-lg mt-4">
               But it&apos;s never too late to fix it :)
             </p>
           </div>
