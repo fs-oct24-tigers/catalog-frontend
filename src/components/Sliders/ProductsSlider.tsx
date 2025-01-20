@@ -39,13 +39,13 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
               className="flex items-center justify-center cursor-pointer bg-icons border-2 hover:border-slate-300 dark:bg-gray-800 dark:hover:bg-gray-600 dark:border-0 w-8 h-8"
               onClick={handlePrev}
             >
-              <ChevronLeft className="h-4 w-4 text-textWhite" />
+              <ChevronLeft className="h-4 w-4 text-slate-900 dark:text-textWhite" />
             </button>
             <button
               className="flex items-center justify-center cursor-pointer bg-icons border-2 hover:border-slate-300 dark:bg-gray-800 dark:hover:bg-gray-600 dark:border-0 w-8 h-8"
               onClick={handleNext}
             >
-              <ChevronRight className="h-4 w-4 text-textWhite" />
+              <ChevronRight className="h-4 w-4 text-slate-900 dark:text-textWhite" />
             </button>
           </div>
         </div>

@@ -74,7 +74,7 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700 ">
             <ThemeSwitcher />
           </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
@@ -90,7 +90,10 @@ const Header: React.FC = () => {
             <AuthButtons />
           </div>
 
-          <div className="flex sm:hidden" onClick={handleMenu}>
+          <div
+            className="flex text-slate-950 dark:text-textWhite sm:hidden"
+            onClick={handleMenu}
+          >
             <AuthButtons />
 
             {!isMenuOpen ?

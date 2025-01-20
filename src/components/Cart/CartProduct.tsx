@@ -60,7 +60,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
           onClick={deleteFromCart}
           className="border-2 hover:border-slate-300 dark:border-0 dark:bg-gray-700 p-2 dark:hover:bg-gray-600 mr-4"
         >
-          <X size={16} />
+          <X size={16} className="text-slate-900 dark:text-textWhite" />
         </button>
 
         <Link to={`/${product.category}/${product.id}`}>
@@ -88,7 +88,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
                 product.quantity === 1,
             })}
           >
-            <Minus size={16} />
+            <Minus size={16} className="text-slate-900 dark:text-textWhite" />
           </button>
           <div className="mx-4 w-[32px] text-slate-950 dark:text-textWhite text-center">
             {product.quantity}
@@ -97,7 +97,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
             onClick={handleIncrement}
             className="w-8 h-8 flex items-center justify-center border-2 hover:border-slate-300 dark:border-0 dark:bg-gray-700 dark:hover:bg-gray-600"
           >
-            <Plus size={16} />
+            <Plus size={16} className="text-slate-900 dark:text-textWhite" />
           </button>
         </div>
 

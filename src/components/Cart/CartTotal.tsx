@@ -31,7 +31,7 @@ const CartTotal: React.FC = () => {
         Total items: {totalItems}
       </p>
       <button
-        className="mt-6 h-[48px] w-full border-2 text-slate-950 hover:border-slate-300 dark:bg-btnPrimary dark:hover:bg-btnHover dark:text-white dark:border-0 py-2 px-4"
+        className="mt-6 h-[48px] w-full bg-btnPrimary dark:hover:bg-btnHover text-white border-0 py-2 px-4"
         onClick={handleCheckout}
       >
         Checkout
