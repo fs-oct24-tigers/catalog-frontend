@@ -2,6 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import cn from 'classnames';
 import { HeaderFavoritesButton } from '../Header/HeaderFavoritesButton';
 import { HeaderCartButton } from '../Header/HeaderCartButton';
+import { AuthButtons } from '../Auth/AuthButtons';
 
 type Props = {
   handleCloseMenu: () => void;
@@ -24,7 +25,7 @@ export const HeaderMenu: React.FC<Props> = ({ handleCloseMenu }) => {
             onClick={handleCloseMenu}
             to={pathName}
             className={cn(
-              'relative text-textGray hover:text-textWhite leading-[55px]',
+              'relative text-textGray hover:text-textWhite leading-[42px]',
               {
                 'text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite':
                   location.pathname.includes(pathName),
@@ -37,6 +38,8 @@ export const HeaderMenu: React.FC<Props> = ({ handleCloseMenu }) => {
       ))}
       <footer className="flex justify-between items-center w-full border-t dark:border-gray-700 fixed inset-x-0 bottom-0">
         <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
+
+        <AuthButtons />
 
         <HeaderCartButton handleCloseMenu={handleCloseMenu} />
       </footer>
