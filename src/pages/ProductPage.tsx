@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 import { ProductOptions } from '../components/ProductPage/ProductOptions';
 import { ProductAbout } from '../components/ProductPage/ProductAbout';
-import { NotFoundPage } from '@/components/NotFoundPage';
+import { NotFoundPage } from '@/components/NotFoundPage/NotFoundPage';
 import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
 import { Breadcrumbs } from '@/components/BreadCrumbs';

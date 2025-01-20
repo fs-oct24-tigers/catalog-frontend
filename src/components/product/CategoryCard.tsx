@@ -16,7 +16,7 @@ export const CategoryCard: React.FC<CategoryCardProps> = ({ category }) => (
     </div>
 
     <div>
-      <h3 className="mb-1 text-h3Mobile font-bold text-textWhite">
+      <h3 className="mb-1 text-h3Mobile font-bold text-slate-950 dark:text-textWhite">
         <NavLink to={category.path}>{category.title}</NavLink>
       </h3>
       <div className="-mb-8">

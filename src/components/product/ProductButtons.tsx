@@ -22,18 +22,20 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   );
   const dispatch = useDispatch();
   const handleAddToCart = () => {
+    toast.dismiss();
     if (isInCart) {
       toast.info('Product is already in the cart!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-in-cart',
       });
       return;
@@ -42,29 +44,31 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
     if (isInFavorites) {
       toast.info('Product added to cart!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
         toastId: 'product-removed-favorites',
       });
     } else {
       toast.success('Product added to cart!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        // className: 'custom-toast',
         toastId: 'product-added-cart',
       });
     }
@@ -75,32 +79,35 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
   );
 
   const handleToggleFavorites = () => {
+    toast.dismiss();
     dispatch(toggleFavorite(product));
     if (isInFavorites) {
       toast.info('Product removed from favorites!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        className: 'custom-toast',
       });
     } else {
       toast.success('Product added to favorites!', {
         position: 'top-right',
-        autoClose: 3000,
+        autoClose: 1500,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
         style: {
-          backgroundColor: '#111827',
+          backgroundColor: '#161827',
         },
+        // className: 'custom-toast',
       });
     }
   };
@@ -109,7 +116,11 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
       <Button
         variant={isInCart ? 'secondary' : 'default'}
         onClick={handleAddToCart}
-        className="text-sm font-bold text-textWhite flex-grow text-left"
+        className={
+          isInCart ?
+            'text-sm font-bold hover:border-slate-300 text-slate-950 border-2 dark:border-0 flex-grow text-left'
+          : 'text-sm font-bold hover:border-slate-300 text-textWhite border-0 flex-grow text-left'
+        }
       >
         {isInCart ? 'Added to cart' : 'Add to cart'}
       </Button>
@@ -117,8 +128,8 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
       <div
         className={`w-10 h-10 flex items-center justify-center cursor-pointer ${
           isInFavorites ?
-            'bg-transparent border border-heartHover'
-          : 'bg-heartGray border border-transparent hover:bg-heartHover'
+            'bg-transparent border-2 hover:border-slate-300 dark:border-heartHover'
+          : 'dark:bg-heartGray border-2 hover:border-slate-300 dark:border-transparent dark:hover:bg-heartHover'
         }`}
         onClick={handleToggleFavorites}
       >
@@ -130,6 +141,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
             fill: isInFavorites ? 'red' : '',
             stroke: isInFavorites ? 'none' : '',
           }}
+          className="text-slate-950 dark:text-textWhite"
         />
       </div>
     </>

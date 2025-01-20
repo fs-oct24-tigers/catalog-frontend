@@ -21,19 +21,22 @@ export const HeaderCartButton: React.FC<Props> = ({ handleCloseMenu }) => {
       onClick={handleCloseMenu}
       to="/cart"
       className={cn(
-        'relative flex grow justify-center',
+        'relative flex grow justify-center after:content-[""] after:absolute after:block after:bottom-[2px] after:w-full after:h-[2px] after:bg-textWhite after:scale-0',
         location.pathname === '/cart' &&
-          "after:content-[''] after:absolute after:block after:bottom-[2px] after:w-full after:h-[2px] after:bg-textWhite",
+          "after:content-[''] after:absolute after:block after:bottom-[2px] after:w-full after:h-[2px] after:bg-slate-950 dark:after:bg-textWhite after:scale-100  after:origin-center after:transition-transform after:duration-300",
       )}
     >
-      <div className="flex items-center justify-center w-16 h-16 hover:bg-lineGray grow border-r border-gray-700">
+      <div className="flex items-center justify-center w-16 h-16 dark:hover:bg-lineGray grow dark:border-gray-700">
         <div className="relative">
           {totalItems > 0 && (
             <div className="absolute flex items-center justify-center top-[-9px] right-[-8px] rounded-full h-[18px] w-[18px] bg-red-700 z-10 text-[10px] leading-none">
               {totalItems}
             </div>
           )}
-          <ShoppingBag size={20} />
+          <ShoppingBag
+            size={20}
+            className="text-slate-950 dark:text-textWhite"
+          />
         </div>
       </div>
     </NavLink>

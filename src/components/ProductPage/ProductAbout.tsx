@@ -8,7 +8,7 @@ type ProductDescription = {
 export const ProductAbout: React.FC<ProductDescription> = ({ description }) => {
   return (
     <div className="flex flex-col lg:w-[559px] items-start ">
-      <div className="text-[22px] font-extrabold text-textWhite pt-[9px]">
+      <div className="text-[22px] font-extrabold text-slate-950 dark:text-textWhite pt-[9px]">
         About
       </div>
       <Table>
@@ -23,7 +23,7 @@ export const ProductAbout: React.FC<ProductDescription> = ({ description }) => {
 
       {description.map((section, index) => (
         <div key={index}>
-          <div className="text-xl font-bold text-textWhite mb-4">
+          <div className="text-xl font-bold text-slate-950 dark:text-textWhite mb-4">
             {section.title}
           </div>
 

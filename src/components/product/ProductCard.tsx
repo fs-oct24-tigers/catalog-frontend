@@ -20,7 +20,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
   const hasDiscount = true;
 
   return (
-    <Card className="w-full max-w-[272px] flex flex-col space-y-2 p-8 shadow-md self-center justify-center items-center h-full border border-transparent hover:border-lineGray">
+    <Card className="w-full max-w-[272px] flex flex-col space-y-2 p-8 shadow-md self-center justify-center items-center h-full border border-transparent hover:border-slate-300 dark:hover:border-lineGray">
       <CardHeader className="flex flex-col items-center space-y-2 m-0 p-0">
         <CardTitle className="flex justify-center items-center m-0 p-0">
           <div className="w-[208px] h-[196px]">
@@ -40,6 +40,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         >
           <h2 className="w-[208px] text-sm font-semibold text-textWhite py-0">
             <Link to={`/${product.category}/${product.id}`}>
+
               {product.name}
             </Link>
           </h2>
@@ -48,7 +49,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
       <CardContent className="flex flex-col items-center justify-start w-ful space-y-2 p-0 pb-2">
         <div className="flex items-center w-[208px] space-x-2">
-          <p className="text-[22px] text-left font-extrabold text-textWhite">
+          <p className="text-[22px] text-left font-extrabold text-slate-950 dark:text-textWhite">
             ${product.priceDiscount}
           </p>
           {hasDiscount && (
@@ -62,21 +63,21 @@ const ProductCard: React.FC<Props> = ({ product }) => {
 
         <div className="flex justify-between items-center w-[208px]">
           <span className="text-xs font-bold text-textGray">Screen</span>
-          <span className="text-xs font-bold text-textWhite">
+          <span className="text-xs font-bold text-slate-950 dark:text-textWhite">
             {product.screen}
           </span>
         </div>
 
         <div className="flex justify-between items-center w-[208px]">
           <span className="text-xs font-bold text-textGray">Capacity</span>
-          <span className="text-xs font-bold text-textWhite">
+          <span className="text-xs font-bold dark:text-textWhite">
             {product.capacity}
           </span>
         </div>
 
         <div className="flex justify-between items-center w-[208px]">
           <span className="text-xs font-bold text-textGray">RAM</span>
-          <span className="text-xs font-bold text-textWhite">
+          <span className="text-xs font-bold text-slate-950 dark:text-textWhite">
             {product.ram}
           </span>
         </div>
