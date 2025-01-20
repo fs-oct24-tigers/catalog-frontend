@@ -4,17 +4,19 @@ interface CreatorsCard {
   image: string;
   name: string;
   role: string;
-  title: string;
+  github?: string;
+  linkedin?: string;
 }
 
 export const CreatorCard: React.FC<CreatorsCard> = ({
   image,
   name,
   role,
-  title,
+  github,
+  linkedin,
 }) => {
   return (
-    <div className="flex flex-col items-center bg-gray-800 p-6 rounded-md shadow-md">
+    <div className="flex flex-col items-center bg-gray-800 p-6 rounded-md shadow-md border border-gray-800 hover:border-textGray cursor-pointer">
       <img
         src={image}
         alt={name}
@@ -22,7 +24,12 @@ export const CreatorCard: React.FC<CreatorsCard> = ({
       />
       <h2 className="text-[14px] font-semibold text-white">{name}</h2>
       <p className="text-[12px] text-gray-400">{role}</p>
-      {title && <p className="text-[32px] text-gray-400">{title}</p>}
+      <a href={github} className="text-[12px] underline">
+        GitHub Profile
+      </a>
+      <a href={linkedin} className="text-[12px] underline">
+        Linkedin Profile
+      </a>
     </div>
   );
 };

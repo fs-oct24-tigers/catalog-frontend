@@ -1,5 +1,10 @@
 import { Color } from './types';
 import { Product } from './types';
+import creator1Image from '../public/img/creator1.png';
+import creator2Image from '../public/img/creator2.png';
+import creator3Image from '../public/img/creator3.png';
+import creator4Image from '../public/img/creator4.png';
+import creator5Image from '../public/img/creator5.png';
 
 export const colorOptions: Record<Color, string> = {
   green: '#51E5BD',
@@ -48,3 +53,42 @@ export const getProperties = (product: Product) => {
 };
 
 export const categories = ['phones', 'tablets', 'accessories'];
+
+export const creators = [
+  {
+    image: creator4Image,
+    name: 'Ihor Krykunov',
+    role: 'Team leader, developer',
+    github: 'https://github.com/Krykunov',
+    linkedin: 'https://www.linkedin.com/in/igor443/',
+  },
+  {
+    image: creator2Image,
+    name: 'Andrii Yanchuk',
+    role: 'Developer',
+    github: 'https://github.com/Andrii-Yanchuk',
+    linkedin: '',
+  },
+  {
+    image: creator1Image,
+    name: 'Stanislav Chyrva',
+    role: 'Developer',
+    github: 'https://github.com/schyrva',
+    linkedin: '',
+  },
+  {
+    image: creator3Image,
+    name: 'Dmytro Fridrif',
+    role: 'Developer',
+    github: 'https://github.com/Fridrif27',
+    linkedin:
+      'https://www.linkedin.com/in/dmytro-fridrif-971444261?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app',
+  },
+  {
+    image: creator5Image,
+    name: 'Alyona Verbanova',
+    role: 'Developer',
+    github: 'https://github.com/AlyonaV22',
+    linkedin: '',
+  },
+];

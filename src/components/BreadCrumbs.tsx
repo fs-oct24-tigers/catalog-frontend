@@ -42,7 +42,7 @@ export const Breadcrumbs = ({ category, productName }: BreadcrumbsProps) => {
             <>
               <BreadcrumbSeparator className="text-textGray" />
               <BreadcrumbItem>
-                <BreadcrumbPage className="text-textWhite">
+                <BreadcrumbPage className="text-slate-950 dark:text-textWhite">
                   {productName}
                 </BreadcrumbPage>
               </BreadcrumbItem>

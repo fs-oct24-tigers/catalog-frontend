@@ -68,7 +68,7 @@ export const SearchProduct = () => {
           onClick={handleSearchToggle}
           className="flex items-center justify-center w-12 h-12 dark:hover:bg-lineGray dark:border-gray-700"
         >
-          <Search size={20} />
+          <Search size={20} className="text-slate-950 dark:text-textWhite" />
         </button>
       </div>
 

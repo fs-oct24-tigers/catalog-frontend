@@ -18,6 +18,8 @@ import { clearCart } from '@/features/cart';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '@/css/index.css';
+import { SignInButton, useAuth } from '@clerk/clerk-react';
+import { useOrders } from '@/hooks/useOrders';
 
 interface PurchaseModalProps {
   open: boolean;
@@ -41,6 +43,8 @@ const toastConfig = {
 export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
   const cartProducts = useAppSelector((state) => state.cart);
   const dispatch = useAppDispatch();
+  const { isSignedIn } = useAuth();
+  const { createOrder } = useOrders();
 
   const totalPrice = cartProducts.reduce(
     (acc, product) =>
@@ -53,28 +57,45 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
     0,
   );
 
-  const handleCheckout = () => {
+  const handlePurchase = async () => {
     toast.dismiss();
     if (totalItems === 0) {
       toast.error('Your cart is empty!', {
         ...toastConfig,
         toastId: 'cart-empty',
       });
-    } else {
+      return;
+    }
+
+    try {
+      await createOrder(cartProducts, totalPrice);
+
       toast.success('Your order has been successfully placed!', {
         ...toastConfig,
         toastId: 'order-success',
       });
+
       dispatch(clearCart());
       onOpenChange(false);
+    } catch (error) {
+      toast.error('Failed to place order. Please try again.', {
+        ...toastConfig,
+        toastId: 'order-error',
+      });
+      console.error('Order creation failed:', error);
     }
+  };
+
+  const handleSignInClick = () => {
+    onOpenChange(false);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] bg-cardBg border-cardBg">
+      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] bg-cardBg border-cardBg z-50">
+
         <DialogHeader>
-          <DialogTitle className="text-xl sm:text-2xl text-center">
+          <DialogTitle className="text-slate-950 dark:text-textWhite text-xl sm:text-2xl text-center">
             Complete your purchase
           </DialogTitle>
         </DialogHeader>
@@ -82,14 +103,14 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           <div className="overflow-x-auto">
             <Table className="min-w-full">
               <TableHeader>
-                <TableRow className="bg-gray-800">
-                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                <TableRow className="bg-slate-300 dark:bg-gray-800">
+                  <TableHead className="text-slate-950 dark:text-textWhite text-lg sm:text-xl px-4 py-2">
                     Product
                   </TableHead>
-                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                  <TableHead className="text-slate-950 dark:text-textWhite text-lg sm:text-xl px-4 py-2">
                     Quantity
                   </TableHead>
-                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                  <TableHead className="text-slate-950 dark:text-textWhite text-lg sm:text-xl px-4 py-2">
                     Price
                   </TableHead>
                 </TableRow>
@@ -99,16 +120,18 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
                   <TableRow
                     key={product.id}
                     className={`${
-                      index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-600'
-                    } hover:bg-gray-500 transition-colors`}
+                      index % 2 === 0 ?
+                        'bg-slate-100 dark:bg-gray-700'
+                      : 'bg-slate-200 dark:bg-gray-600'
+                    } hover:bg-slate-400 dark:hover:bg-gray-500 transition-colors`}
                   >
-                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                    <TableCell className="text-slate-950 dark:text-textWhite text-base sm:text-lg px-4 py-2">
                       {product.name}
                     </TableCell>
-                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                    <TableCell className="text-slate-950 dark:text-textWhite text-base sm:text-lg px-4 py-2">
                       {product.quantity}
                     </TableCell>
-                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                    <TableCell className="text-slate-950 dark:text-textWhite text-base sm:text-lg px-4 py-2">
                       $
                       {(product.priceDiscount || product.priceRegular).toFixed(
                         2,
@@ -120,17 +143,27 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
             </Table>
           </div>
 
-          <div className="flex justify-end mt-6 text-lg sm:text-xl">
+          <div className="text-slate-950 dark:text-textWhite flex justify-end mt-6 text-lg sm:text-xl">
             <span>Total Price: ${totalPrice.toFixed(2)}</span>
           </div>
 
           <div className="flex justify-center gap-4 mt-8">
-            <Button
-              className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
-              onClick={handleCheckout}
-            >
-              Confirm
-            </Button>
+            {isSignedIn ?
+              <Button
+                className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
+                onClick={handlePurchase}
+              >
+                Purchase
+              </Button>
+            : <SignInButton mode="modal">
+                <Button
+                  className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
+                  onClick={handleSignInClick}
+                >
+                  Sign in to Checkout
+                </Button>
+              </SignInButton>
+            }
             <Button
               className="bg-btnPrimary hover:bg-btnHover text-textWhite px-6 sm:px-8 text-base sm:text-lg"
               onClick={() => onOpenChange(false)}

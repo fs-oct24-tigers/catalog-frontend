@@ -32,7 +32,10 @@ export const HeaderCartButton: React.FC<Props> = ({ handleCloseMenu }) => {
               {totalItems}
             </div>
           )}
-          <ShoppingBag size={20} />
+          <ShoppingBag
+            size={20}
+            className="text-slate-950 dark:text-textWhite"
+          />
         </div>
       </div>
     </NavLink>

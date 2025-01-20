@@ -29,7 +29,7 @@ export const HeaderFavoritesButton: React.FC<Props> = ({ handleCloseMenu }) => {
               {totalFavorites}
             </div>
           )}
-          <Heart size={20} />
+          <Heart size={20} className="text-slate-950 dark:text-textWhite" />
         </div>
       </div>
     </NavLink>

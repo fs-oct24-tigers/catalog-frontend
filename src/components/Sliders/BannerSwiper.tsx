@@ -99,7 +99,7 @@ const BannerSwiper: React.FC = () => {
               onClick={goToPrevSlide}
               aria-label="Previous slide"
             >
-              <ChevronLeft className="w-4 h-4 " />
+              <ChevronLeft className="w-4 h-4 text-slate-900 dark:text-textWhite" />
             </button>
 
             <div
@@ -177,7 +177,7 @@ const BannerSwiper: React.FC = () => {
               onClick={goToNextSlide}
               aria-label="Next slide"
             >
-              <ChevronRight className="w-4 h-4" />
+              <ChevronRight className="w-4 h-4 text-slate-900 dark:text-textWhite" />
             </button>
           </div>
         </div>
