@@ -66,14 +66,14 @@ export const SearchProduct = () => {
       <div className="h-16 flex justify-center items-center">
         <button
           onClick={handleSearchToggle}
-          className="flex items-center justify-center w-16 h-16 dark:hover:bg-lineGray dark:border-gray-700"
+          className="flex items-center justify-center w-12 h-12 dark:hover:bg-lineGray dark:border-gray-700"
         >
           <Search size={20} />
         </button>
       </div>
 
       {isSearchOpen && (
-        <div className="flex items-center top-0 right-0  w-[300px] shadow-sm">
+        <div className=" flex items-center top-0 right-0 w-full shadow-sm">
           <input
             type="text"
             value={inputValue}

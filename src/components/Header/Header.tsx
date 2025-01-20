@@ -43,27 +43,27 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="border-b dark:border-gray-700 h-16 relative z-50 ">
+    <header className="border-b dark:border-gray-700 h-12 relative z-50 ">
       <nav
         data-cy="nav"
-        className="is-fixed-top has-shadow flex items-center justify-between"
+        className="relative is-fixed-top has-shadow flex items-center justify-between"
         role="navigation"
         aria-label="main navigation"
       >
-        <div className="flex items-center gap-[60px] ">
+        <div className="flex items-center lg:gap-[60px] sm:gap-[30px]">
           <Logo handleCloseMenu={handleCloseMenu} />
           {navLinks.map(({ name, pathName }) => (
             <div
-              className={cn('relative h-16 flex items-center hidden md:flex')}
+              className={cn('relative h-12 flex items-center hidden md:flex')}
               key={name}
             >
               <Link
                 to={pathName}
                 className={cn(
-                  'text-slate-600 hover:text-slate-950 dark:text-textGray dark:hover:text-textWhite leading-[55px] after:scale-0',
+                  'text-slate-600 hover:text-slate-950 dark:text-textGray dark:hover:text-textWhite leading-[42px] after:scale-0',
                   {
                     'dark:text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-slate-950 dark:after:bg-textWhite after:scale-100  after:origin-center after:transition-transform after:duration-300':
-                      location.pathname === pathName,
+                      location.pathname.includes(pathName),
                   },
                 )}
               >
@@ -74,25 +74,23 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
-            <ThemeSwitcher />
-          </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
+          <div className="h-12 ml-[10px] flex justify-between items-center  border-l dark:border-gray-700">
             <SearchProduct />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
+          <div className="h-12 flex justify-between items-center border-l dark:border-gray-700">
+            <ThemeSwitcher />
+          </div>
+          <div className="h-12 flex justify-between items-center hidden md:flex border-l dark:border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
-          <div className="h-16 flex justify-between items-center hidden md:flex">
+          <div className="h-12 flex justify-between items-center hidden md:flex">
             <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex">
+          <div className="h-12 flex justify-between items-center hidden md:flex">
             <AuthButtons />
           </div>
 
-          <div className="flex sm:hidden" onClick={handleMenu}>
-            <AuthButtons />
-
+          <div className="flex md:hidden" onClick={handleMenu}>
             {!isMenuOpen ?
               <HeaderMenuButton />
             : <HeaderCloseButton />}

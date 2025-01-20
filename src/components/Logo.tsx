@@ -4,16 +4,16 @@ import { useTheme } from './ThemeSwitcher/ThemeSwitcher';
 type Props = {
   handleCloseMenu: () => void;
 };
-      
+
 export const Logo: React.FC<Props> = ({ handleCloseMenu }) => {
   const { theme } = useTheme();
 
   return (
     <Link to="/" onClick={handleCloseMenu}>
       {theme === 'dark' ?
-        <img className="px-6 h-8" src="/img/logo.png" alt="Dark Logo" />
+        <img className="pl-6 h-8" src="/img/logo.png" alt="Dark Logo" />
       : <img
-          className="px-6 h-8"
+          className="pl-6 h-8"
           src="/img/nice-gadgets-logo.svg"
           alt="Light Logo"
         />
