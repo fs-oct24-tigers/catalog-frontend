@@ -115,7 +115,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
       </Button>
 
       <div
-        className={`w-10 h-10 flex items-center justify-center ${
+        className={`w-10 h-10 flex items-center justify-center cursor-pointer ${
           isInFavorites ?
             'bg-transparent border border-heartHover'
           : 'bg-heartGray border border-transparent hover:bg-heartHover'
