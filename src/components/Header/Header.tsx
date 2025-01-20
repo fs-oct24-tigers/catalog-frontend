@@ -58,9 +58,9 @@ const Header: React.FC = () => {
               <Link
                 to={pathName}
                 className={cn(
-                  'text-textGray hover:text-textWhite leading-[55px] ',
+                  'text-textGray hover:text-textWhite leading-[55px] after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite after:scale-0',
                   {
-                    'text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-textWhite':
+                    'text-textWhite after:scale-100  after:origin-center after:transition-transform after:duration-300':
                       location.pathname === pathName,
                   },
                 )}

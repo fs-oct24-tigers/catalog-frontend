@@ -21,7 +21,7 @@ const FavoritesPage = () => {
               <div className="absolute top-1/5 left-1/2 w-2 h-2 bg-white rounded-full animate-float-fast opacity-80" />
             </div>
             <img
-              src="public\img\product-not-found.png"
+              src="/img/product-not-found.png"
               alt="Cart is empty"
               className="h-80 mb-8 animate-swing"
             />

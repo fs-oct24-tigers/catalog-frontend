@@ -8,7 +8,7 @@ export const CartEmpty = () => {
         <div className="absolute top-1/2 left-1/3 w-2 h-2 bg-white rounded-full animate-float-medium opacity-30" />
       </div>
       <img
-        src="public\img\cart-is-empty.png"
+        src="/img/cart-is-empty.png"
         alt="Cart is empty"
         className="size-80 mb-8 animate-swing"
       />
