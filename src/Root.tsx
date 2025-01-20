@@ -11,6 +11,7 @@ import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
 import { categories } from './constants';
+import { Delivery } from './pages/Delivery';
 
 const Root = () => {
   return (
@@ -41,6 +42,7 @@ const Root = () => {
             <Route path="cart" element={<CartPage />} />
             <Route path="home" element={<Navigate to="/" replace />} />
             <Route path="contacts" element={<ContactsPage />} />
+            <Route path="delivery" element={<Delivery />} />
             <Route path="*" element={<NotFoundPage />} />
           </Route>
         </Routes>

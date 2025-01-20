@@ -37,6 +37,9 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
         <a href="#" className="footer-link">
           Rights
         </a>
+        <Link to="/delivery" className="footer-link">
+          Delivery
+        </Link>
       </div>
 
       <div className="flex justify-center items-center gap-4 mt-6 md:mt-0 sm:mt-8">
