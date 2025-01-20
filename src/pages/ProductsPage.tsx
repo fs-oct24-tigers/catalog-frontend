@@ -1,7 +1,6 @@
-import { FC } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import usePagedQuery from '@/hooks/usePagedQuery';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
@@ -11,27 +10,64 @@ import PagesQuantitySelect from '@/components/PagesQuantitySelect';
 import { useAppSelector } from '@/app/hooks';
 import { changePerPage } from '@/features/perPage';
 import SortingSelect from '@/components/SortingSelect';
-import { sortProducts } from '@/utils/sortProducts';
 import Pagination from '@/components/Pagination';
+import { getProducts } from '@/api/apiProducts';
+import { Product } from '@/types';
+
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 type Props = {
   category: string;
 };
 
 const ProductsPage: FC<Props> = ({ category }) => {
+  const [products, setProducts] = useState<Product[]>([]);
+  const [totalCount, setTotalCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  const [isError, setIsError] = useState(false);
+
+  const [searchParams, setSearchParams] = useSearchParams();
+
   const dispatch = useDispatch();
   const perPage = useAppSelector((state) => state.perPage);
   const currentSort = useAppSelector((state) => state.sorting);
 
-  const [searchParams, setSearchParams] = useSearchParams();
   const currentPage = Number(searchParams.get('page')) || 1;
 
-  const { products, totalCount, isLoading, isError } = usePagedQuery({
-    category,
-    currentPage,
-    perPage,
-    currentSort,
-  });
+  // const { products, totalCount, isLoading, isError } = usePagedQuery({
+  //   category,
+  //   currentPage,
+  //   perPage,
+  //   currentSort,
+  // });
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsLoading(true);
+      setIsError(false);
+
+      try {
+        const { products, totalCount } = await getProducts(
+          category,
+          perPage,
+          currentPage,
+          currentSort,
+        );
+
+        console.log('data', products);
+        setProducts(products);
+        setTotalCount(totalCount ?? 0);
+      } catch (error) {
+        console.error('Failed to fetch products:', error);
+        setIsError(true);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, [category, currentPage, perPage, currentSort]);
 
   const handlePerPageChange = (perPage: number) => {
     dispatch(changePerPage(perPage));
@@ -49,15 +85,15 @@ const ProductsPage: FC<Props> = ({ category }) => {
     });
   };
 
-  if (isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
   if (isError) {
     return <div>Error fetching products</div>;
   }
 
-  const sortedProducts = products && sortProducts(products, currentSort);
+  // const sortedProducts = products && sortProducts(products, currentSort);
 
   return (
     <div className="container">
@@ -71,13 +107,26 @@ const ProductsPage: FC<Props> = ({ category }) => {
           handlePerPageChange={handlePerPageChange}
         />
       </div>
-      {sortedProducts && sortedProducts.length > 0 ?
+      {isLoading && (
+        // Show Skeleton while loading
+
+        <SkeletonTheme baseColor="#161827" highlightColor="#0f1121">
+          <div className="m-auto grid gap-x-4 gap-y-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center place-items-center">
+            {Array.from({ length: 16 }).map((_, index) => (
+              <div key={index} className="w-full">
+                <Skeleton height={487} width="100%" />
+              </div>
+            ))}
+          </div>
+        </SkeletonTheme>
+      )}
+      {products && products.length > 0 && (
         <ProductGrid>
-          {sortedProducts.map((product) => (
-            <ProductCard key={product.id} product={product} />
+          {products.map((product) => (
+            <ProductCard key={product.itemId} product={product} />
           ))}
         </ProductGrid>
-      : <div>No products available</div>}
+      )}
       <Pagination
         currentPage={currentPage}
         totalItems={totalCount}

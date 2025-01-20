@@ -1,6 +1,6 @@
 import { useQuery } from '@tanstack/react-query';
 import { Product } from '@/types';
-import { get } from '@/api/fetchProducts';
+import { get } from '@/api/delete-fetchProducts';
 
 type QueryData = {
   products: Product[];
