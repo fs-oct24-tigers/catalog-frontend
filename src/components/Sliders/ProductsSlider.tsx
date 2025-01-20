@@ -30,20 +30,19 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
   return (
     <div className="w-full mb-20 overflow-hidden">
       <div className="max-w-7xl mx-auto">
-
         <div className="flex justify-between items-center mb-8">
-          <h2 className="text-h3 sm:text-h2 font-extrabold text-textWhite mb-6">
+          <h2 className="text-h3 sm:text-h2 font-extrabold text-slate-950 dark:text-textWhite mb-6">
             {title}
           </h2>
           <div className="flex gap-2 items-center justify-center">
             <button
-              className="flex items-center justify-center cursor-pointer bg-icons bg-bgGrayHigh hover:bg-bgGrayLight border-0 w-8 h-8"
+              className="flex items-center justify-center cursor-pointer bg-icons border-2 hover:border-slate-300 dark:bg-gray-800 dark:hover:bg-gray-600 dark:border-0 w-8 h-8"
               onClick={handlePrev}
             >
               <ChevronLeft className="h-4 w-4 text-textWhite" />
             </button>
             <button
-              className="flex items-center justify-center cursor-pointer bg-icons bg-bgGrayHigh hover:bg-bgGrayLight border-0 w-8 h-8"
+              className="flex items-center justify-center cursor-pointer bg-icons border-2 hover:border-slate-300 dark:bg-gray-800 dark:hover:bg-gray-600 dark:border-0 w-8 h-8"
               onClick={handleNext}
             >
               <ChevronRight className="h-4 w-4 text-textWhite" />
@@ -52,7 +51,7 @@ const PhonesSlider: React.FC<PhonesSliderProps> = ({
         </div>
 
         {isLoading ?
-          <div className="text-textWhite">Loading...</div>
+          <div className="text-slate-950 dark:text-textWhite">Loading...</div>
         : isError ?
           <div className="text-red-500">Failed to load products</div>
         : products.length > 0 ?

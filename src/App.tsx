@@ -17,7 +17,7 @@ export const App = () => {
         <Main>
           <Outlet />
         </Main>
-        <Footer className="mt-auto" />
+        <Footer className="sticky top-[100vh]" />
         <ToastContainer />
       </div>
     </ThemeProvider>

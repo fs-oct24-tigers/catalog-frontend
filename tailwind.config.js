@@ -23,13 +23,9 @@ export default {
         textMutedGray: '#B4BDC3',
         btnBejge: '#FCDBC1',
         btnGreen: '#27AE60',
-        borderGray: '#374151',
-        borderGrayHigh: '#1F2937',
-        borderGrayLight: '#4B5563',
-        bgGrayLight: '#4B5563',
-        bgGrayMd: '#374151',
-        bgGrayHigh: '#1F2937',
-        bgGrayLow: '#6B7280',
+
+        // text-slate-600
+        // hover:text-slate-950
 
         light: {
           bodyBg: '#FFFFFF',
@@ -37,7 +33,7 @@ export default {
           heartGray: '#E9ECEF',
           heartHover: '#DEE2E6',
           lineGray: '#CED4DA',
-          textPrimary: '#212529',
+          textPrimary: '#33333',
           textSecondary: '#495057',
           textMuted: '#6C757D',
           borderLight: '#E9ECEF',

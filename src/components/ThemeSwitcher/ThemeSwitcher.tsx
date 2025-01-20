@@ -47,12 +47,12 @@ export const ThemeSwitcher = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-5 transition-colors duration-200 hover:bg-lineGray"
+      className="p-5 transition-colors duration-200"
       aria-label="Toggle theme"
     >
       {theme === 'dark' ?
         <Sun className="w-5 h-5 text-textWhite" />
-      : <Moon className="w-5 h-5 text-textGray" />}
+      : <Moon className="w-5 h-5 text-textWhite" />}
     </button>
   );
 };
