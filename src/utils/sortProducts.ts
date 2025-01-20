@@ -1,5 +1,4 @@
-import { Product } from '@/types';
-import { SortType } from '@/features/sorting';
+import { Product, SortType } from '@/types';
 
 export const sortProducts = (products: Product[], sortType: SortType) => {
   const sortedProducts = [...products];
