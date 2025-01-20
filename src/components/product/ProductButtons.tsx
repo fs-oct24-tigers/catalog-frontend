@@ -68,7 +68,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         style: {
           backgroundColor: '#161827',
         },
-        className: 'custom-toast',
+        // className: 'custom-toast',
         toastId: 'product-added-cart',
       });
     }
@@ -107,7 +107,7 @@ const ProductButtons: React.FC<Props> = ({ product }) => {
         style: {
           backgroundColor: '#161827',
         },
-        className: 'custom-toast',
+        // className: 'custom-toast',
       });
     }
   };
