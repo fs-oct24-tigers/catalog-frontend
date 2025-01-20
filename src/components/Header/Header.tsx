@@ -15,8 +15,6 @@ const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
   { name: 'TABLETS', pathName: '/tablets' },
   { name: 'ACCESSORIES', pathName: '/accessories' },
-  { pathName: '/favourites' },
-  { pathName: '/cart' },
 ];
 
 const Header: React.FC = () => {
@@ -52,21 +50,19 @@ const Header: React.FC = () => {
         role="navigation"
         aria-label="main navigation"
       >
-        <div className="flex items-center gap-[64px] ">
-          <Logo />
+        <div className="flex items-center gap-[60px] ">
+          <Logo handleCloseMenu={handleCloseMenu} />
           {navLinks.map(({ name, pathName }) => (
             <div
-              className={cn(
-                'relative size-max h-16 flex items-center hidden sm:flex',
-              )}
+              className={cn('relative h-16 flex items-center hidden md:flex')}
               key={name}
             >
               <Link
                 to={pathName}
                 className={cn(
-                  'text-slate-600 hover:text-slate-950 dark:text-textGray dark:hover:text-textWhite leading-[55px] ',
+                  'text-slate-600 hover:text-slate-950 dark:text-textGray dark:hover:text-textWhite leading-[55px] after:scale-0',
                   {
-                    'dark:text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-slate-950 dark:after:bg-textWhite':
+                    'dark:text-textWhite after:content-[""] after:absolute after:block after:b-0 after:w-full after:h-[2px] after:bg-slate-950 dark:after:bg-textWhite after:scale-100  after:origin-center after:transition-transform after:duration-300':
                       location.pathname === pathName,
                   },
                 )}
@@ -78,7 +74,7 @@ const Header: React.FC = () => {
         </div>
 
         <div className="flex">
-          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
+          <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700 ">
             <ThemeSwitcher />
           </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
@@ -87,15 +83,19 @@ const Header: React.FC = () => {
           <div className="h-16 flex justify-between items-center hidden sm:flex border-l dark:border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
-          <div className="h-16 flex justify-between items-center hidden sm:flex">
+          <div className="h-16 flex justify-between items-center hidden md:flex">
             <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
           <div className="h-16 flex justify-between items-center hidden sm:flex">
             <AuthButtons />
           </div>
 
-          <div className="flex sm:hidden" onClick={handleMenu}>
+          <div
+            className="flex text-slate-950 dark:text-textWhite sm:hidden"
+            onClick={handleMenu}
+          >
             <AuthButtons />
+
             {!isMenuOpen ?
               <HeaderMenuButton />
             : <HeaderCloseButton />}

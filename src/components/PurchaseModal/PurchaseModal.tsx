@@ -93,8 +93,9 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[600px] md:max-w-[700px] bg-cardBg border-cardBg z-50">
+
         <DialogHeader>
-          <DialogTitle className="text-xl sm:text-2xl text-center">
+          <DialogTitle className="text-slate-950 dark:text-textWhite text-xl sm:text-2xl text-center">
             Complete your purchase
           </DialogTitle>
         </DialogHeader>
@@ -102,14 +103,14 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
           <div className="overflow-x-auto">
             <Table className="min-w-full">
               <TableHeader>
-                <TableRow className="bg-gray-800">
-                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                <TableRow className="bg-slate-300 dark:bg-gray-800">
+                  <TableHead className="text-slate-950 dark:text-textWhite text-lg sm:text-xl px-4 py-2">
                     Product
                   </TableHead>
-                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                  <TableHead className="text-slate-950 dark:text-textWhite text-lg sm:text-xl px-4 py-2">
                     Quantity
                   </TableHead>
-                  <TableHead className="text-textWhite text-lg sm:text-xl px-4 py-2">
+                  <TableHead className="text-slate-950 dark:text-textWhite text-lg sm:text-xl px-4 py-2">
                     Price
                   </TableHead>
                 </TableRow>
@@ -119,16 +120,18 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
                   <TableRow
                     key={product.id}
                     className={`${
-                      index % 2 === 0 ? 'bg-gray-700' : 'bg-gray-600'
-                    } hover:bg-gray-500 transition-colors`}
+                      index % 2 === 0 ?
+                        'bg-slate-100 dark:bg-gray-700'
+                      : 'bg-slate-200 dark:bg-gray-600'
+                    } hover:bg-slate-400 dark:hover:bg-gray-500 transition-colors`}
                   >
-                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                    <TableCell className="text-slate-950 dark:text-textWhite text-base sm:text-lg px-4 py-2">
                       {product.name}
                     </TableCell>
-                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                    <TableCell className="text-slate-950 dark:text-textWhite text-base sm:text-lg px-4 py-2">
                       {product.quantity}
                     </TableCell>
-                    <TableCell className="text-base sm:text-lg px-4 py-2">
+                    <TableCell className="text-slate-950 dark:text-textWhite text-base sm:text-lg px-4 py-2">
                       $
                       {(product.priceDiscount || product.priceRegular).toFixed(
                         2,
@@ -140,7 +143,7 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
             </Table>
           </div>
 
-          <div className="flex justify-end mt-6 text-lg sm:text-xl">
+          <div className="text-slate-950 dark:text-textWhite flex justify-end mt-6 text-lg sm:text-xl">
             <span>Total Price: ${totalPrice.toFixed(2)}</span>
           </div>
 

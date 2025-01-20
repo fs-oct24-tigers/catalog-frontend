@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '@/../public/img/logo.png';
+import logo from '@/../public/img/logo.svg';
 import lightLogo from '@/../public/img/nice-gadgets-logo.svg';
 import { Link } from 'react-router-dom';
 import { ChevronUp } from 'lucide-react';
@@ -44,7 +44,7 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
           Back to top
         </p>
         <button onClick={scrollToTop} className="footer-button">
-          <ChevronUp className="w-4 h-4" />
+          <ChevronUp className="w-4 h-4 text-slate-950 dark:text-textWhite" />
         </button>
       </div>
     </footer>

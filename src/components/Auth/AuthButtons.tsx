@@ -18,7 +18,7 @@ export const AuthButtons = () => {
       </SignedOut>
 
       <SignedIn>
-        <div className="flex size-16 items-center justify-center border-x dark:border-gray-700 dark:hover:bg-lineGray cursor-pointer">
+        <div className="flex size-16 items-center justify-center border-l dark:border-gray-700 dark:hover:bg-lineGray cursor-pointer">
           <UserButton
             afterSignOutUrl="/"
             appearance={{
