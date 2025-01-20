@@ -9,7 +9,6 @@ import { colorOptions } from '@/constants';
 type Props = {
   category: string;
   product: Product;
-  products: Product[];
   properties: { name: string; value: string | undefined }[];
 };
 

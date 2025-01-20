@@ -11,6 +11,7 @@ import {
 import { Product } from '@/types';
 import { Link } from 'react-router-dom';
 import ProductButtons from './ProductButtons';
+import { SUPABASE_STORAGE_URL } from '@/constants/auth';
 
 type Props = {
   product: Product;
@@ -24,9 +25,9 @@ const ProductCard: React.FC<Props> = ({ product }) => {
       <CardHeader className="flex flex-col items-center space-y-2 m-0 p-0">
         <CardTitle className="flex justify-center items-center m-0 p-0">
           <div className="w-[208px] h-[196px]">
-            <Link to={`/${product.category}/${product.id}`}>
+            <Link to={`/${product.category}/${product.itemId}`}>
               <img
-                src={`/${product.images[0]}`}
+                src={`${SUPABASE_STORAGE_URL}/${product.images[0]}`}
                 alt="iPhone"
                 className="w-full h-full object-contain"
               />
@@ -39,8 +40,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
           style={{ height: '48px' }}
         >
           <h2 className="w-[208px] text-sm font-semibold text-textWhite py-0">
-            <Link to={`/${product.category}/${product.id}`}>
-
+            <Link to={`/${product.category}/${product.itemId}`}>
               {product.name}
             </Link>
           </h2>
