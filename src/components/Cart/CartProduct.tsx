@@ -10,6 +10,7 @@ import { Link } from 'react-router-dom';
 import cn from 'classnames';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { SUPABASE_STORAGE_URL } from '@/constants/auth';
 
 type Props = {
   product: CartProduct;
@@ -63,13 +64,17 @@ const CartProduct: React.FC<Props> = ({ product }) => {
           <X size={16} className="text-slate-900 dark:text-textWhite" />
         </button>
 
-        <Link to={`/${product.category}/${product.id}`}>
+        <Link to={`/${product.category}/${product.itemId}`}>
           <div className="flex justify-center w-[80px] h-[80px]">
-            <img className="h-[80px]" src={product.images[0]} alt="iphone" />
+            <img
+              className="h-[80px]"
+              src={`${SUPABASE_STORAGE_URL}/${product.images[0]}`}
+              alt="iphone"
+            />
           </div>
         </Link>
 
-        <Link to={`/${product.category}/${product.id}`} className="flex-1">
+        <Link to={`/${product.category}/${product.itemId}`} className="flex-1">
           <p className="text-slate-950 dark:text-textWhite text-lg">
             {product.name}
           </p>

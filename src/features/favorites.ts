@@ -9,11 +9,13 @@ export const favoritesSlice = createSlice({
   reducers: {
     toggleFavorite: (state, action: PayloadAction<Product>) => {
       const existProduct = state.find(
-        (product) => product.id === action.payload.id,
+        (product) => product.itemId === action.payload.itemId,
       );
 
       if (existProduct) {
-        return state.filter((product) => product.id !== action.payload.id);
+        return state.filter(
+          (product) => product.itemId !== action.payload.itemId,
+        );
       }
 
       state.push(action.payload);
