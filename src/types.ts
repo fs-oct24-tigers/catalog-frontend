@@ -4,7 +4,7 @@ export type Description = {
 };
 
 export type Product = {
-  id: string;
+  itemId: string;
   category: string;
   namespaceId?: string;
   name: string;
@@ -25,30 +25,6 @@ export type Product = {
   cell?: string[];
   year: number;
 };
-
-export interface ApiPhone {
-  id?: string;
-  itemId?: string;
-  category: string;
-  name: string;
-  capacity: string;
-  priceRegular?: number;
-  fullPrice?: number;
-  priceDiscount?: number;
-  price?: number;
-  screen: string;
-  ram: string;
-  color: string;
-  year?: number;
-  images?: string[];
-  image?: string;
-}
-
-export interface PhonesSliderProps {
-  title: string;
-  apiEndpoint: string;
-  filterType?: 'newModels' | 'hotPrices';
-}
 
 export type Color =
   | 'green'
@@ -79,3 +55,12 @@ export type Category = {
   image: string;
   path: string;
 };
+
+export type SortType =
+  | 'alphabetically'
+  | 'cheapest'
+  | 'expensive'
+  | 'newest'
+  | 'oldest';
+
+export type FilterType = 'newModels' | 'hotPrices' | 'all';
