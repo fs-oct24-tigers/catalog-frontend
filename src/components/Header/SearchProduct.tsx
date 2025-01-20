@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import { debounce } from 'lodash';
 import { getSearchProducts } from '@/api/apiProducts';
 import { Product } from '@/types';
+import { SUPABASE_STORAGE_URL } from '@/constants/auth';
 
 export const SearchProduct = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -113,7 +114,7 @@ export const SearchProduct = () => {
                   className="flex items-center text-slate-900 dark:text-textWhite"
                 >
                   <img
-                    src={`/${product.images[0]}`}
+                    src={`${SUPABASE_STORAGE_URL}/${product.images[0]}`}
                     alt={product.name}
                     className="w-12 h-12"
                   />

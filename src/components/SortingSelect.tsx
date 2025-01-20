@@ -8,8 +8,9 @@ import {
   SelectValue,
 } from './ui/select';
 import { useAppDispatch, useAppSelector } from '@/app/hooks';
-import { changeSorting, SortType } from '@/features/sorting';
+import { changeSorting } from '@/features/sorting';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { SortType } from '@/types';
 
 const options: { value: SortType; label: string }[] = [
   { value: 'newest', label: 'Newest' },

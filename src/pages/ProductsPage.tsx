@@ -55,7 +55,6 @@ const ProductsPage: FC<Props> = ({ category }) => {
           currentSort,
         );
 
-        console.log('data', products);
         setProducts(products);
         setTotalCount(totalCount ?? 0);
       } catch (error) {
