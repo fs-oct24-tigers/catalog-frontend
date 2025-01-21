@@ -15,7 +15,7 @@ import { SortType } from '@/types';
 const options: { value: SortType; label: string }[] = [
   { value: 'newest', label: 'Newest' },
   { value: 'oldest', label: 'Oldest' },
-  { value: 'name', label: 'Name' },
+  { value: 'alphabetically', label: 'Name' },
   { value: 'cheapest', label: 'Cheapest' },
   { value: 'expensive', label: 'Expensive' },
 ];

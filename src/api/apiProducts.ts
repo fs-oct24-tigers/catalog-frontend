@@ -13,7 +13,7 @@ export async function getProducts(
 
   const sortMapping: Record<SortType, { column: string; ascending: boolean }> =
     {
-      name: { column: 'name', ascending: true },
+      alphabetically: { column: 'name', ascending: true },
       cheapest: { column: 'priceDiscount', ascending: true },
       expensive: { column: 'priceDiscount', ascending: false },
       newest: { column: 'year', ascending: false },
