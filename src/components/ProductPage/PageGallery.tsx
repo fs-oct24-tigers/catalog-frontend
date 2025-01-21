@@ -53,7 +53,7 @@ export const PageGallery = ({ images }: PageGalleryProps) => {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
   const slides = images.map((image) => ({
-    src: `${image}`,
+    src: `${SUPABASE_STORAGE_URL}/${image}`,
   }));
 
   return (
