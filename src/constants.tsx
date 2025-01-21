@@ -67,14 +67,14 @@ export const creators = [
     name: 'Andrii Yanchuk',
     role: 'Developer',
     github: 'https://github.com/Andrii-Yanchuk',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/andrii-yanchuk-1b2270332/',
   },
   {
     image: creator1Image,
     name: 'Stanislav Chyrva',
     role: 'Developer',
     github: 'https://github.com/schyrva',
-    linkedin: '',
+    linkedin: 'https://www.linkedin.com/in/stanislav-chyrva-3a3b24347/',
   },
   {
     image: creator3Image,
@@ -89,6 +89,6 @@ export const creators = [
     name: 'Alyona Verbanova',
     role: 'Developer',
     github: 'https://github.com/AlyonaV22',
-    linkedin: '',
+    linkedin: 'https://linkedin.com/in/alyona-verbanova-8652a4348/',
   },
 ];

@@ -71,7 +71,7 @@ export const ProductOptions: React.FC<Props> = ({
                 handleColorClick(color);
               }}
             >
-              <div className="flex items-center justify-center rounded-full w-8 h-8 bg-bodyBg">
+              <div className="flex items-center justify-center rounded-full w-8 h-8 dark:bg-bodyBg bg-white">
                 <div
                   className="rounded-full h-[27px] w-[27px]"
                   style={{ backgroundColor: colorOptions[color as Color] }}
