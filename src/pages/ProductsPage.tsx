@@ -96,7 +96,7 @@ const ProductsPage: FC<Props> = ({ category }) => {
       {isLoading && (
         <SkeletonTheme baseColor="#161827" highlightColor="#0f1121">
           <div className="m-auto grid gap-x-4 gap-y-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center place-items-center">
-            {Array.from({ length: 16 }).map((_, index) => (
+            {Array.from({ length: perPage }).map((_, index) => (
               <div key={index} className="w-full">
                 <Skeleton height={487} width="100%" />
               </div>

@@ -71,21 +71,18 @@ export const SearchProduct = () => {
   }, []);
 
   return (
-    <div
-      ref={searchRef}
-      className="flex flex-row-reverse items-center relative"
-    >
-      <div className="h-16 flex justify-center items-center">
+    <div ref={searchRef} className="flex flex-row-reverse items-center">
+      <div className=" flex justify-center items-center">
         <button
           onClick={handleSearchToggle}
-          className="flex items-center justify-center w-16 h-16 dark:hover:bg-lineGray dark:border-gray-700"
+          className="flex items-center justify-center size-12 dark:hover:bg-lineGray dark:border-gray-700"
         >
           <Search size={20} />
         </button>
       </div>
 
       {isSearchOpen && (
-        <div className="flex items-center top-0 right-0  w-[300px] shadow-sm">
+        <div className="flex items-center top-[48px] md:top-0 right-0 left-0 w-full md:w-[300px] absolute sm:relative border-b-[1px] border-gray-700  md:border-0 m-auto">
           <input
             type="text"
             value={inputValue}
@@ -94,14 +91,14 @@ export const SearchProduct = () => {
             className="w-full px-4 py-2 text-slate-600 dark:text-white dark:bg-bodyBg focus:outline-none dark:focus:border-textWhite"
           />
           {!!inputValue.length && (
-            <div className="cursor-pointer" onClick={handleSearchClose}>
+            <div className="cursor-pointer px-2" onClick={handleSearchClose}>
               <X size={20} />
             </div>
           )}
         </div>
       )}
       {inputValue.length > 3 && (
-        <div className="absolute w-[500px] h-[300px] top-16 p-2 border-2 dark:border-0 dark:bg-gray-800 overflow-y-scroll">
+        <div className="absolute w-full right-0 left-0 md:left-auto md:right-36 md:w-[500px] h-[300px] top-[89px] md:top-12 p-2 border-2 dark:border-0 dark:bg-gray-800 overflow-y-scroll m-auto md:m-0 custom-scrollbar">
           {products &&
             products.map((product) => (
               <div
