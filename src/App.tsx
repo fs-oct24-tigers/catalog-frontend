@@ -5,6 +5,7 @@ import Main from './components/Main';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { ThemeProvider } from './components/ThemeSwitcher/ThemeSwitcher';
+import { ThemeSwitcher } from './components/ThemeSwitcher/ThemeSwitcher';
 
 export const App = () => {
   return (
@@ -14,6 +15,7 @@ export const App = () => {
         className="min-h-screen bg-light-bodyBg dark:bg-bodyBg text-light-textPrimary dark:text-textWhite"
       >
         <Header />
+        <ThemeSwitcher />
         <Main>
           <Outlet />
         </Main>

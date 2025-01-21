@@ -9,7 +9,7 @@ import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
 import { SearchProduct } from './SearchProduct';
 import { AuthButtons } from '../Auth/AuthButtons';
-import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
+// import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
 
 const navLinks = [
   { name: 'PHONES', pathName: '/phones' },
@@ -77,9 +77,9 @@ const Header: React.FC = () => {
           <div className="h-12 ml-[10px] flex justify-between items-center  border-l dark:border-gray-700">
             <SearchProduct />
           </div>
-          <div className="h-12 flex justify-between items-center border-l dark:border-gray-700">
+          {/* <div className="h-12 flex justify-between items-center border-l dark:border-gray-700">
             <ThemeSwitcher />
-          </div>
+          </div> */}
           <div className="h-12 flex justify-between items-center hidden md:flex border-l dark:border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>

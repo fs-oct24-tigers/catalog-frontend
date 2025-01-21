@@ -13,17 +13,23 @@ const BannerSwiper: React.FC = () => {
       link: '/phones',
       customClass: 'first-slide',
       buttonText: 'ORDER NOW',
-      bgColor: 'bg-black',
+      bgColor: 'bg-bodyBg',
     },
     {
       url: '/img/banner-accessories.png',
       alt: 'Latest smartphones displayed on wooden surface',
       link: '/accessories',
+      customClass: 'second-slide',
+      buttonText: 'ORDER NOW',
+      bgColor: 'bg-bodyBg',
     },
     {
       url: '/img/banner-tablets.png',
       alt: 'Modern tablets and digital devices',
       link: '/tablets',
+      customClass: 'third-slide',
+      buttonText: 'ORDER NOW',
+      bgColor: 'bg-bodyBg',
     },
   ];
 
@@ -112,60 +118,59 @@ const BannerSwiper: React.FC = () => {
                     className={`swiper-slide relative ${image.customClass || ''} ${image.bgColor || ''}`}
                     key={index}
                   >
-                    {index === 0 ?
-                      <div className="flex flex-row h-[400px] justify-between">
-                        <div className="flex w-[40%] max-w-[450px] flex-shrink-1 relative flex-col items-center justify-between h-full ml-6 py-4 sm:flex">
-                          <div className="w-full h-full bg-gray-800 rounded-3xl p-8 flex flex-col justify-between">
-                            <div className="text-left">
-                              <p className="text-purple-500 text-4xl font-bold mb-2">
-                                Now available
-                              </p>
-                              <p className="text-purple-500 text-3xl font-bold mb-6">
-                                in our store! 👌
-                              </p>
-                              <p className="text-gray-400 text-l mb-6">
-                                Be the first!
-                              </p>
-                            </div>
-                            <div className="absolute bottom-14 text-center">
-                              <Link
-                                to={image.link}
-                                className="inline-block bg-transparent border-[1.5px] border-gray-600 text-textWhite px-6 py-2 rounded-full hover:bg-gray-600 hover:border-gray-700 font-semibold"
-                              >
-                                {image.buttonText}
-                              </Link>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div className="flex w-[60%] max-w-[600px] flex-shrink-1 relative flex-col items-center justify-between h-full py-4 mt-6">
-                          <div className="text-center">
-                            <h2 className="gradient-text text-4xl font-bold mb-4">
-                              iPhone 14 Pro
-                            </h2>
-                            <p className="text-gray-400 text-xl">
-                              Pro. Beyond.
+                    <div className="flex flex-row h-[400px] justify-between">
+                      <div className="flex w-[40%] max-w-[450px] flex-shrink-1 relative flex-col items-center justify-between h-full ml-6 py-4 sm:flex">
+                        <div className="w-full h-full bg-gray-800 rounded-3xl p-8 flex flex-col justify-between">
+                          <div className="text-left">
+                            <p className="text-purple-500 text-4xl font-bold mb-2">
+                              {index === 0 ? 'Now available' : 'New Arrivals'}
+                            </p>
+                            <p className="text-purple-500 text-3xl font-bold mb-6">
+                              {index === 0 ?
+                                'in our store! 👌'
+                              : 'Check them out! 🚀'}
+                            </p>
+                            <p className="text-gray-400 text-l mb-6">
+                              {index === 0 ? 'Be the first!' : 'Explore now!'}
                             </p>
                           </div>
-                          <Link to={image.link}>
-                            <img
-                              src={image.url}
-                              className="w-full h-auto max-h-[300px] object-contain self-end"
-                              alt={image.alt}
-                            />
-                          </Link>
+                          <div className="absolute bottom-14 text-center">
+                            <Link
+                              to={image.link}
+                              className="inline-block bg-transparent border-[1.5px] border-gray-600 text-textWhite px-6 py-2 rounded-full hover:bg-gray-600 hover:border-gray-700 font-semibold"
+                            >
+                              {image.buttonText}
+                            </Link>
+                          </div>
                         </div>
                       </div>
-                    : <div className="relative h-[400px]">
+
+                      <div className="flex w-[60%] max-w-[600px] flex-shrink-1 relative flex-col items-center justify-between h-full py-4 mt-6">
+                        <div className="text-center">
+                          <h2 className="gradient-text text-4xl font-bold mb-4">
+                            {index === 0 ?
+                              'iPhone 14 Pro'
+                            : index === 1 ?
+                              'Accessories'
+                            : 'Tablets'}
+                          </h2>
+                          <p className="text-gray-400 text-xl">
+                            {index === 0 ?
+                              'Pro. Beyond.'
+                            : index === 1 ?
+                              'Enhance your experience'
+                            : 'Powerful and portable'}
+                          </p>
+                        </div>
                         <Link to={image.link}>
                           <img
                             src={image.url}
-                            className="w-full h-full object-cover"
+                            className="w-full h-auto max-h-[300px] object-contain self-end"
                             alt={image.alt}
                           />
                         </Link>
                       </div>
-                    }
+                    </div>
                   </div>
                 ))}
               </div>
