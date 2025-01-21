@@ -83,7 +83,7 @@ const ProductCard: React.FC<Props> = ({ product }) => {
         </div>
       </CardContent>
 
-      <CardFooter className="flex flex-1 justify-between items-center w-[224px] p-0 m-0 space-x-2">
+      <CardFooter className="flex flex-1 justify-between items-center w-full p-0 m-0 space-x-2">
         <ProductButtons product={product} />
       </CardFooter>
     </Card>

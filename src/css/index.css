@@ -153,6 +153,10 @@ html {
     scrollbar-width: none; /* Firefox */
   }
   .custom-scrollbar::-webkit-scrollbar {
+    background: gray;
+    width: 6px;
+  }
+  .custom-scrollbar-dark::-webkit-scrollbar {
     background: #1f2937;
     width: 6px;
   }

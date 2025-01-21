@@ -12,6 +12,7 @@ export const SearchProduct = () => {
     handleSearchQuery,
     inputValue,
     products,
+    isLoading,
   } = useProductSearch();
 
   return (
@@ -32,7 +33,7 @@ export const SearchProduct = () => {
             value={inputValue}
             onChange={handleSearchQuery}
             placeholder="Search products..."
-            className="w-full px-4 py-2 text-slate-600 dark:text-white dark:bg-bodyBg focus:outline-none dark:focus:border-textWhite"
+            className="w-full px-4 py-2 text-slate-600 dark:text-white dark:bg-bodyBg focus:outline-none dark:focus:border-textWhite text-xs"
           />
           {!!inputValue.length && (
             <div className="cursor-pointer px-2" onClick={handleSearchClose}>
@@ -42,7 +43,7 @@ export const SearchProduct = () => {
         </div>
       )}
       {isSearchOpen && inputValue.length > 3 && (products?.length ?? 0) > 0 && (
-        <div className="absolute flex flex-col gap-2 w-full right-0 left-0 md:left-auto md:right-36 md:w-[352px] h-[300px] top-[89px] md:top-12 p-2 border-2 dark:border-0 dark:bg-gray-800 overflow-y-scroll m-auto md:m-0 custom-scrollbar">
+        <div className="absolute flex flex-col gap-2 w-full right-0 left-0 md:left-auto md:right-36 md:w-[352px] h-[300px] top-[89px] md:top-12 p-2 border-2 dark:border-0 bg-gray-100 dark:bg-gray-800 overflow-y-scroll m-auto md:m-0 custom-scrollbar dark:custom-scrollbar-dark">
           {products &&
             products.map((product) => (
               <Link
@@ -56,17 +57,22 @@ export const SearchProduct = () => {
                   alt={product.name}
                   className="w-10"
                 />
-                <p className="text-sm">{product.name}</p>
+                <p className="text-sm text-gray-800 dark:text-white">
+                  {product.name}
+                </p>
               </Link>
             ))}
         </div>
       )}
 
-      {isSearchOpen && inputValue.length > 2 && products?.length === 0 && (
-        <div className="absolute p-4 w-full right-0 left-0 md:left-auto md:right-36 md:w-[352px] h-[50px] top-[89px] md:top-12 text-slate-950 dark:text-textWhite dark:bg-gray-800">
-          <p className="text-sm">No products found</p>
-        </div>
-      )}
+      {isSearchOpen &&
+        inputValue.length > 2 &&
+        products?.length === 0 &&
+        !isLoading && (
+          <div className="absolute p-4 w-full right-0 left-0 md:left-auto md:right-36 md:w-[352px] h-[50px] top-[89px] md:top-12 text-slate-950 dark:text-textWhite dark:bg-gray-800">
+            <p className="text-sm">No products found</p>
+          </div>
+        )}
     </div>
   );
 };

@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useContext } from 'react';
 import useProducts from '@/hooks/useProducts';
 import ProductCard from '@/components/product/ProductCard';
 import ProductGrid from '@/components/product/ProductGrid';
@@ -10,6 +10,7 @@ import SortingSelect from '@/components/SortingSelect';
 import Pagination from '@/components/Pagination';
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { ThemeContext } from '@/components/ThemeSwitcher/ThemeSwitcher';
 
 type Props = {
   category: string;
@@ -26,6 +27,11 @@ const ProductsPage: FC<Props> = ({ category }) => {
     isLoading,
     isError,
   } = useProducts({ category });
+
+  const { theme } = useContext(ThemeContext);
+
+  const skeletonBaseColor = theme === 'light' ? '#E5E7EB' : '#161827';
+  const skeletonHighlightColor = theme === 'light' ? '#D1D5DB' : '#0F1121';
 
   if (isError) {
     return <div>Error fetching products</div>;
@@ -44,7 +50,10 @@ const ProductsPage: FC<Props> = ({ category }) => {
         />
       </div>
       {isLoading && (
-        <SkeletonTheme baseColor="#161827" highlightColor="#0f1121">
+        <SkeletonTheme
+          baseColor={skeletonBaseColor}
+          highlightColor={skeletonHighlightColor}
+        >
           <div className="m-auto grid gap-x-4 gap-y-10 xs:grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 items-center justify-center place-items-center">
             {Array.from({ length: perPage }).map((_, index) => (
               <div key={index} className="w-full">

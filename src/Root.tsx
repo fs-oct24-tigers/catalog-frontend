@@ -11,10 +11,13 @@ import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
 import { Delivery } from './pages/Delivery';
-import useCategories from './hooks/useCategories';
-
+import UseCategories from './hooks/useCategories';
 const Root = () => {
-  const { categories } = useCategories();
+  const { categories, isLoading } = UseCategories();
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <ErrorBoundary>
