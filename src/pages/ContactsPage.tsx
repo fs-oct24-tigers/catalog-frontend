@@ -8,7 +8,9 @@ const ContactsPage: React.FC = () => {
   return (
     <div className="container mx-auto py-2 px-4">
       <Breadcrumbs category="Contacts" />
-      <h1 className="text-2xl font-bold mb-4">Creators</h1>
+      <h1 className="text-2xl text-slate-950 dark:text-textWhite font-bold mb-4">
+        Creators
+      </h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
         <CreatorCard
           image={creators[0].image}
@@ -24,7 +26,9 @@ const ContactsPage: React.FC = () => {
             alt={'tiger'}
             className="w-[150px] h-[150px] mb-2 rounded-md"
           />
-          <h2 className="text-[22px] font-semibold text-white pt-4">Group</h2>
+          <h2 className="text-[22px] font-semibold text-slate-950 dark:text-white pt-4">
+            Group
+          </h2>
           <p className="text-[36px] text-gray-400">Jun Tigers</p>
         </div>
         {creators.slice(1).map((creator) => (
