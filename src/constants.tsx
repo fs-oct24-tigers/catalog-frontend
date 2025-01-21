@@ -52,8 +52,6 @@ export const getProperties = (product: Product) => {
   ];
 };
 
-export const categories = ['phones', 'tablets', 'accessories'];
-
 export const creators = [
   {
     image: creator4Image,

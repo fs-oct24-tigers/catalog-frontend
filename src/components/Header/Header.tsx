@@ -9,16 +9,18 @@ import { HeaderCloseButton } from './HeaderCloseButton';
 import { HeaderMenu } from './HeaderMenu';
 import { SearchProduct } from './SearchProduct';
 import { AuthButtons } from '../Auth/AuthButtons';
-// import { ThemeSwitcher } from '../ThemeSwitcher/ThemeSwitcher';
-
-const navLinks = [
-  { name: 'PHONES', pathName: '/phones' },
-  { name: 'TABLETS', pathName: '/tablets' },
-  { name: 'ACCESSORIES', pathName: '/accessories' },
-];
+import UseCategories from '@/hooks/useCategories';
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const { categories } = UseCategories();
+
+  const navLinks =
+    categories?.map((category) => ({
+      name: category.toUpperCase(),
+      pathName: `/${category.toLowerCase()}`,
+    })) || [];
 
   const location = useLocation();
 
@@ -54,7 +56,7 @@ const Header: React.FC = () => {
           <Logo handleCloseMenu={handleCloseMenu} />
           {navLinks.map(({ name, pathName }) => (
             <div
-              className={cn('relative h-12 flex items-center hidden md:flex')}
+              className={cn('relative h-12  items-center hidden md:flex')}
               key={name}
             >
               <Link
@@ -77,16 +79,14 @@ const Header: React.FC = () => {
           <div className="h-12 ml-[10px] flex justify-between items-center  border-l dark:border-gray-700">
             <SearchProduct />
           </div>
-          {/* <div className="h-12 flex justify-between items-center border-l dark:border-gray-700">
-            <ThemeSwitcher />
-          </div> */}
-          <div className="h-12 flex justify-between items-center hidden md:flex border-l dark:border-gray-700">
+
+          <div className="h-12 justify-between items-center hidden md:flex border-l dark:border-gray-700">
             <HeaderFavoritesButton handleCloseMenu={handleCloseMenu} />
           </div>
-          <div className="h-12 flex justify-between items-center hidden md:flex">
+          <div className="h-12 justify-between items-center hidden md:flex">
             <HeaderCartButton handleCloseMenu={handleCloseMenu} />
           </div>
-          <div className="h-12 flex justify-between items-center hidden md:flex">
+          <div className="h-12 justify-between items-center hidden md:flex">
             <AuthButtons />
           </div>
 
