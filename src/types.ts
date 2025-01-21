@@ -56,11 +56,6 @@ export type Category = {
   path: string;
 };
 
-export type SortType =
-  | 'alphabetically'
-  | 'cheapest'
-  | 'expensive'
-  | 'newest'
-  | 'oldest';
+export type SortType = 'name' | 'cheapest' | 'expensive' | 'newest' | 'oldest';
 
 export type FilterType = 'newModels' | 'hotPrices' | 'all';
