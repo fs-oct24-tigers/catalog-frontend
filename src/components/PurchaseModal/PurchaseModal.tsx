@@ -92,7 +92,7 @@ export function PurchaseModal({ open, onOpenChange }: PurchaseModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] bg-cardBg border-cardBg z-50">
+      <DialogContent className="sm:max-w-[600px] md:max-w-[700px] dark:bg-cardBg border-cardBg z-50">
         <DialogHeader>
           <DialogTitle className="text-slate-950 dark:text-textWhite text-xl sm:text-2xl text-center">
             Complete your purchase

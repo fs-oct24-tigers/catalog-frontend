@@ -17,7 +17,7 @@ export const ProductTable: React.FC<ProductSpecs> = ({ specs }) => {
     <Table>
       <TableHeader>
         <TableRow>
-          <TableHead className="text-[22px] font-extrabold text-textWhite">
+          <TableHead className="text-[22px] font-extrabold text-slate-950 dark:text-textWhite">
             Tech specs
           </TableHead>
         </TableRow>
@@ -35,7 +35,7 @@ export const ProductTable: React.FC<ProductSpecs> = ({ specs }) => {
                 <TableCell className="text-textGray text-sm font-semibold pt-2">
                   {spec.name}
                 </TableCell>
-                <TableCell className="text-right text-textWhite pt-2">
+                <TableCell className="text-right font-semibold text-slate-950 dark:text-textWhite pt-2">
                   {spec.value}
                 </TableCell>
               </TableRow>
