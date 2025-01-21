@@ -30,7 +30,7 @@ const ThemeTransition = ({ theme }) => {
           <motion.div
             className="absolute inset-0"
             style={{
-              background: theme === 'dark' ? 'black' : 'white',
+              background: theme === 'dark' ? '#161827' : '#FFF0F5',
               clipPath: 'circle(0% at 100% 100%)',
             }}
             animate={{
