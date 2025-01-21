@@ -24,7 +24,7 @@ const PagesQuantitySelect: React.FC<Props> = ({
     <div className="flex flex-col gap-1">
       <span className="text-small text-textGray">Items on page</span>
       <Select onValueChange={(value) => handlePerPageChange(Number(value))}>
-        <SelectTrigger className="w-[128px]">
+        <SelectTrigger className="w-[130px] sm:w-[150px]">
           <SelectValue placeholder={perPage} />
         </SelectTrigger>
         <SelectContent className="bg-white">

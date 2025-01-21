@@ -15,9 +15,9 @@ import { SortType } from '@/types';
 const options: { value: SortType; label: string }[] = [
   { value: 'newest', label: 'Newest' },
   { value: 'oldest', label: 'Oldest' },
-  { value: 'alphabetically', label: 'Alphabetically' },
+  { value: 'name', label: 'Name' },
   { value: 'cheapest', label: 'Cheapest' },
-  { value: 'expensive', label: 'Most expensive' },
+  { value: 'expensive', label: 'Expensive' },
 ];
 
 const SortingSelect: React.FC = () => {
@@ -38,7 +38,7 @@ const SortingSelect: React.FC = () => {
     <div className="flex flex-col gap-1">
       <span className="text-small text-textGray">Sort by</span>
       <Select value={currentSort} onValueChange={handleValueChange}>
-        <SelectTrigger className="w-[176px]">
+        <SelectTrigger className="w-[140px]">
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
         <SelectContent className="bg-white">
