@@ -10,7 +10,7 @@ export const sortProducts = (products: Product[], sortType: SortType) => {
     case 'cheapest':
       return sortedProducts.sort((a, b) => a.priceDiscount - b.priceDiscount);
 
-    case 'alphabetically':
+    case 'name':
       return sortedProducts.sort((a, b) => a.name.localeCompare(b.name));
 
     case 'newest':
