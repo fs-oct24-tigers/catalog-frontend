@@ -32,7 +32,7 @@ export const HeaderTitle: React.FC<TitleProps> = ({
     <div
       className={`
       flex flex-col
-      ${isHomePage ? 'pt-6 md:pt-8 xl:pt-14' : ''}
+      ${isHomePage ? 'pt-8 xl:pt-14 text-center md:text-left' : ''}
     `}
     >
       <h1
