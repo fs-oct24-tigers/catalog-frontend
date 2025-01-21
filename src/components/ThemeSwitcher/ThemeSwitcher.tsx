@@ -1,13 +1,28 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
+import {
+  createContext,
+  useContext,
+  useEffect,
+  useState,
+  ReactNode,
+} from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Moon, Sun, Star } from 'lucide-react';
 
-const ThemeContext = createContext({
+interface ThemeContextType {
+  theme: string;
+  toggleTheme: () => void;
+}
+
+const ThemeContext = createContext<ThemeContextType>({
   theme: 'light',
   toggleTheme: () => {},
 });
 
-const ThemeTransition = ({ theme }) => {
+interface ThemeTransitionProps {
+  theme: string;
+}
+
+const ThemeTransition = ({ theme }: ThemeTransitionProps) => {
   const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
@@ -47,7 +62,11 @@ const ThemeTransition = ({ theme }) => {
   );
 };
 
-export const ThemeProvider = ({ children }) => {
+interface ThemeProviderProps {
+  children: ReactNode;
+}
+
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [theme, setTheme] = useState('light');
   const [isMounted, setIsMounted] = useState(false);
 

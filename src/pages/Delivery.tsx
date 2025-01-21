@@ -7,11 +7,13 @@ export const Delivery: React.FC = () => {
     <div>
       <Breadcrumbs category="Delivery" />
       <div className="flex flex-col">
-        <p className="text-textWhite text-4xl font-semibold">
+        <p className="text-slate-950 dark:text-textWhite text-4xl font-semibold">
           Delivery history
         </p>
         <div className="flex items-center space-x-10">
-          <p className="text-textWhite text-2xl py-4">Order number</p>
+          <p className="text-slate-950 dark:text-textWhite text-2xl py-4">
+            Order number
+          </p>
           <div className="text-textGray text-[24px]">256837</div>
         </div>
 
