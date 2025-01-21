@@ -1,53 +1,22 @@
-import { useParams } from 'react-router-dom';
 import { ProductOptions } from '../components/ProductPage/ProductOptions';
 import { ProductAbout } from '../components/ProductPage/ProductAbout';
 import { NotFoundPage } from '@/components/NotFoundPage/NotFoundPage';
 import { PageGallery } from '../components/ProductPage/PageGallery';
 import { ProductTable } from '@/components/ProductPage/ProductTable';
 import { Breadcrumbs } from '@/components/BreadCrumbs';
-
 import { getSpecs, getProperties } from '@/constants';
-
 import { HeaderTitle } from '@/components/HeaderTitle/HeaderTitle';
 import { BackButton } from '@/components/BackButton/BackButton';
-import { useEffect, useState } from 'react';
-import { Product } from '@/types';
-import { getProduct } from '@/api/apiProducts';
+
 import ProductsSlider from '@/components/Sliders/ProductsSlider';
+import useSingleProduct from '@/hooks/useSingleProduct';
 
 type Props = {
   category: string;
 };
 
 const ProductPage: React.FC<Props> = ({ category }) => {
-  const { id } = useParams<{ id: string }>();
-
-  const [product, setProduct] = useState<Product>();
-  const [isLoading, setIsLoading] = useState(true);
-  const [isError, setIsError] = useState(false);
-
-  useEffect(() => {
-    const fetchProduct = async () => {
-      setIsLoading(true);
-      setIsError(false);
-
-      try {
-        if (!id) {
-          throw new Error('Product ID is undefined');
-        }
-        const products = await getProduct(id);
-
-        setProduct(products);
-      } catch (error) {
-        console.error('Failed to fetch product:', error);
-        setIsError(true);
-      } finally {
-        setIsLoading(false);
-      }
-    };
-
-    fetchProduct();
-  }, [id]);
+  const { product, isLoading, isError } = useSingleProduct();
 
   if (isLoading) {
     return <div>Loading...</div>;

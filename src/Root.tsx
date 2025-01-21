@@ -10,10 +10,12 @@ import ErrorBoundary from './components/ErrorBoundary';
 import { NotFoundPage } from './components/NotFoundPage/NotFoundPage';
 import ScrollToTop from './components/ScrollToTop';
 import ContactsPage from './pages/ContactsPage';
-import { categories } from './constants';
 import { Delivery } from './pages/Delivery';
+import useCategories from './hooks/useCategories';
 
 const Root = () => {
+  const { categories } = useCategories();
+
   return (
     <ErrorBoundary>
       <Router>
@@ -21,7 +23,8 @@ const Root = () => {
         <Routes>
           <Route path="/" element={<App />}>
             <Route index element={<HomePage />} />
-            {categories.map((category) => (
+
+            {categories?.map((category) => (
               <Route key={category} path={category}>
                 <Route
                   index
@@ -33,7 +36,11 @@ const Root = () => {
                 />
                 <Route
                   path=":id"
-                  element={<ProductPage category={category} />}
+                  element={
+                    <ErrorBoundary>
+                      <ProductPage category={category} />
+                    </ErrorBoundary>
+                  }
                 />
               </Route>
             ))}
