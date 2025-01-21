@@ -12,7 +12,7 @@ export const AuthButtons = () => {
       <SignedOut>
         <SignInButton mode="modal">
           <div className="flex grow w-12 h-12 items-center justify-center border-x dark:border-gray-700 dark:hover:bg-lineGray cursor-pointer">
-            <UserIcon />
+            <UserIcon className="text-slate-950 dark:text-textWhite" />
           </div>
         </SignInButton>
       </SignedOut>

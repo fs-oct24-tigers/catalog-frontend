@@ -19,7 +19,10 @@ export const Breadcrumbs = ({ category, productName }: BreadcrumbsProps) => {
       <Breadcrumb>
         <BreadcrumbList className="text-small">
           <BreadcrumbItem>
-            <NavLink to="/" className="text-textGray hover:text-textWhite">
+            <NavLink
+              to="/"
+              className="text-textGray hover:text-slate-950 dark:hover:text-textWhite"
+            >
               <Home size={16} />
             </NavLink>
           </BreadcrumbItem>
@@ -30,7 +33,7 @@ export const Breadcrumbs = ({ category, productName }: BreadcrumbsProps) => {
               <BreadcrumbItem>
                 <NavLink
                   to={`/${category}`}
-                  className="text-textGray hover:text-textWhite"
+                  className="text-textGray hover:text-slate-950 dark:hover:text-textWhite"
                 >
                   {category.charAt(0).toUpperCase() + category.slice(1)}
                 </NavLink>

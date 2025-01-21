@@ -20,6 +20,7 @@ const CartProduct: React.FC<Props> = ({ product }) => {
   const dispatch = useAppDispatch();
 
   const deleteFromCart = () => {
+    toast.dismiss();
     dispatch(removeFromCart(product.itemId));
     toast.success('Product removed from cart!', {
       position: 'top-right',

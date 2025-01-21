@@ -13,7 +13,7 @@ const BannerSwiper: React.FC = () => {
       link: '/phones',
       customClass: 'first-slide',
       buttonText: 'ORDER NOW',
-      bgColor: 'bg-bodyBg',
+      bgColor: 'bg-black',
     },
     {
       url: '/img/banner-accessories.png',
@@ -21,7 +21,7 @@ const BannerSwiper: React.FC = () => {
       link: '/accessories',
       customClass: 'second-slide',
       buttonText: 'ORDER NOW',
-      bgColor: 'bg-bodyBg',
+      bgColor: 'bg-black',
     },
     {
       url: '/img/banner-tablets.png',
@@ -29,7 +29,7 @@ const BannerSwiper: React.FC = () => {
       link: '/tablets',
       customClass: 'third-slide',
       buttonText: 'ORDER NOW',
-      bgColor: 'bg-bodyBg',
+      bgColor: 'bg-black',
     },
   ];
 
