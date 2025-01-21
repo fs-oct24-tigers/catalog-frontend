@@ -28,15 +28,16 @@ const Footer: React.FC<FooterProps> = ({ className }) => {
       </Link>
 
       <div className="flex flex-col md:flex-row gap-[13px] lg:gap-[106px] mt-6 md:mt-0 sm:mt-8">
-        <a href="#" className="footer-link">
+        <a
+          href="https://github.com/fs-oct24-tigers/catalog-frontend"
+          className="footer-link"
+        >
           Github
         </a>
         <Link to="/contacts" className="footer-link">
           Contacts
         </Link>
-        <a href="#" className="footer-link">
-          Rights
-        </a>
+
         <Link to="/delivery" className="footer-link">
           Delivery
         </Link>

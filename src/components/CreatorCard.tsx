@@ -24,10 +24,20 @@ export const CreatorCard: React.FC<CreatorsCard> = ({
       />
       <h2 className="text-[14px] font-semibold text-white">{name}</h2>
       <p className="text-[12px] text-gray-400">{role}</p>
-      <a href={github} className="text-[12px] underline">
+      <a
+        target="_blank"
+        href={github}
+        className="text-[12px] underline"
+        rel="noreferrer"
+      >
         GitHub Profile
       </a>
-      <a href={linkedin} className="text-[12px] underline">
+      <a
+        target="_blank"
+        href={linkedin}
+        className="text-[12px] underline"
+        rel="noreferrer"
+      >
         Linkedin Profile
       </a>
     </div>

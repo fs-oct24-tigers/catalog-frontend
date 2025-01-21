@@ -8,6 +8,7 @@ const useProductSearch = () => {
   const [inputValue, setInputValue] = useState('');
   const [products, setProducts] = useState<Product[]>();
   const [searchQuery, setSearchQuery] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const searchRef = useRef<HTMLDivElement>(null);
 
@@ -39,6 +40,7 @@ const useProductSearch = () => {
   };
 
   useEffect(() => {
+    setIsLoading(true);
     const fetchProducts = async () => {
       if (!searchQuery) {
         setProducts([]);
@@ -48,8 +50,11 @@ const useProductSearch = () => {
       try {
         const fetchedProducts = await getSearchProducts(searchQuery);
         setProducts(fetchedProducts);
+        setIsLoading(false);
       } catch (error) {
         console.error('Failed to fetch products:', error);
+      } finally {
+        setIsLoading(false);
       }
     };
 
@@ -81,6 +86,7 @@ const useProductSearch = () => {
     handleSearchQuery,
     inputValue,
     products,
+    isLoading,
   };
 };
 

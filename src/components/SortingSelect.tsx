@@ -41,7 +41,7 @@ const SortingSelect: React.FC = () => {
         <SelectTrigger className="w-[176px]">
           <SelectValue placeholder="Sort by" />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="bg-white">
           <SelectGroup>
             {options.map(({ value, label }) => (
               <SelectItem key={value} value={value}>

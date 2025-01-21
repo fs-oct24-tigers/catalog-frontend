@@ -27,7 +27,7 @@ const PagesQuantitySelect: React.FC<Props> = ({
         <SelectTrigger className="w-[128px]">
           <SelectValue placeholder={perPage} />
         </SelectTrigger>
-        <SelectContent>
+        <SelectContent className="bg-white">
           <SelectGroup>
             {options.map((option) => (
               <SelectItem key={option} value={String(option)}>
