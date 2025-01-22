@@ -8,10 +8,18 @@ This project leverages the following technologies and tools:
 
 - **[React](https://reactjs.org/):** A JavaScript library for building user interfaces.
 - **[Vite](https://vitejs.dev/):** A lightning-fast build tool for modern web projects.
+- **[Redux](https://redux.js.org/):** Library for global state management.
+- **[Redux Persist](https://github.com/rt2zz/redux-persist):** Tool for persisting and rehydrating a redux store.
 - **[Tailwind CSS](https://tailwindcss.com/):** A utility-first CSS framework for rapid UI development.
 - **[shadcn](https://shadcn.dev/):** A collection of accessible and reusable UI components built with Tailwind CSS.
 - **[Lucide React](https://lucide.dev/):** Icon library for modern React applications.
 - **[React Router](https://reactrouter.com/):** A powerful routing library for navigation within React applications.
+- **[Clerk](https://clerk.com/):** Authentication and user management platform.
+- **[Supabase](https://supabase.com/):** Open-source backend-as-a-service (BaaS) platform.
+- **[Swiper](https://swiperjs.com/):** Responsive slider and carousel library for web and mobile.
+- **[React-paginate](https://github.com/AdeleD/react-paginate):** A ReactJS component to render a pagination.
+- **[React-loading-skeleton](https://github.com/dvtng/react-loading-skeleton):** Adaptive animated loading skeletons.
+- **[Netlify](https://www.netlify.com/):** Cloud solution for developers to build and deploy web applications.
 
 ---
 
