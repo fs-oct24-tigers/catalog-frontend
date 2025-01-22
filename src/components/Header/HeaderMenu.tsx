@@ -3,19 +3,22 @@ import cn from 'classnames';
 import { HeaderFavoritesButton } from '../Header/HeaderFavoritesButton';
 import { HeaderCartButton } from '../Header/HeaderCartButton';
 import { AuthButtons } from '../Auth/AuthButtons';
+import UseCategories from '@/hooks/useCategories';
 
 type Props = {
   handleCloseMenu: () => void;
 };
 
-const navLinks = [
-  { name: 'PHONES', pathName: '/phones' },
-  { name: 'TABLETS', pathName: '/tablets' },
-  { name: 'ACCESSORIES', pathName: '/accessories' },
-];
-
 export const HeaderMenu: React.FC<Props> = ({ handleCloseMenu }) => {
   const location = useLocation();
+
+  const { categories } = UseCategories();
+
+  const navLinks =
+    categories?.map((category) => ({
+      name: category.toUpperCase(),
+      pathName: `/${category.toLowerCase()}`,
+    })) || [];
 
   return (
     <menu className="h-screen relative z-20 bg-white dark:bg-bodyBg">
